@@ -1,0 +1,22 @@
+{% extends "../base.html" %} 
+{% block title %}Departments{% endblock title %} 
+{%block content %}
+<h1>Departments</h1>
+<a href="{% url 'departments:create' %}">Create New Department</a>
+
+<ul>
+  {% for department in departments %}
+  <li>
+    <a href="{% url 'departments:detail' department.id %}"
+      >{{ department.name }}</a
+    >
+  </li>
+  {%empty%}
+  <p>
+    There is no departments. Follow the link to
+    <a href="{% url 'departments:create' %}">create department</a>.
+  </p>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

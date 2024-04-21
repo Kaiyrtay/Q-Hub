@@ -1,0 +1,17 @@
+{% extends "../base.html" %}
+{% block title %}Department {{department.name}}{% endblock title %}
+{% block content %}
+<h1>Department: {{ department.name }}</h1>
+
+<p>Number of Managers: {{ manager_count }}</p>
+<p>Number of Teachers: {{ teacher_count }}</p>
+<p>Number of Students: {{ student_count }}</p>
+
+<a href="{% url 'departments:update' department.id %}">Edit</a>
+<form method="post" action="{% url 'departments:delete' department.id %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+
+<a href="{% url 'departments:list' %}">Back to List</a>
+{%endblock%}
