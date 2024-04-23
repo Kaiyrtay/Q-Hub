@@ -16,11 +16,10 @@ class DepartmentDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Add the count of teachers and managers to the context
         department = self.get_object()
         # Later
         # context["teacher_count"] = department.teachers.count()
-        # context["manager_count"] = department.managers.count()
+        context["manager_count"] = department.managers.count()
         # context["student_count"] = department.students.count()
         return context
 

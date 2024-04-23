@@ -1,22 +1,39 @@
-{% extends "../base.html" %} 
-{% block title %}Departments{% endblock title %} 
-{%block content %}
+{% extends "../base.html" %}
+{% block title %}Departments{% endblock title %}
+
+{% block content %}
 <h1>Departments</h1>
 <a href="{% url 'departments:create' %}">Create New Department</a>
 
-<ul>
-  {% for department in departments %}
-  <li>
-    <a href="{% url 'departments:detail' department.id %}"
-      >{{ department.name }}</a
-    >
-  </li>
-  {%empty%}
-  <p>
-    There is no departments. Follow the link to
-    <a href="{% url 'departments:create' %}">create department</a>.
-  </p>
-  {% endfor %}
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Department Name</th>
+      <th>Department Head</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for department in departments %}
+    <tr>
+      <td>
+        <a href="{% url 'departments:detail' department.id %}">{{ department.name }}</a>
+      </td>
+      <td>
+        {{ department.head.get_full_name|default:'Not Assigned' }}
+      </td>
+      <td>
+        <a href="{% url 'departments:update' department.id %}">Edit</a>
+        |
+        <a href="{% url 'departments:delete' department.id %}">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No departments found. <a href="{% url 'departments:create' %}">Create a new department</a>.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 {% endblock content %}

@@ -2,7 +2,8 @@
 {% block title %}Department {{department.name}}{% endblock title %}
 {% block content %}
 <h1>Department: {{ department.name }}</h1>
-
+<h3>Head of department:{{department.head}}</h3>
+<hr>
 <p>Number of Managers: {{ manager_count }}</p>
 <p>Number of Teachers: {{ teacher_count }}</p>
 <p>Number of Students: {{ student_count }}</p>

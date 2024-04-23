@@ -5,7 +5,7 @@ from departments.models import Department
 
 class Manager(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL,null=True,blank=True,related_name='managers')
     # for now is char fields.
     role = models.CharField(max_length=100, default="Department Manager")
     appointed_date = models.DateField(null=True, blank=True)
