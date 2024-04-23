@@ -1,0 +1,39 @@
+{% extends "../base.html" %}
+{% block title %}Faculties{% endblock title %}
+
+{% block content %}
+<h1>Faculties</h1>
+<a href="{% url 'faculties:create' %}">Create New Faculty</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Faculty Name</th>
+      <th>Dean</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for faculty in faculties %}
+    <tr>
+      <td>
+        <a href="{% url 'faculties:detail' faculty.id %}">{{ faculty.name }}</a>
+      </td>
+      <td>
+        {{ faculty.dean.get_full_name|default:'Not Assigned' }}
+      </td>
+      <td>
+        <a href="{% url 'faculties:update' faculty.id %}">Edit</a>
+        |
+        <a href="{% url 'faculties:delete' faculty.id %}">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No faculties found. <a href="{% url 'faculties:create' %}">Create a new faculty</a>.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

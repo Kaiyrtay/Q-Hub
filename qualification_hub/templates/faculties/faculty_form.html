@@ -1,0 +1,19 @@
+{% extends "../base.html" %}
+{% block title %}Faculty Form{% endblock title %}
+{% block content %}
+{% if object %}
+<h1>Edit Faculty: {{ object.name }}</h1>
+{% else %}
+<h1>Create New Faculty</h1>
+{% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">
+    {% if object %}Save Changes{% else %}Create{% endif %}
+  </button>
+</form>
+
+<a href="{% url 'faculties:list' %}">Back to Faculty List</a>
+{% endblock %}

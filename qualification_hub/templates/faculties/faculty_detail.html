@@ -1,0 +1,32 @@
+{% extends "../base.html" %}
+{% block title %}Faculty {{ faculty.name }}{% endblock title %}
+{% block content %}
+<h1>Faculty: {{ faculty.name }}</h1>
+
+<h3>Dean of Faculty: {{ faculty.dean.get_full_name|default:'Not Assigned' }}</h3>
+
+<p>Description: {{ faculty.description|default:'No description available' }}</p>
+<p>Location: {{ faculty.location|default:'Not specified' }}</p>
+<p>Website: {% if faculty.website %}<a href="{{ faculty.website }}">Visit Website</a>{% else %}Not Available{% endif %}</p>
+<p>Contact Email: {{ faculty.contact_email|default:'Not specified' }}</p>
+
+<hr>
+
+<p>Number of Departments: {{ faculty.departments.count }}</p>
+<ul>
+    {% for department in faculty.departments.all %}
+    <li><a href="{% url 'departments:detail' department.id %}">{{ department.name }}</a></li>
+    {% empty %}
+    <li>No departments are associated with this faculty.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'faculties:update' faculty.id %}">Edit</a>
+<form method="post" action="{% url 'faculties:delete' faculty.id %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+
+<a href="{% url 'faculties:list' %}">Back to List</a>
+
+{% endblock %}
