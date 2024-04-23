@@ -1,0 +1,45 @@
+{% extends '../base.html' %}
+{% block title %}Managers by Department{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Managers by Department</h1>
+    <a href="{% url 'managers:create' %}" class="btn btn-primary">Create New Manager</a>
+
+    {% if managers_grouped %}
+        {% for department, managers in managers_grouped %}
+            <h2>{{ department.name }}</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if managers %}
+                        {% for manager in managers %}
+                            <tr>
+                                <td>{{ manager.full_name }}</td>
+                                <td>{{ manager.role }}</td>
+                                <td>
+                                    <a href="{% url 'managers:detail' manager.pk %}">View</a> |
+                                    <a href="{% url 'managers:update' manager.pk %}">Update</a> |
+                                    <a href="{% url 'managers:delete' manager.pk %}">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="3" class="text-center">No managers in this department. <a href="{% url 'managers:create' %}">Add a new manager</a>.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p>No departments found. <a href="{% url 'departments:create' %}">Please add some departments.</a></p>
+    {% endif %}
+</div>
+{% endblock %}

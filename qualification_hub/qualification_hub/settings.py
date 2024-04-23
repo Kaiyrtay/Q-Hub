@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # local apps
     'departments',
+    'managers',
 ]
 
 MIDDLEWARE = [
