@@ -20,10 +20,8 @@ class FacultyDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         faculty = self.get_object()
-
-        # Add department information to the context
-        # All related departments
         context['departments'] = faculty.departments.all()
+        context['department_count'] = faculty.departments.count()
 
         return context
 
@@ -31,7 +29,7 @@ class FacultyDetailView(DetailView):
 # Create View for creating a new faculty
 class FacultyCreateView(CreateView):
     model = Faculty
-    fields = ["name", "description", "dean", "departments",
+    fields = ["name", "description", "dean",
               "website", "contact_email", "location"]
     template_name = "faculties/faculty_form.html"
     success_url = reverse_lazy("faculties:list")
@@ -40,7 +38,7 @@ class FacultyCreateView(CreateView):
 # Update View for updating an existing faculty
 class FacultyUpdateView(UpdateView):
     model = Faculty
-    fields = ["name", "description", "dean", "departments",
+    fields = ["name", "description", "dean",
               "website", "contact_email", "location"]
     template_name = "faculties/faculty_form.html"
     success_url = reverse_lazy("faculties:list")

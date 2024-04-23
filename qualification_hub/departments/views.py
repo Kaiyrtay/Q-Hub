@@ -26,14 +26,14 @@ class DepartmentDetailView(DetailView):
 
 class DepartmentCreateView(CreateView):
     model = Department
-    fields = ['name']
+    fields = ['faculty', 'name', 'head']
     template_name = "departments/department_form.html"
     success_url = reverse_lazy("departments:list")
 
 
 class DepartmentUpdateView(UpdateView):
     model = Department
-    fields = ['name']
+    fields = ['faculty', 'name', 'head']
     template_name = "departments/department_form.html"
     success_url = reverse_lazy("departments:list")
 

@@ -3,14 +3,14 @@ from .models import Department
 
 
 class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ('name', ) #'manager_count', 'teacher_count', 'student_count')
-    list_filter = ('name',)
-    search_fields = ('name',)
+    list_display = ('faculty','name', 'manager_count',) #'teacher_count', 'student_count')
+    list_filter = ('faculty','name',)
+    search_fields = ('faculty', 'name',)
 
-    #
-    # def manager_count(self, obj):
-    #     return obj.managers.count()
-    # manager_count.short_description = 'Number of Managers'
+    
+    def manager_count(self, obj):
+        return obj.managers.count()
+    manager_count.short_description = 'Number of Managers'
 
     # def teacher_count(self, obj):
     #     return obj.managers.count()

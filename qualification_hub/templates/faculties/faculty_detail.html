@@ -12,7 +12,7 @@
 
 <hr>
 
-<p>Number of Departments: {{ faculty.departments.count }}</p>
+<p>Number of Departments: {{ department_count }}</p>
 <ul>
     {% for department in faculty.departments.all %}
     <li><a href="{% url 'departments:detail' department.id %}">{{ department.name }}</a></li>
