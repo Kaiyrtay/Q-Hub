@@ -23,5 +23,6 @@ urlpatterns = [
     path('faculties/', include('faculties.urls')),
     path('departments/', include('departments.urls')),
     path('managers/', include('managers.urls')),
+    path('teachers/', include('teachers.urls')),
     path('', TemplateView.as_view(template_name='base.html'), name='home-page'),
 ]
