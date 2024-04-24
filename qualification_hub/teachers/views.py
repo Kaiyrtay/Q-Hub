@@ -28,7 +28,8 @@ class TeacherListView(ListView):
             (Department.objects.get(id=dept_id), teachers)
             for dept_id, teachers in grouped_teachers.items()
         ]
-
+        context['without_departments_teachers'] = Teacher.objects.filter(
+            department=None)
         return context
 
 

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'teachers',
     'students',
     'certificates',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default authentication
+]
+
+# Email backend that sends emails to the console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

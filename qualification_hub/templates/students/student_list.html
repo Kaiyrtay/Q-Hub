@@ -21,7 +21,17 @@
 {% else %}
     <p>No students found.</p>
 {% endif %}
+<h2>Teachers without Departments</h2>
 
+{% if without_departments_students %}
+    <ul>
+    {% for student in without_departments_students %}
+        <li>{{ student.full_name }} - No Department <a href="{% url 'students:edit' student.pk%}">Edit</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No students are currently without departments.</p>
+{% endif %}
 <!-- Link to create a new student -->
 <p>
     <a href="{% url 'students:create' %}">Add New Student</a>

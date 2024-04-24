@@ -30,5 +30,24 @@
     {% block content %}{% endblock content %}
     <hr>
     <a href="javascript:window.history.back()">Go Back</a>
+    <hr>
+    {% if user.is_authenticated %}
+      <p>Welcome back, {{ user.username }}!</p>
+      <p>Ready to explore your dashboard?</p>
+      <form action="{% url 'core:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+      </form>
+    {% else %}
+      <p>Welcome to our platform!</p>
+      <p>If you have an account, you can:</p>
+      <ul>
+        <li><a href="{% url 'core:login' %}">Log In</a> to access your account</li>
+        <li><a href="{% url 'core:register' %}">Register</a> to create a new account</li>
+        <li><a href="{% url 'password_reset' %}">Forgot Your Password?</a> to reset it</li>
+      </ul>
+      <p>If you're new here, we recommend registering to enjoy all our features.</p>
+    {% endif %}
+
   </body>
 </html>

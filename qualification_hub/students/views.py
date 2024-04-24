@@ -25,7 +25,8 @@ class StudentListView(ListView):
             (Department.objects.get(id=dept_id), students)
             for dept_id, students in grouped_students.items()
         ]
-
+        context['without_departments_students'] = Student.objects.filter(
+            department=None)
         return context
 
 

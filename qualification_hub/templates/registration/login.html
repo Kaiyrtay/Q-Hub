@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<h2>Welcome Back!</h2>
+<p>We've missed you! Please enter your username or email, and your password, to log in to your account.</p>
+
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="username">Username or Email:</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username or email" />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password" />
+    </div>
+    <button type="submit">Log In</button>
+</form>
+
+<p>
+  Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.
+</p>
+
+<p>
+  Don't have an account? <a href="{% url 'core:register' %}">Sign up here</a> to create a new one.
+</p>
+{% endblock %}
