@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block title %}
+    {% if object %}
+        Edit Student: {{ object.full_name }}
+    {% else %}
+        Create New Student
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if object %}
+        <h1>Edit Student: {{ object.full_name }}</h1>
+    {% else %}
+        <h1>Create New Student</h1>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">
+            {% if object %}
+                Save Changes
+            {% else %}
+                Create
+            {% endif %}
+        </button>
+    </form>
+
+    <a href="{% url 'students:list' %}" class="btn btn-secondary">Back to List</a>
+</div>
+{% endblock %}

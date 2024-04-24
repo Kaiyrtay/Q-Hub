@@ -24,5 +24,6 @@ urlpatterns = [
     path('departments/', include('departments.urls')),
     path('managers/', include('managers.urls')),
     path('teachers/', include('teachers.urls')),
+    path('students/', include('students.urls')),
     path('', TemplateView.as_view(template_name='base.html'), name='home-page'),
 ]

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Students List</h1>
+
+{% if students_grouped %}
+    {% for department, students in students_grouped %}
+    <h2>Department: {{ department.name }}</h2>
+    <ul>
+        {% for student in students %}
+        <li>
+            <!-- Link to the student's detail view -->
+            <a href="{% url 'students:detail' student.pk %}">
+                {{ student.full_name }} - {{ student.role }}
+            </a>
+            (Enrolled: {{ student.enrollment_date }})
+        </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>No students found.</p>
+{% endif %}
+
+<!-- Link to create a new student -->
+<p>
+    <a href="{% url 'students:create' %}">Add New Student</a>
+</p>
+
+{% endblock %}
