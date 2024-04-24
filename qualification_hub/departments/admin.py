@@ -3,9 +3,8 @@ from .models import Department
 
 
 class DepartmentAdmin(admin.ModelAdmin):
-    # , 'student_count')
     list_display = ('faculty', 'name', 'head',
-                    'manager_count', 'teacher_count')
+                    'manager_count', 'teacher_count', 'student_count')
     list_filter = ('faculty', 'name',)
     search_fields = ('faculty', 'name',)
 
@@ -17,9 +16,9 @@ class DepartmentAdmin(admin.ModelAdmin):
         return obj.managers.count()
     teacher_count.short_description = 'Number of Teachers'
 
-    # def student_count(self, obj):
-    #     return obj.managers.count()
-    # student_count.short_description = 'Number of Students'
+    def student_count(self, obj):
+        return obj.managers.count()
+    student_count.short_description = 'Number of Students'
 
 
 admin.site.register(Department, DepartmentAdmin)

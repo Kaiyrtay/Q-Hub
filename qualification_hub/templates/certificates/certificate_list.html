@@ -1,0 +1,20 @@
+{% extends '../base.html' %}
+
+{% block title %}Certificate List{% endblock %}
+
+{% block content %}
+<h1>Certificate List</h1>
+<ul>
+{% for certificate in certificates %}
+    <li>
+        <a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }} - {{ certificate.organization }}</a>
+        {% if certificate.teacher_owner %}
+            (Owned by Teacher: {{ certificate.teacher_owner.name }})
+        {% elif certificate.student_owner %}
+            (Owned by Student: {{ certificate.student_owner.name }})
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+<a href="{% url 'certificates:create' %}">Create New Certificate</a>
+{% endblock %}

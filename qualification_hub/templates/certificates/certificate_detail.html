@@ -1,0 +1,24 @@
+{% extends '../base.html' %}
+
+{% block title %}Certificate Detail{% endblock %}
+
+{% block content %}
+<h1>{{ certificate.certificate_name }}</h1>
+<p><strong>Organization:</strong> {{ certificate.organization }}</p>
+<p><strong>Description:</strong> {{ certificate.description }}</p>
+<p><strong>Expiration Date:</strong> {{ certificate.expiration_date }}</p>
+<p><strong>Issued By:</strong> {{ certificate.issuing_authority }}</p>
+<p><strong>Certificate Number:</strong> {{ certificate.certificate_number }}</p>
+<p><strong>Date Earned:</strong> {{ certificate.date_earned }}</p>
+<p><strong>Verification URL:</strong> <a href="{{ certificate.verification_url }}">{{ certificate.verification_url }}</a></p>
+
+{% if certificate.teacher_owner %}
+    <p><strong>Owner (Teacher):</strong> {{ certificate.teacher_owner.name }}</p>
+{% elif certificate.student_owner %}
+    <p><strong>Owner (Student):</strong> {{ certificate.student_owner.name }}</p>
+{% endif %}
+
+<a href="{% url 'certificates:update' certificate.pk %}">Edit Certificate</a>
+<a href="{% url 'certificates:delete' certificate.pk %}">Delete Certificate</a>
+<a href="{% url 'certificates:list' %}">Back to Certificate List</a>
+{% endblock %}

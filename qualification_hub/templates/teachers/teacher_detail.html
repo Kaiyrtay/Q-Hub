@@ -12,6 +12,18 @@
 <p><strong>Phone Number:</strong> {{ teacher.phone_number }}</p>
 <p><strong>Contact Email:</strong> {{ teacher.contact_email }}</p>
 
+<h2>Certificates</h2>
+<ul>
+  {% for certificate in teacher.certificates.all %}
+    <li><a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }}</a></li>
+  {% empty %}
+    <li>No certificates found.</li>
+    {% if self.request.user == teacher.user %}
+        <a href="{% url 'certificates:create' %}">Add new certificates</a>
+    {% endif %}
+  {% endfor %}
+</ul>
+
 <a href="{% url 'teachers:update' teacher.pk %}">Update</a> |
 <a href="{% url 'teachers:delete' teacher.pk %}">Delete</a> |
 <a href="{% url 'teachers:list' %}">Back to List</a>
