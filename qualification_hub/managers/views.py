@@ -6,6 +6,7 @@ from .models import Manager
 from .forms import UserManagerForm
 from departments.models import Department
 from collections import defaultdict
+from core.mixins import StaffRequiredMixin, OwnerOrStaffRequiredMixin
 
 
 # List View for displaying all managers
@@ -46,8 +47,7 @@ class ManagerDetailView(DetailView):
     context_object_name = 'manager'
 
 
-# Form View for creating a new manager
-class ManagerCreateView(CreateView):
+class ManagerCreateView(StaffRequiredMixin, CreateView):
     model = Manager
     form_class = UserManagerForm
     template_name = 'managers/manager_form.html'
@@ -66,11 +66,16 @@ class ManagerCreateView(CreateView):
 
 
 # Form View for updating an existing manager
-class ManagerUpdateView(UpdateView):
+class ManagerUpdateView(OwnerOrStaffRequiredMixin, UpdateView):
     model = Manager
     form_class = UserManagerForm
     template_name = 'managers/manager_form.html'
     success_url = reverse_lazy('managers:list')
+
+    def get_object(self):
+        # Retrieve the Certificate object to check ownership
+        obj = super().get_object()
+        return obj
 
     def form_valid(self, form):
         manager = self.get_object()
@@ -85,10 +90,15 @@ class ManagerUpdateView(UpdateView):
 
 
 # Delete View for deleting a manager
-class ManagerDeleteView(DeleteView):
+class ManagerDeleteView(OwnerOrStaffRequiredMixin, DeleteView):
     model = Manager
     template_name = 'managers/manager_confirm_delete.html'
     success_url = reverse_lazy('managers:list')
+
+    def get_object(self):
+        # Retrieve the Certificate object to check ownership
+        obj = super().get_object()
+        return obj
 
     def post(self, request, *args, **kwargs):
         manager = self.get_object()

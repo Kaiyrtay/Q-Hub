@@ -6,9 +6,11 @@ from .models import Teacher
 from .forms import UserTeacherForm
 from departments.models import Department
 from collections import defaultdict
-
+from core.mixins import ManagerGroupRequiredMixin, ManagerOrOwnerRequiredMixin
 
 # List View for displaying all teachers
+
+
 class TeacherListView(ListView):
     model = Teacher
     template_name = 'teachers/teacher_list.html'
@@ -41,7 +43,7 @@ class TeacherDetailView(DetailView):
 
 
 # Form View for creating a new teacher
-class TeacherCreateView(CreateView):
+class TeacherCreateView(ManagerGroupRequiredMixin, CreateView):
     model = Teacher
     form_class = UserTeacherForm
     template_name = 'teachers/teacher_form.html'
@@ -62,11 +64,14 @@ class TeacherCreateView(CreateView):
 
 
 # Form View for updating an existing teacher
-class TeacherUpdateView(UpdateView):
+class TeacherUpdateView(ManagerOrOwnerRequiredMixin, UpdateView):
     model = Teacher
     form_class = UserTeacherForm
     template_name = 'teachers/teacher_form.html'
     success_url = reverse_lazy('teachers:list')
+
+    def get_object(self):
+        return super().get_object()
 
     def form_valid(self, form):
         teacher = self.get_object()  # Get the existing teacher
@@ -87,10 +92,13 @@ class TeacherUpdateView(UpdateView):
 
 
 # Delete View for deleting a teacher
-class TeacherDeleteView(DeleteView):
+class TeacherDeleteView(ManagerOrOwnerRequiredMixin, DeleteView):
     model = Teacher
     template_name = 'teachers/teacher_confirm_delete.html'
     success_url = reverse_lazy('teachers:list')
+
+    def get_object(self):
+        return super().get_object()
 
     def post(self, request, *args, **kwargs):
         teacher = self.get_object()  # Get the teacher instance

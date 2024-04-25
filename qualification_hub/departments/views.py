@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Department
+from core.mixins import StaffRequiredMixin
 
 
 class DepartmentListView(ListView):
@@ -24,21 +25,21 @@ class DepartmentDetailView(DetailView):
         return context
 
 
-class DepartmentCreateView(CreateView):
+class DepartmentCreateView(StaffRequiredMixin, CreateView):
     model = Department
     fields = ['faculty', 'name', 'head']
     template_name = "departments/department_form.html"
     success_url = reverse_lazy("departments:list")
 
 
-class DepartmentUpdateView(UpdateView):
+class DepartmentUpdateView(StaffRequiredMixin, UpdateView):
     model = Department
     fields = ['faculty', 'name', 'head']
     template_name = "departments/department_form.html"
     success_url = reverse_lazy("departments:list")
 
 
-class DepartmentDeleteView(DeleteView):
+class DepartmentDeleteView(StaffRequiredMixin, DeleteView):
     model = Department
     template_name = "departments/department_confirm_delete.html"
     success_url = reverse_lazy("departments:list")

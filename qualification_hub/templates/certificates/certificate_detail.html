@@ -13,9 +13,9 @@
 <p><strong>Verification URL:</strong> <a href="{{ certificate.verification_url }}">{{ certificate.verification_url }}</a></p>
 
 {% if certificate.teacher_owner %}
-    <p><strong>Owner (Teacher):</strong> {{ certificate.teacher_owner.name }}</p>
+    <p><strong>Owner (Teacher):</strong> {{ certificate.teacher_owner.user.username }}</p>
 {% elif certificate.student_owner %}
-    <p><strong>Owner (Student):</strong> {{ certificate.student_owner.name }}</p>
+    <p><strong>Owner (Student):</strong> {{ certificate.student_owner.user.username }}</p>
 {% endif %}
 
 <a href="{% url 'certificates:update' certificate.pk %}">Edit Certificate</a>

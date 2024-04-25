@@ -1,13 +1,10 @@
-from django.urls import reverse
 from students.models import Student
 from teachers.models import Teacher
 from .forms import UserRegistrationForm
+from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
-from django.contrib.auth.models import User
-
 
 def login_view(request):
     if request.method == 'POST':
@@ -32,23 +29,27 @@ def logout_view(request):
     return redirect('/')
 
 
-class UserRegisterView(CreateView):
+class StudentRegisterView(CreateView):
+    model = User
     form_class = UserRegistrationForm
     template_name = 'registration/register.html'
 
     def form_valid(self, form):
         user = form.save(commit=False)
-        role = form.cleaned_data['role']
         user.save()
+        student = Student(user=user)
+        student.save()
+        return super().form_valid(form)
 
-        if role == 'teacher':
-            teacher = Teacher.objects.create(
-                user=user) 
-            detail_url = reverse('teachers:update', kwargs={'pk': teacher.id})
-        elif role == 'student':
-            student = Student.objects.create(
-                user=user) 
-            detail_url = reverse('students:update', kwargs={'pk': student.id})
 
-        login(self.request, user) 
-        return redirect(detail_url) 
+class TeacherRegisterView(CreateView):
+    model = User
+    form_class = UserRegistrationForm
+    template_name = 'registration/register.html'
+
+    def form_valid(self, form):
+        user = form.save(commit=False)
+        user.save()
+        teacher = Teacher(user=user)
+        teacher.save()
+        return super().form_valid(form)

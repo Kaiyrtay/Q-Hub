@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
@@ -14,6 +14,15 @@ class Teacher(models.Model):
     contact_email = models.EmailField(blank=True, null=True)
     subject_taught = models.CharField(max_length=100, blank=True, null=True)
     room_number = models.CharField(max_length=10, blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if not self.user.groups.exists():
+            default_group = Group.objects.get(name='Teachers')
+            self.user.groups.add(default_group)
+
+        super().save(*args, **kwargs)
 
     def full_name(self):
         """Returns the full name with middle name if available."""

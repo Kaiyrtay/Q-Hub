@@ -2,9 +2,11 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from .models import Faculty
-
+from core.mixins import StaffRequiredMixin, SuperuserRequiredMixin
 
 # List View for displaying all faculties
+
+
 class FacultyListView(ListView):
     model = Faculty
     template_name = "faculties/faculty_list.html"
@@ -27,7 +29,7 @@ class FacultyDetailView(DetailView):
 
 
 # Create View for creating a new faculty
-class FacultyCreateView(CreateView):
+class FacultyCreateView(StaffRequiredMixin, CreateView):
     model = Faculty
     fields = ["name", "description", "dean",
               "website", "contact_email", "location"]
@@ -36,7 +38,7 @@ class FacultyCreateView(CreateView):
 
 
 # Update View for updating an existing faculty
-class FacultyUpdateView(UpdateView):
+class FacultyUpdateView(StaffRequiredMixin, UpdateView):
     model = Faculty
     fields = ["name", "description", "dean",
               "website", "contact_email", "location"]
@@ -45,7 +47,7 @@ class FacultyUpdateView(UpdateView):
 
 
 # Delete View for deleting a faculty
-class FacultyDeleteView(DeleteView):
+class FacultyDeleteView(SuperuserRequiredMixin, DeleteView):
     model = Faculty
     template_name = "faculties/faculty_confirm_delete.html"
     success_url = reverse_lazy("faculties:list")

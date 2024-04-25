@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
@@ -16,6 +16,15 @@ class Student(models.Model):
     contact_email = models.EmailField(
         blank=True, null=True)
     major = models.CharField(max_length=100, blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if not self.user.groups.exists():
+            default_group = Group.objects.get(name='Students')
+            self.user.groups.add(default_group)
+
+        super().save(*args, **kwargs)
 
     def full_name(self):
         """Returns the full name with the middle name if available."""

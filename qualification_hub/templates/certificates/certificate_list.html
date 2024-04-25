@@ -9,9 +9,9 @@
     <li>
         <a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }} - {{ certificate.organization }}</a>
         {% if certificate.teacher_owner %}
-            (Owned by Teacher: {{ certificate.teacher_owner.name }})
+            (Owned by Teacher: {{ certificate.teacher_owner.full_name }})
         {% elif certificate.student_owner %}
-            (Owned by Student: {{ certificate.student_owner.name }})
+            (Owned by Student: {{ certificate.student_owner.full_name }})
         {% endif %}
     </li>
 {% endfor %}

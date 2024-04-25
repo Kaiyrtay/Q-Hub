@@ -6,6 +6,7 @@ from collections import defaultdict
 from .models import Student
 from .forms import UserStudentForm
 from departments.models import Department
+from core.mixins import ManagerGroupRequiredMixin, ManagerOrOwnerRequiredMixin
 
 
 class StudentListView(ListView):
@@ -36,7 +37,7 @@ class StudentDetailView(DetailView):
     context_object_name = 'student'
 
 
-class StudentCreateView(CreateView):
+class StudentCreateView(ManagerGroupRequiredMixin, CreateView):
     model = Student
     form_class = UserStudentForm
     template_name = 'students/student_form.html'
@@ -54,11 +55,14 @@ class StudentCreateView(CreateView):
         return super().form_valid(form)
 
 
-class StudentUpdateView(UpdateView):
+class StudentUpdateView(ManagerOrOwnerRequiredMixin, UpdateView):
     model = Student
     form_class = UserStudentForm
     template_name = 'students/student_form.html'
     success_url = reverse_lazy('students:list')
+
+    def get_object(self):
+        return super().get_object()
 
     def form_valid(self, form):
         student = self.get_object()
@@ -77,10 +81,13 @@ class StudentUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class StudentDeleteView(DeleteView):
+class StudentDeleteView(ManagerOrOwnerRequiredMixin, DeleteView):
     model = Student
     template_name = 'students/student_confirm_delete.html'
     success_url = reverse_lazy('students:list')
+
+    def get_object(self):
+        return super().get_object()
 
     def post(self, request, *args, **kwargs):
         student = self.get_object()
