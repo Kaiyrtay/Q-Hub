@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{%block title%}{%endblock%}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
   </head>
   <body>
         <!-- Display messages at the top of the page -->
@@ -17,6 +20,7 @@
         </div>
     {% endif %}
     <hr>
+    <div class="container">
     <ul>
       <li><a href="{% url 'faculties:list' %}">Faculties APP</a></li>
       <li><a href="{% url 'departments:list' %}">Departments APP</a></li>
@@ -26,6 +30,7 @@
       <li><a href="{% url 'certificates:list' %}">Certificates APP</a></li>
       <li><a href="/admin">Admin panel</a></li>
     </ul>
+    </div>
     <hr>
     {% block content %}{% endblock content %}
     <hr>
