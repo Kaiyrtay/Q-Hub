@@ -7,6 +7,6 @@ urlpatterns = [
     path("", StudentListView.as_view(), name="list"),
     path("<int:pk>/", StudentDetailView.as_view(), name="detail"),
     path("create/", StudentCreateView.as_view(), name="create"),
-    path("<int:pk>/edit/", StudentUpdateView.as_view(), name="edit"),
+    path("<int:pk>/update/", StudentUpdateView.as_view(), name="update"),
     path("<int:pk>/delete/", StudentDeleteView.as_view(), name="delete"),
 ]

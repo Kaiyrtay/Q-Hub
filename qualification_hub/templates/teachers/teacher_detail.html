@@ -1,31 +1,70 @@
 {% extends 'base.html' %}
-
-{% block title %}Teacher: {{ teacher.full_name }}{% endblock title %}
+{% load core_tags %}
+{% load i18n %}
+{% block title %}{% trans "Teacher" %}: {{ teacher.full_name }}{% endblock title %}
 
 {% block content %}
-<h1>Teacher Details</h1>
-
-<p><strong>Full Name:</strong> {{ teacher.full_name }}</p>
-<p><strong>Department:</strong> {{ teacher.department.name }}</p>
-<p><strong>Role:</strong> {{ teacher.role }}</p>
-<p><strong>Hire Date:</strong> {{ teacher.hire_date }}</p>
-<p><strong>Phone Number:</strong> {{ teacher.phone_number }}</p>
-<p><strong>Contact Email:</strong> {{ teacher.contact_email }}</p>
-
-<h2>Certificates</h2>
-<ul>
-  {% for certificate in teacher.certificates.all %}
-    <li><a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }}</a></li>
-  {% empty %}
-    <li>No certificates found.</li>
-    {% if self.request.user == teacher.user %}
-        <a href="{% url 'certificates:create' %}">Add new certificates</a>
-    {% endif %}
-  {% endfor %}
-</ul>
-
-<a href="{% url 'teachers:update' teacher.pk %}">Update</a> |
-<a href="{% url 'teachers:delete' teacher.pk %}">Delete</a> |
-<a href="{% url 'teachers:list' %}">Back to List</a>
-
+<div class="container mt-4 mb-4">
+    <h1 class="display-5">{% trans "Teacher Details" %}</h1>
+    
+    <div class="card mt-3 mb-3">
+        <div class="card-body">
+            <p class="card-text">
+                <strong>{% trans "Full Name" %}:</strong> {{ teacher.full_name }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Department" %}:</strong> {{ teacher.department.name }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Role" %}:</strong> {{ teacher.role }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Hire Date" %}:</strong> {{ teacher.hire_date }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Phone Number" %}:</strong> {{ teacher.phone_number }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Contact Email" %}:</strong> {{ teacher.contact_email }}
+            </p>
+        </div>
+    </div>
+    
+    <h2 class="h4">{% trans "Certificates" %}</h2>
+    <ul class="list-group">
+        {% for certificate in teacher.certificates.all %}
+            <li class="list-group-item">
+                <i class="bi bi-file-earmark"></i>
+                <a href="{% url 'certificates:detail' certificate.pk %}">
+                    {{ certificate.certificate_name }}
+                </a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">{% trans "No certificates found." %}</li>
+            {% if self.request.user == teacher.user %}
+                <li class="list-group-item">
+                    <a href="{% url 'certificates:create' %}" class="btn btn-primary btn-sm">
+                        <i class="bi bi-plus-lg"></i>{% trans "Add New Certificate" %}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+    <div class="mt-4">
+      {% if user.is_authenticated%}
+        {% if user|in_group:'Managers' or user.pk == teacher.user.pk%}
+        <a href="{% url 'teachers:update' teacher.pk %}" class="btn btn-warning">
+            <i class="bi bi-pencil-square"></i>{% trans "Update" %}
+        </a>
+        <a href="{% url 'teachers:delete' teacher.pk %}" class="btn btn-danger">
+            <i class="bi bi-trash"></i>{% trans "Delete" %}
+        </a>
+        {%endif%}
+      {%endif%}
+        <a href="{% url 'teachers:list' %}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i>{% trans "Back to List" %}
+        </a>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,64 @@
+{% load i18n %}
+<!-- Footer -->
+<footer class="bg-dark text-white text-center text-md-start">
+  <div class="container p-4">
+    <!-- Footer Links -->
+    <div class="row">
+      <!-- About Section -->
+      <div class="col-md-4">
+        <h5 class="text-uppercase">{% trans "About Us" %}</h5>
+        <p>
+          {% blocktrans %}
+          Q-hub is a platform dedicated to connecting students, teachers, and
+          professionals. Learn more about our mission, vision, and values.
+          {% endblocktrans %}
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5 class="text-uppercase">{% trans "Quick Links" %} </h5>
+        <ul class="list-unstyled">
+          <li>
+            <a class="text-white" href="{% url 'home' %}">{% trans "Home" %} </a>
+          </li>
+          <li>
+            <a class="text-white" href="{% url 'faculties:list' %}">{% trans "Faculties" %} </a>
+          </li>
+          <li>
+            <a class="text-white" href="{% url 'teachers:list' %}">{% trans "Teachers" %} </a>
+          </li>
+          <li>
+            <a class="text-white" href="{% url 'departments:list' %}">{% trans "Departments" %} </a>
+          </li>
+          <li>
+            <a class="text-white" href="{% url 'certificates:list' %}">{% trans "Certificates" %} </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="col-md-4">
+        <h5 class="text-uppercase">{% trans "Contact Us" %} </h5>
+        <ul class="list-unstyled">
+          <li>{% trans "Email" %} : <a class="text-white" href="mailto:info@q-hub.com">info@q-hub.com</a></li>
+          <li>{% trans "Phone" %} : +123 456 7890 </li>
+          <li>{% trans "Address" %} : 123 Main Street, City, Country</li>
+        </ul>
+
+        <!-- Social Media Icons -->
+        <div class="mt-3">
+          <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Notice -->
+  <div class="bg-dark text-center text-white-50 p-3">
+    <a href="{% url 'copy-right' %}" class="text-white">© 2024 Q-hub. {% trans "All rights reserved." %} </a>
+  </div>
+</footer>

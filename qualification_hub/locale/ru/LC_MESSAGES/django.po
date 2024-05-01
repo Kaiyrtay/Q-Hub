@@ -1,0 +1,1192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-01 15:12+0600\n"
+"PO-Revision-Date: 2024-05-01 14:53+0000\n"
+"Last-Translator: Anonymous User <anonymous@user.tld>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\qualification_hub\settings.py:161
+msgid "English"
+msgstr "Английский"
+
+#: .\qualification_hub\settings.py:162
+msgid "Russian"
+msgstr "Русский"
+
+#: .\qualification_hub\settings.py:163
+msgid "Kazakh"
+msgstr "Казахский"
+
+#: .\templates\certificates\certificate_confirm_delete.html:4
+#: .\templates\certificates\certificate_detail.html:62
+msgid "Delete Certificate"
+msgstr "Удалить сертификат"
+
+#: .\templates\certificates\certificate_confirm_delete.html:9
+msgid "Delete certificate"
+msgstr "Удалить сертификат"
+
+#: .\templates\certificates\certificate_confirm_delete.html:12
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: .\templates\certificates\certificate_confirm_delete.html:18
+#: .\templates\departments\department_confirm_delete.html:19
+#: .\templates\departments\department_detail.html:35
+#: .\templates\faculties\faculty_confirm_delete.html:18
+#: .\templates\faculties\faculty_detail.html:59
+#: .\templates\managers\manager_confirm_delete.html:19
+#: .\templates\managers\manager_detail.html:39
+#: .\templates\students\student_confirm_delete.html:15
+#: .\templates\students\student_detail.html:59
+#: .\templates\teachers\teacher_confirm_delete.html:19
+#: .\templates\teachers\teacher_detail.html:61
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\certificates\certificate_confirm_delete.html:23
+#: .\templates\departments\department_confirm_delete.html:24
+#: .\templates\departments\department_detail.html:41
+#: .\templates\departments\department_form.html:35
+#: .\templates\faculties\faculty_confirm_delete.html:23
+#: .\templates\faculties\faculty_detail.html:64
+#: .\templates\managers\manager_confirm_delete.html:24
+#: .\templates\managers\manager_detail.html:45
+#: .\templates\managers\manager_form.html:44
+#: .\templates\students\student_confirm_delete.html:20
+#: .\templates\students\student_detail.html:65
+#: .\templates\students\student_form.html:60
+#: .\templates\teachers\teacher_confirm_delete.html:24
+#: .\templates\teachers\teacher_detail.html:66
+#: .\templates\teachers\teacher_form.html:44
+msgid "Back to List"
+msgstr "Вернуться в список"
+
+#: .\templates\certificates\certificate_detail.html:4
+msgid "Certificate Detail"
+msgstr "Подробная информация о сертификате"
+
+#: .\templates\certificates\certificate_detail.html:13
+msgid "Organization"
+msgstr "Организация"
+
+#: .\templates\certificates\certificate_detail.html:16
+#: .\templates\certificates\certificate_list.html:31
+#: .\templates\faculties\faculty_detail.html:14
+msgid "Description"
+msgstr "Описание"
+
+#: .\templates\certificates\certificate_detail.html:25
+msgid "Issued By"
+msgstr "Выдан"
+
+#: .\templates\certificates\certificate_detail.html:28
+msgid "Certificate Number"
+msgstr "Номер сертификата"
+
+#: .\templates\certificates\certificate_detail.html:31
+msgid "Date Earned"
+msgstr "Дата получения"
+
+#: .\templates\certificates\certificate_detail.html:34
+msgid "Verification URL"
+msgstr "URL-адрес подтверждения"
+
+#: .\templates\certificates\certificate_detail.html:42
+#: .\templates\certificates\certificate_detail.html:46
+msgid "Owner"
+msgstr "Владелец"
+
+#: .\templates\certificates\certificate_detail.html:56
+msgid "Edit Certificate"
+msgstr "Изменить сертификат"
+
+#: .\templates\certificates\certificate_detail.html:69
+msgid "Back to Certificate List"
+msgstr "Вернуться к списку сертификатов"
+
+#: .\templates\certificates\certificate_form.html:4
+msgid "Create Certificate"
+msgstr "Создать сертификат"
+
+#: .\templates\certificates\certificate_form.html:10
+#: .\templates\certificates\certificate_list.html:12
+msgid "Create New Certificate"
+msgstr "Создать новый сертификат"
+
+#: .\templates\certificates\certificate_form.html:21
+#: .\templates\departments\department_form.html:29
+#: .\templates\faculties\faculty_form.html:30
+#: .\templates\managers\manager_form.html:38
+#: .\templates\students\student_form.html:54
+#: .\templates\teachers\teacher_form.html:38
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\certificates\certificate_form.html:26
+msgid "Back to Certificates List"
+msgstr "Вернуться к списку сертификатов"
+
+#: .\templates\certificates\certificate_list.html:4
+msgid "Certificate List"
+msgstr "Список сертификатов"
+
+#: .\templates\certificates\certificate_list.html:34
+msgid "View Details"
+msgstr "Посмотреть детали"
+
+#: .\templates\certificates\certificate_list.html:46
+msgid "@None"
+msgstr ""
+
+#: .\templates\certificates\certificate_list.html:57
+msgid "Page navigation"
+msgstr "Навигация по страницам"
+
+#: .\templates\certificates\certificate_list.html:62
+#: .\templates\managers\manager_list.html:67
+#: .\templates\managers\manager_list.html:72
+#: .\templates\managers\manager_list.html:150
+#: .\templates\managers\manager_list.html:155
+#: .\templates\students\student_list.html:75
+#: .\templates\students\student_list.html:80
+#: .\templates\students\student_list.html:173
+#: .\templates\students\student_list.html:178
+#: .\templates\teachers\teacher_list.html:74
+#: .\templates\teachers\teacher_list.html:78
+#: .\templates\teachers\teacher_list.html:170
+#: .\templates\teachers\teacher_list.html:174
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: .\templates\certificates\certificate_list.html:77
+#: .\templates\managers\manager_list.html:91
+#: .\templates\managers\manager_list.html:96
+#: .\templates\managers\manager_list.html:176
+#: .\templates\managers\manager_list.html:181
+#: .\templates\students\student_list.html:101
+#: .\templates\students\student_list.html:106
+#: .\templates\students\student_list.html:197
+#: .\templates\students\student_list.html:202
+#: .\templates\teachers\teacher_list.html:99
+#: .\templates\teachers\teacher_list.html:103
+#: .\templates\teachers\teacher_list.html:193
+#: .\templates\teachers\teacher_list.html:197
+msgid "Next"
+msgstr "следующий"
+
+#: .\templates\core\search.html:4 .\templates\core\search.html:8
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: .\templates\core\search.html:13
+msgid "Error"
+msgstr "Ошибка"
+
+#: .\templates\core\search.html:20 .\templates\core\search.html:74
+msgid "certificates"
+msgstr "сертификаты"
+
+#: .\templates\core\search.html:35 .\templates\core\search.html:88
+#: .\templates\teachers\teacher_detail.html:4
+msgid "Teacher"
+msgstr "Учитель"
+
+#: .\templates\core\search.html:39 .\templates\core\search.html:92
+#: .\templates\students\student_detail.html:4
+msgid "Student"
+msgstr "Студент"
+
+#: .\templates\core\search.html:42 .\templates\core\search.html:95
+msgid "No owner assigned"
+msgstr "Владелец не назначен"
+
+#: .\templates\core\search.html:48 .\templates\core\search.html:101
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: .\templates\core\search.html:48
+msgid "No certificates from"
+msgstr "Нет сертификатов от"
+
+#: .\templates\core\search.html:58
+#: .\templates\departments\department_list.html:4
+#: .\templates\departments\department_list.html:8 .\templates\footer.html:32
+msgid "Departments"
+msgstr "Отделы"
+
+#: .\templates\core\search.html:101
+#: .\templates\students\student_detail.html:43
+#: .\templates\teachers\teacher_detail.html:43
+msgid "No certificates found."
+msgstr "Сертификаты не найдены."
+
+#: .\templates\core\search.html:111 .\templates\nav-bar.html:37
+msgid "Managers"
+msgstr "Менеджеры"
+
+#: .\templates\core\search.html:129 .\templates\footer.html:29
+#: .\templates\nav-bar.html:42
+msgid "Teachers"
+msgstr "Учителя"
+
+#: .\templates\core\search.html:147 .\templates\nav-bar.html:47
+msgid "Students"
+msgstr "Студенты"
+
+#: .\templates\departments\department_confirm_delete.html:4
+#: .\templates\departments\department_confirm_delete.html:9
+msgid "Delete Department"
+msgstr "Удалить отдел"
+
+#: .\templates\departments\department_confirm_delete.html:13
+#: .\templates\faculties\faculty_confirm_delete.html:12
+#: .\templates\managers\manager_confirm_delete.html:12
+msgid "Are you sure you want to delete this"
+msgstr "Вы уверены, что хотите удалить это"
+
+#: .\templates\departments\department_confirm_delete.html:13
+#: .\templates\search-bar.html:24
+msgid "department"
+msgstr "отдел"
+
+#: .\templates\departments\department_detail.html:4
+#: .\templates\departments\department_detail.html:8
+#: .\templates\managers\manager_detail.html:15
+#: .\templates\managers\manager_list.html:19 .\templates\nav-bar.html:32
+#: .\templates\students\student_detail.html:16
+#: .\templates\students\student_list.html:19
+#: .\templates\teachers\teacher_detail.html:16
+#: .\templates\teachers\teacher_list.html:18
+msgid "Department"
+msgstr "Отдел"
+
+#: .\templates\departments\department_detail.html:12
+msgid "Head of Department"
+msgstr "Глава департамента"
+
+#: .\templates\departments\department_detail.html:15
+msgid "Number of Managers"
+msgstr "Количество менеджеров"
+
+#: .\templates\departments\department_detail.html:18
+msgid "Number of Teachers"
+msgstr "Количество преподавателей"
+
+#: .\templates\departments\department_detail.html:21
+msgid "Number of Students"
+msgstr "Количество студентов"
+
+#: .\templates\departments\department_detail.html:29
+#: .\templates\faculties\faculty_detail.html:53
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\templates\departments\department_form.html:3
+msgid "Department Form"
+msgstr "Форма отдела"
+
+#: .\templates\departments\department_form.html:12
+msgid "Edit Department"
+msgstr "Отдел редактирования"
+
+#: .\templates\departments\department_form.html:14
+#: .\templates\departments\department_list.html:13
+msgid "Create New Department"
+msgstr "Создать новый отдел"
+
+#: .\templates\departments\department_form.html:27
+#: .\templates\faculties\faculty_form.html:28
+#: .\templates\managers\manager_form.html:36
+#: .\templates\students\student_form.html:52
+#: .\templates\teachers\teacher_form.html:36
+msgid "Save Changes"
+msgstr "сохранить изменения"
+
+#: .\templates\departments\department_list.html:21
+msgid "Department Name"
+msgstr "Название отдела"
+
+#: .\templates\departments\department_list.html:22
+msgid "Department Head"
+msgstr "Начальник отдела"
+
+#: .\templates\departments\department_list.html:23
+#: .\templates\faculties\faculty_detail.html:4
+#: .\templates\faculties\faculty_detail.html:8 .\templates\nav-bar.html:27
+msgid "Faculty"
+msgstr "Факультет"
+
+#: .\templates\departments\department_list.html:25
+#: .\templates\faculties\faculty_list.html:28
+#: .\templates\managers\manager_list.html:32
+#: .\templates\managers\manager_list.html:119
+#: .\templates\students\student_list.html:32
+#: .\templates\students\student_list.html:130
+#: .\templates\teachers\teacher_list.html:33
+#: .\templates\teachers\teacher_list.html:129
+msgid "Actions"
+msgstr "Действия"
+
+#: .\templates\departments\department_list.html:44
+msgid "Not Assigned"
+msgstr "Не назначен"
+
+#: .\templates\departments\department_list.html:63
+msgid "No departments found."
+msgstr "Отделы не найдены."
+
+#: .\templates\departments\department_list.html:64
+msgid "Create a new department"
+msgstr "Создайте новый отдел"
+
+#: .\templates\faculties\faculty_confirm_delete.html:4
+#: .\templates\faculties\faculty_confirm_delete.html:9
+msgid "Delete Faculty"
+msgstr "Удалить факультет"
+
+#: .\templates\faculties\faculty_confirm_delete.html:12
+msgid "faculty? This action cannot be undone."
+msgstr "факультет? Это действие нельзя отменить."
+
+#: .\templates\faculties\faculty_detail.html:12
+msgid "Dean of Faculty"
+msgstr "Декан факультета"
+
+#: .\templates\faculties\faculty_detail.html:17
+#: .\templates\faculties\faculty_list.html:25
+msgid "Location"
+msgstr "Местоположение"
+
+#: .\templates\faculties\faculty_detail.html:20
+#: .\templates\faculties\faculty_list.html:23
+msgid "Website"
+msgstr "Вебсайт"
+
+#: .\templates\faculties\faculty_detail.html:22
+msgid "Visit Website"
+msgstr "Посетите веб-сайт"
+
+#: .\templates\faculties\faculty_detail.html:24
+msgid "Not Available"
+msgstr "не доступен"
+
+#: .\templates\faculties\faculty_detail.html:28
+#: .\templates\faculties\faculty_list.html:24
+#: .\templates\managers\manager_detail.html:27
+#: .\templates\managers\manager_list.html:30
+#: .\templates\managers\manager_list.html:117
+#: .\templates\students\student_detail.html:28
+#: .\templates\students\student_list.html:29
+#: .\templates\students\student_list.html:127
+#: .\templates\teachers\teacher_detail.html:28
+#: .\templates\teachers\teacher_list.html:30
+#: .\templates\teachers\teacher_list.html:126
+msgid "Contact Email"
+msgstr "Контактный адрес электронной почты"
+
+#: .\templates\faculties\faculty_detail.html:34
+msgid "Number of Departments"
+msgstr "Количество отделов"
+
+#: .\templates\faculties\faculty_detail.html:44
+msgid "No departments are associated with this faculty."
+msgstr "С этим факультетом не связаны никакие кафедры."
+
+#: .\templates\faculties\faculty_form.html:3
+msgid "Faculty Form"
+msgstr "Форма факультета"
+
+#: .\templates\faculties\faculty_form.html:12
+msgid "Edit Faculty"
+msgstr "Редактировать факультет"
+
+#: .\templates\faculties\faculty_form.html:14
+#: .\templates\faculties\faculty_list.html:13
+msgid "Create New Faculty"
+msgstr "Создать новый преподавательский состав"
+
+#: .\templates\faculties\faculty_form.html:36
+msgid "Back to Faculty List"
+msgstr "Вернуться к списку преподавателей"
+
+#: .\templates\faculties\faculty_list.html:4
+#: .\templates\faculties\faculty_list.html:8 .\templates\footer.html:26
+msgid "Faculties"
+msgstr "Кафедра"
+
+#: .\templates\faculties\faculty_list.html:21
+msgid "Faculty Name"
+msgstr "Название факультета"
+
+#: .\templates\faculties\faculty_list.html:22
+msgid "Dean"
+msgstr "Декан"
+
+#: .\templates\faculties\faculty_list.html:26
+msgid "Created At"
+msgstr "Создан в"
+
+#: .\templates\faculties\faculty_list.html:70
+msgid "No faculties found."
+msgstr "Факультетов не обнаружено."
+
+#: .\templates\faculties\faculty_list.html:71
+msgid "Create a new faculty"
+msgstr "Создать новый факультет"
+
+#: .\templates\footer.html:9
+msgid "About Us"
+msgstr "О нас"
+
+#: .\templates\footer.html:11
+msgid ""
+"\n"
+"          Q-hub is a platform dedicated to connecting students, teachers, "
+"and\n"
+"          professionals. Learn more about our mission, vision, and values.\n"
+"          "
+msgstr ""
+"\n"
+"Q-hub — это платформа, предназначенная для объединения студентов, "
+"преподавателей и\n"
+"профессионалы. Узнайте больше о нашей миссии, видении и ценностях."
+
+#: .\templates\footer.html:20
+msgid "Quick Links"
+msgstr "Быстрые ссылки"
+
+#: .\templates\footer.html:23
+msgid "Home"
+msgstr "Домашняя страница"
+
+#: .\templates\footer.html:35 .\templates\nav-bar.html:52
+#: .\templates\students\student_detail.html:33
+#: .\templates\teachers\teacher_detail.html:33
+msgid "Certificates"
+msgstr "Сертификаты"
+
+#: .\templates\footer.html:42
+msgid "Contact Us"
+msgstr "Cвязаться с нами"
+
+#: .\templates\footer.html:44
+msgid "Email"
+msgstr "Электронная почта"
+
+#: .\templates\footer.html:45
+msgid "Phone"
+msgstr "Номер телефона"
+
+#: .\templates\footer.html:46
+msgid "Address"
+msgstr "Адрес"
+
+#: .\templates\footer.html:62
+msgid "All rights reserved."
+msgstr "Все права защищены."
+
+#: .\templates\home.html:31
+msgid "Welcome to Qualification Hub"
+msgstr "Добро пожаловать в Qualification Hub"
+
+#: .\templates\home.html:39
+msgid ""
+" \n"
+"              Easily upload, organize, and access your\n"
+"              university certificates in one place. Keep track of your "
+"academic\n"
+"              achievements and share them with employers or educational\n"
+"              institutions. \n"
+"              "
+msgstr ""
+"Легко загружайте, систематизируйте и получайте доступ к своим\n"
+"университетским сертификатам в одном месте. Следите за своими "
+"академическими\n"
+"достижениями и делитесь ими с работодателями или учебными\n"
+"заведениями."
+
+#: .\templates\home.html:54
+msgid " Join to us!"
+msgstr "Присоединяйтесь к нам!"
+
+#: .\templates\home.html:61
+msgid " Business collaboration based on trust"
+msgstr "Деловое сотрудничество, основанное на доверии"
+
+#: .\templates\managers\manager_confirm_delete.html:4
+msgid "Delete Manager"
+msgstr "Удалить менеджер"
+
+#: .\templates\managers\manager_confirm_delete.html:9
+msgid "Delete manager"
+msgstr "Удалить менеджер"
+
+#: .\templates\managers\manager_confirm_delete.html:13
+msgid ""
+"manager? This will also delete the associated user. This action cannot be "
+"undone."
+msgstr ""
+"менеджер? Это также приведет к удалению связанного пользователя. Это "
+"действие невозможно отменить."
+
+#: .\templates\managers\manager_detail.html:3
+msgid "Manager"
+msgstr "Менеджер"
+
+#: .\templates\managers\manager_detail.html:7
+msgid "Manager Details"
+msgstr "Информация о менеджере"
+
+#: .\templates\managers\manager_detail.html:12
+#: .\templates\managers\manager_list.html:27
+#: .\templates\managers\manager_list.html:114
+#: .\templates\students\student_detail.html:13
+#: .\templates\students\student_list.html:26
+#: .\templates\students\student_list.html:124
+#: .\templates\teachers\teacher_detail.html:13
+#: .\templates\teachers\teacher_list.html:25
+#: .\templates\teachers\teacher_list.html:121
+msgid "Full Name"
+msgstr "полное имя"
+
+#: .\templates\managers\manager_detail.html:18
+#: .\templates\managers\manager_list.html:28
+#: .\templates\managers\manager_list.html:115
+#: .\templates\students\student_detail.html:19
+#: .\templates\teachers\teacher_detail.html:19
+#: .\templates\teachers\teacher_list.html:26
+#: .\templates\teachers\teacher_list.html:122
+msgid "Role"
+msgstr "Роль"
+
+#: .\templates\managers\manager_detail.html:21
+msgid "Appointed Date"
+msgstr "Назначенная дата"
+
+#: .\templates\managers\manager_detail.html:24
+#: .\templates\managers\manager_list.html:29
+#: .\templates\managers\manager_list.html:116
+#: .\templates\students\student_detail.html:25
+#: .\templates\students\student_list.html:28
+#: .\templates\students\student_list.html:126
+#: .\templates\teachers\teacher_detail.html:25
+#: .\templates\teachers\teacher_list.html:29
+#: .\templates\teachers\teacher_list.html:125
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+#: .\templates\managers\manager_detail.html:36
+#: .\templates\students\student_detail.html:56
+#: .\templates\teachers\teacher_detail.html:58
+msgid "Update"
+msgstr "Обновление"
+
+#: .\templates\managers\manager_form.html:6
+#: .\templates\managers\manager_form.html:19
+msgid "Edit Manager"
+msgstr "Менеджер редактирования"
+
+#: .\templates\managers\manager_form.html:8
+#: .\templates\managers\manager_form.html:21
+#: .\templates\managers\manager_list.html:10
+msgid "Create New Manager"
+msgstr "Создайте нового менеджера"
+
+#: .\templates\managers\manager_list.html:3
+msgid "Managers List"
+msgstr "Список менеджеров"
+
+#: .\templates\managers\manager_list.html:26
+#: .\templates\managers\manager_list.html:113
+msgid "#"
+msgstr ""
+
+#: .\templates\managers\manager_list.html:107
+msgid "Managers Without Departments"
+msgstr "Менеджеры без отделов"
+
+#: .\templates\nav-bar.html:71
+msgid "Language"
+msgstr "Язык"
+
+#: .\templates\nav-bar.html:92 .\templates\nav-bar.html:96
+msgid "Hello"
+msgstr "Здравствуйте"
+
+#: .\templates\nav-bar.html:102
+msgid "Logout"
+msgstr "Выход из системы"
+
+#: .\templates\nav-bar.html:108
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: .\templates\nav-bar.html:113
+msgid "Sign In"
+msgstr "Войти в систему"
+
+#: .\templates\registration\login.html:4
+msgid "Login"
+msgstr "Вход в систему"
+
+#: .\templates\registration\login.html:12
+#: .\templates\registration\password_reset_complete.html:12
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\registration\login.html:17
+#: .\templates\registration\password_reset_complete.html:17
+msgid "Login Image"
+msgstr "Изображение для входа в систему"
+
+#: .\templates\registration\login.html:21
+#: .\templates\registration\password_reset_complete.html:21
+msgid "Not a member yet"
+msgstr "Еще не стал членом клуба"
+
+#: .\templates\registration\login.html:22
+#: .\templates\registration\password_reset_complete.html:22
+#: .\templates\registration\password_reset_confirm.html:21
+msgid "Register now"
+msgstr "Зарегистрируйтесь прямо сейчас"
+
+#: .\templates\registration\login.html:28
+#: .\templates\registration\password_reset_form.html:63
+msgid "Log in"
+msgstr "Вход в систему"
+
+#: .\templates\registration\login.html:44
+msgid "Email or Username"
+msgstr "Адрес электронной почты или имя пользователя"
+
+#: .\templates\registration\login.html:50
+msgid "name@example.com"
+msgstr ""
+
+#: .\templates\registration\login.html:55
+msgid "Password"
+msgstr "Пароль"
+
+#: .\templates\registration\login.html:77
+msgid "Keep me logged in"
+msgstr "Держите меня в курсе событий"
+
+#: .\templates\registration\login.html:83
+#: .\templates\registration\password_reset_complete.html:45
+#: .\templates\registration\register.html:22
+msgid "Log in now"
+msgstr "Войдите в систему прямо сейчас"
+
+#: .\templates\registration\login.html:90
+msgid "Forgot password"
+msgstr "Забыли пароль"
+
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_complete.html:28
+msgid "Password Reset Successful"
+msgstr "Сброс пароля прошел успешно"
+
+#: .\templates\registration\password_reset_complete.html:30
+msgid ""
+"Congratulations! Your password has been successfully reset. You can now log "
+"in with your new password."
+msgstr ""
+"Поздравляю! Ваш пароль был успешно сброшен. Теперь вы можете войти в систему "
+"со своим новым паролем."
+
+#: .\templates\registration\password_reset_complete.html:31
+msgid "log in"
+msgstr "Вход в систему"
+
+#: .\templates\registration\password_reset_complete.html:32
+msgid "with your new password."
+msgstr "с вашим новым паролем."
+
+#: .\templates\registration\password_reset_complete.html:35
+msgid ""
+"If you're using a password manager, don't forget to update it with your new "
+"password for seamless access."
+msgstr ""
+"Если вы используете менеджер паролей, не забудьте ввести в него новый пароль "
+"для беспрепятственного доступа."
+
+#: .\templates\registration\password_reset_complete.html:38
+msgid ""
+"If you encounter any issues logging in or have questions, please contact our "
+"support team for assistance."
+msgstr ""
+"Если у вас возникнут какие-либо проблемы при входе в систему или возникнут "
+"вопросы, пожалуйста, обратитесь за помощью в нашу службу поддержки"
+
+#: .\templates\registration\password_reset_complete.html:41
+msgid "Thank you for choosing our platform. We're glad to have you back!"
+msgstr "Спасибо, что выбрали нашу платформу. Мы рады, что вы вернулись!"
+
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_confirm.html:27
+msgid "Set a New Password"
+msgstr "Установите новый пароль"
+
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Welcome!"
+msgstr "Добро пожаловать!"
+
+#: .\templates\registration\password_reset_confirm.html:17
+msgid "Password Image"
+msgstr "Изображение пароля"
+
+#: .\templates\registration\password_reset_confirm.html:21
+msgid "Not a member yet? "
+msgstr "Еще не являетесь членом клуба?"
+
+#: .\templates\registration\password_reset_confirm.html:29
+msgid ""
+"To ensure your account's security, please enter your new password twice. "
+"Make sure to choose a unique and secure password."
+msgstr ""
+"Для обеспечения безопасности вашей учетной записи, пожалуйста, введите новый "
+"пароль дважды. Убедитесь, что вы выбрали уникальный и надежный пароль."
+
+#: .\templates\registration\password_reset_confirm.html:46
+#: .\templates\registration\password_reset_form.html:4
+msgid "Reset Password"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_confirm.html:51
+msgid "Tips for a Strong Password:"
+msgstr "Советы по созданию надежного пароля:"
+
+#: .\templates\registration\password_reset_confirm.html:53
+msgid "Use a mix of uppercase and lowercase letters, numbers, and symbols."
+msgstr "Используйте сочетание прописных и строчных букв, цифр и символов."
+
+#: .\templates\registration\password_reset_confirm.html:54
+msgid "Avoid common words, phrases, or easily guessed patterns."
+msgstr "Избегайте общих слов, фраз или легко угадываемых шаблонов."
+
+#: .\templates\registration\password_reset_confirm.html:55
+msgid ""
+"Consider using a password manager to generate and store secure passwords."
+msgstr ""
+"Рассмотрите возможность использования менеджера паролей для создания и "
+"хранения защищенных паролей."
+
+#: .\templates\registration\password_reset_confirm.html:60
+msgid ""
+"If you encounter any issues during this process, please contact our support "
+"team for assistance."
+msgstr ""
+"Если у вас возникнут какие-либо проблемы в ходе этого процесса, пожалуйста, "
+"обратитесь за помощью в нашу службу поддержки."
+
+#: .\templates\registration\password_reset_confirm.html:64
+#: .\templates\registration\password_reset_done.html:31
+msgid "Back to Home"
+msgstr "Вернуться на главную страницу"
+
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_done.html:12
+msgid "Check Your Email"
+msgstr "Проверьте свою электронную почту"
+
+#: .\templates\registration\password_reset_done.html:14
+msgid ""
+"We have sent password reset instructions to the email address you provided. "
+"If an account with that email exists, you should receive an email shortly."
+msgstr ""
+"Мы отправили инструкции по сбросу пароля на указанный вами адрес электронной "
+"почты. Если учетная запись с таким адресом электронной почты существует, вы "
+"вскоре получите электронное письмо."
+
+#: .\templates\registration\password_reset_done.html:17
+msgid "Didn't receive the email? Here are some things to check:"
+msgstr ""
+"Не получили электронное письмо? Вот некоторые моменты, которые следует "
+"проверить:"
+
+#: .\templates\registration\password_reset_done.html:21
+msgid "Ensure the email address you entered is correct."
+msgstr "Убедитесь, что вы правильно указали адрес электронной почты."
+
+#: .\templates\registration\password_reset_done.html:22
+msgid "Check your spam or junk folder; sometimes the email might end up there."
+msgstr ""
+"Проверьте свою папку \"спам\"; иногда письмо может оказаться именно там."
+
+#: .\templates\registration\password_reset_done.html:23
+msgid "Give it a few minutes, as email delivery can sometimes be delayed."
+msgstr ""
+"Уделите этому несколько минут, так как доставка электронной почты иногда "
+"может задерживаться."
+
+#: .\templates\registration\password_reset_done.html:27
+msgid ""
+"If you've tried these steps and still haven't received the email, please "
+"contact our support team for further assistance."
+msgstr ""
+"Если вы уже выполнили эти действия и до сих пор не получили электронное "
+"письмо, пожалуйста, свяжитесь с нашей службой поддержки для получения "
+"дополнительной помощи."
+
+#: .\templates\registration\password_reset_form.html:12
+msgid "Reset Your Password"
+msgstr "Сбросьте свой пароль"
+
+#: .\templates\registration\password_reset_form.html:17
+msgid "Password Reset Image"
+msgstr "Изображение для сброса пароля"
+
+#: .\templates\registration\password_reset_form.html:21
+msgid ""
+"If you've forgotten your password, enter your email address below, and we'll "
+"send you a link to reset it."
+msgstr ""
+"Если вы забыли свой пароль, введите свой адрес электронной почты ниже, и мы "
+"вышлем вам ссылку для его сброса."
+
+#: .\templates\registration\password_reset_form.html:42
+msgid "Email Address"
+msgstr "Aдрес электронной почты"
+
+#: .\templates\registration\password_reset_form.html:49
+msgid "Enter your email"
+msgstr "Введите свой адрес электронной почты"
+
+#: .\templates\registration\password_reset_form.html:53
+msgid "Send Reset Link"
+msgstr "Отправить ссылку для сброса"
+
+#: .\templates\registration\password_reset_form.html:59
+msgid ""
+"After you receive the email, click the link to set your new password. If you "
+"don't get the email, check your spam/junk folder or contact support."
+msgstr ""
+"После получения электронного письма перейдите по ссылке, чтобы установить "
+"новый пароль. Если вы не получили электронное письмо, проверьте папку со "
+"спамом или обратитесь в службу поддержки."
+
+#: .\templates\registration\password_reset_form.html:64
+#: .\templates\registration\register.html:4
+#: .\templates\registration\register.html:28
+#: .\templates\registration\register.html:34
+msgid "Register"
+msgstr "Зарегистрировать"
+
+#: .\templates\registration\register.html:12
+msgid "Welcome to Registration"
+msgstr "Добро пожаловать на регистрацию"
+
+#: .\templates\registration\register.html:17
+msgid "Registration Image"
+msgstr "Регистрационное изображение"
+
+#: .\templates\registration\register.html:21
+msgid "Already have an account"
+msgstr "У вас уже есть учетная запись"
+
+#: .\templates\search-bar.html:22
+msgid "Quick search"
+msgstr "Быстрый поиск"
+
+#: .\templates\search-bar.html:23
+msgid "username"
+msgstr "имя пользователя"
+
+#: .\templates\search-bar.html:25
+msgid "certificate organization"
+msgstr "организация сертификации"
+
+#: .\templates\search-bar.html:26
+msgid "certificate number"
+msgstr "номер сертификата"
+
+#: .\templates\students\student_confirm_delete.html:3
+msgid "Delete Student"
+msgstr "Удалить учащегося"
+
+#: .\templates\students\student_confirm_delete.html:7
+msgid "Delete student"
+msgstr "Удалить учащегося"
+
+#: .\templates\students\student_confirm_delete.html:9
+#, fuzzy
+#| msgid "Are you sure you want to delete this"
+msgid "Are you sure you want to delete this "
+msgstr "Вы уверены, что хотите удалить это"
+
+#: .\templates\students\student_confirm_delete.html:9
+#, fuzzy
+#| msgid ""
+#| "manager? This will also delete the associated user. This action cannot be "
+#| "undone."
+msgid ""
+" student?This will also delete the associated user. This action cannot be "
+"undone. "
+msgstr ""
+"менеджер? Это также приведет к удалению связанного пользователя. Это "
+"действие невозможно отменить."
+
+#: .\templates\students\student_detail.html:8
+msgid "Student Details"
+msgstr "Сведения о студенте"
+
+#: .\templates\students\student_detail.html:22
+#: .\templates\students\student_list.html:30
+#: .\templates\students\student_list.html:128
+msgid "Enrollment Date"
+msgstr "Дата зачисления"
+
+#: .\templates\students\student_detail.html:46
+#: .\templates\teachers\teacher_detail.html:47
+msgid "Add New Certificate"
+msgstr "Добавить новый сертификат"
+
+#: .\templates\students\student_form.html:6
+#: .\templates\students\student_form.html:19
+msgid "Edit Student"
+msgstr "Редактировать Студента"
+
+#: .\templates\students\student_form.html:8
+#: .\templates\students\student_form.html:21
+#: .\templates\students\student_list.html:10
+msgid "Create New Student"
+msgstr "Создать нового студента"
+
+#: .\templates\students\student_list.html:4
+msgid "Students List"
+msgstr "Список студентов"
+
+#: .\templates\students\student_list.html:27
+#: .\templates\students\student_list.html:125
+msgid "Major"
+msgstr "Oсновная степень"
+
+#: .\templates\students\student_list.html:117
+msgid "Students Without Departments"
+msgstr "Студенты без факультетов"
+
+#: .\templates\teachers\teacher_confirm_delete.html:3
+msgid "Delete Teacher"
+msgstr "Удалить учителя"
+
+#: .\templates\teachers\teacher_confirm_delete.html:8
+#, fuzzy
+#| msgid "Delete Teacher"
+msgid "Delete teacher"
+msgstr "Удалить учителя"
+
+#: .\templates\teachers\teacher_confirm_delete.html:12
+#, fuzzy
+#| msgid "Are you sure you want to delete this"
+msgid " Are you sure you want to delete this "
+msgstr "Вы уверены, что хотите удалить это"
+
+#: .\templates\teachers\teacher_confirm_delete.html:12
+#, fuzzy
+#| msgid ""
+#| "manager? This will also delete the associated user. This action cannot be "
+#| "undone."
+msgid ""
+" teacher?This will also\n"
+"      delete the associated user. This action cannot be undone."
+msgstr ""
+"менеджер? Это также приведет к удалению связанного пользователя. Это "
+"действие невозможно отменить."
+
+#: .\templates\teachers\teacher_detail.html:8
+msgid "Teacher Details"
+msgstr "Сведения об учителе"
+
+#: .\templates\teachers\teacher_detail.html:22
+#: .\templates\teachers\teacher_list.html:31
+#: .\templates\teachers\teacher_list.html:127
+msgid "Hire Date"
+msgstr "Дата приема на работу"
+
+#: .\templates\teachers\teacher_form.html:6
+#: .\templates\teachers\teacher_form.html:19
+msgid "Edit Teacher"
+msgstr "Изменить учителя"
+
+#: .\templates\teachers\teacher_form.html:8
+#: .\templates\teachers\teacher_form.html:21
+#: .\templates\teachers\teacher_list.html:10
+msgid "Create New Teacher"
+msgstr "Создать нового учителя"
+
+#: .\templates\teachers\teacher_list.html:4
+msgid "Teachers List"
+msgstr "Список учителей"
+
+#: .\templates\teachers\teacher_list.html:27
+#: .\templates\teachers\teacher_list.html:123
+msgid "Subject Taught"
+msgstr "Преподаваемый предмет"
+
+#: .\templates\teachers\teacher_list.html:28
+#: .\templates\teachers\teacher_list.html:124
+msgid "Room Number"
+msgstr "Аудитория"
+
+#: .\templates\teachers\teacher_list.html:114
+msgid "Teachers Without Departments"
+msgstr "Учителя без факультетов"
+
+#~ msgid ""
+#~ "Are you sure you want to delete this \"%(student.user)s\" student?This "
+#~ "will also delete the associated user. This action cannot be undone. "
+#~ msgstr ""
+#~ "Вы уверены, что хотите удалить этого студента \"%(student.user)%\"?При "
+#~ "этом также будет удален связанный с ним пользователь. Это действие "
+#~ "невозможно отменить."
+
+#~ msgid " Delete teacher: %(teacher.user)s"
+#~ msgstr "Удалить учителя:{{teacher.user }}"
+
+#~ msgid ""
+#~ " Are you sure you want to delete this \"%(teacher.user)s\" teacher?This "
+#~ "will also\n"
+#~ "      delete the associated user. This action cannot be undone."
+#~ msgstr ""
+#~ "Вы уверены, что хотите удалить учителя \"{{teacher.user}}\"?Это также\n"
+#~ "удалить связанного пользователя. Это действие не может быть отменено."
+
+#~ msgid ""
+#~ " is a Django-based project designed to\n"
+#~ "        manage and track educational qualifications, certificates, and "
+#~ "related\n"
+#~ "        information. It supports various user roles such as teachers, "
+#~ "students,\n"
+#~ "        managers, and administrators, allowing them to manage "
+#~ "certificates and\n"
+#~ "        track qualifications.\n"
+#~ "        "
+#~ msgstr ""
+#~ "это проект на основе Django, предназначенный для\n"
+#~ "управлять и отслеживать образовательные квалификации, сертификаты и "
+#~ "связанные с ними\n"
+#~ "информация. Он поддерживает различные роли пользователей, такие как "
+#~ "учителя, студенты,\n"
+#~ "менеджеров и администраторов, что позволяет им управлять сертификатами и\n"
+#~ "отслеживать квалификацию."
+
+#~ msgid "Features"
+#~ msgstr "Функции"
+
+#~ msgid ""
+#~ "\n"
+#~ "          Certificate Management: Create, view, update, and delete "
+#~ "certificates.\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "Управление сертификатами: создание, просмотр, обновление и удаление "
+#~ "сертификатов."
+
+#~ msgid ""
+#~ "\n"
+#~ "          User Roles and Permissions: Different roles with varying access "
+#~ "levels\n"
+#~ "          (Owner, Admin, Manager, Teacher, Student, Guest).\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "Роли и разрешения пользователей: разные роли с разными уровнями доступа.\n"
+#~ "(Владелец, Администратор, Менеджер, Учитель, Студент, Гость)."
+
+#~ msgid ""
+#~ "\n"
+#~ "          Search Functionality: Search across multiple models for "
+#~ "certificates,\n"
+#~ "          users, departments, and more.\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "Функциональность поиска: поиск сертификатов по нескольким моделям,\n"
+#~ "пользователи, отделы и т. д."
+
+#~ msgid ""
+#~ "\n"
+#~ "          Authentication and Authorization: Handles user login, logout, "
+#~ "and\n"
+#~ "          registration with appropriate permissions.\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "Аутентификация и авторизация: обрабатывает вход пользователя в систему, "
+#~ "выход из системы и\n"
+#~ "регистрация с соответствующими разрешениями."
+
+#~ msgid "User Roles and Permissions"
+#~ msgstr "Роли и разрешения пользователей"
+
+#~ msgid ""
+#~ "Superuser with full access to the project.\n"
+#~ "          "
+#~ msgstr "Суперпользователь с полным доступом к проекту."
+
+#~ msgid "Admin"
+#~ msgstr "Администратор"
+
+#~ msgid ""
+#~ "Staff member with access to managers,\n"
+#~ "          departments, and faculties.\n"
+#~ "          "
+#~ msgstr ""
+#~ "Сотрудник с доступом к менеджерам,\n"
+#~ "кафедры и факультеты."
+
+#~ msgid "Access to teachers and students."
+#~ msgstr "Доступ к преподавателям и ученикам."
+
+#~ msgid "Access to certificates."
+#~ msgstr "Доступ к сертификатам."
+
+#~ msgid ""
+#~ "Non-authenticated user with read-only access\n"
+#~ "          to public information.\n"
+#~ "          "
+#~ msgstr ""
+#~ "Пользователь, не прошедший проверку подлинности, имеющий доступ\n"
+#~ "к общедоступной информации только для чтения."
+
+#~ msgid "Visual representation of project"
+#~ msgstr "Визуальное представление проекта"
+
+#~ msgid "Entity-Relationship Diagram"
+#~ msgstr "Диаграмма сущности-взаимосвязи"
+
+#~ msgid "Below is the Entity-Relationship Diagram for the project"
+#~ msgstr "Ниже приведена схема взаимосвязи сущностей для проекта"
+
+#~ msgid "Unified Modeling Language (UML)"
+#~ msgstr "Унифицированный язык моделирования (UML)"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Here's a UML class diagram showing the relationships between "
+#~ "classes:\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Вот диаграмма классов UML, показывающая взаимосвязи между классами:"
+
+#~ msgid "Flowchart"
+#~ msgstr "Блок-схема"

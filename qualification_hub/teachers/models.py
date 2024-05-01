@@ -1,10 +1,33 @@
+"""
+Teacher Model Definition
+
+This file defines the Teacher model, representing teachers in the system.
+Each Teacher is associated with a User and can belong to a Department.
+Additional attributes like middle name, phone number, contact email, 
+subject taught, and room number are also included.
+
+Important Notes:
+- The `full_name()` method returns the full name of the teacher, including
+  their middle name if available.
+- The `save()` method ensures the associated User is added to the "Teachers" 
+  group by default if not already in a group.
+- The `__str__()` method provides a string representation of the teacher, 
+  including the full name, role, and department.
+
+Dependencies:
+- Relies on Django's `User` model for user-related information.
+- Relies on the `Department` model to represent a teacher's department.
+
+Author: Kaiyrtay
+"""
+
 from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
-
 class Teacher(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="teacher")
     department = models.ForeignKey(
         Department, on_delete=models.SET_NULL, null=True, blank=True, related_name='teachers')
     role = models.CharField(max_length=100, default="Teacher")

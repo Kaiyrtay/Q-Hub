@@ -1,12 +1,39 @@
+"""
+Student Views for Managing Students in Django
+
+This file contains views for listing, creating, updating, and deleting `Student`
+instances, as well as displaying details of individual students.
+
+Key Classes:
+- `StudentListView`: Lists all students with pagination and grouping by department.
+- `StudentDetailView`: Displays detailed information about a specific student.
+- `StudentCreateView`: Allows creation of new student entries, along with associated user data.
+- `StudentUpdateView`: Updates existing student data, including user details.
+- `StudentDeleteView`: Handles deletion of student records and associated user data.
+
+Important Features:
+- The `StudentListView` groups students by department and provides pagination.
+- The `StudentCreateView` creates a new `User` when adding a student.
+- The `StudentUpdateView` supports updating user-related fields like username, email, and password.
+- The `StudentDeleteView` removes the associated user upon student deletion.
+
+Dependencies:
+- Relies on the `Student` model from the current module.
+- Uses `User` from `django.contrib.auth.models` for user-related operations.
+- Requires the `Department` model to associate students with departments.
+- Uses `ManagerGroupRequiredMixin` and `ManagerOrOwnerRequiredMixin` for permission control.
+
+Author: Kaiyrtay
+"""
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
 from collections import defaultdict
 from .models import Student
 from .forms import UserStudentForm
 from departments.models import Department
 from core.mixins import ManagerGroupRequiredMixin, ManagerOrOwnerRequiredMixin
+from django.core.paginator import Paginator
 
 
 class StudentListView(ListView):
@@ -16,18 +43,31 @@ class StudentListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
         grouped_students = defaultdict(list)
 
         for student in Student.objects.all():
             if student.department:
                 grouped_students[student.department.id].append(student)
 
-        context['students_grouped'] = [
-            (Department.objects.get(id=dept_id), students)
-            for dept_id, students in grouped_students.items()
-        ]
-        context['without_departments_students'] = Student.objects.filter(
-            department=None)
+        students_grouped = []
+        for dept_id, students in grouped_students.items():
+            paginator = Paginator(students, 5)  # Paginate by 5
+            page_number = self.request.GET.get(f'page_dept_{dept_id}')
+            students_paginated = paginator.get_page(page_number)
+            department = Department.objects.get(id=dept_id)
+            students_grouped.append((department, students_paginated))
+
+        without_departments = Student.objects.filter(department=None)
+        paginator_without_departments = Paginator(
+            without_departments, 5)  # Paginate by 5
+        page_number = self.request.GET.get('page_without_dept')
+        without_departments_paginated = paginator_without_departments.get_page(
+            page_number)
+
+        context['students_grouped'] = students_grouped
+        context['without_departments_paginated'] = without_departments_paginated
+
         return context
 
 

@@ -1,45 +1,223 @@
-{% extends '../base.html' %}
-{% block title %}Managers by Department{% endblock %}
-
+{% extends "base.html" %} 
+{% load crispy_forms_tags i18n %} 
+{% block title %}{%trans "Managers List" %}{% endblock %} 
 {% block content %}
-<div class="container">
-    <h1>Managers by Department</h1>
-    <a href="{% url 'managers:create' %}" class="btn btn-primary">Create New Manager</a>
+<div class="container mt-5">
+  <!-- Create New Manager Button -->
+  {% if user.is_authenticated and user.is_staff %}
+  <div class="d-flex justify-content-between mb-4">
+    <a href="{% url 'managers:create' %}" class="btn btn-primary"
+      >{% trans "Create New Manager" %}</a
+    >
+  </div>
+  {% endif %}
 
-    {% if managers_grouped %}
-        {% for department, managers in managers_grouped %}
-            <h2>{{ department.name }}</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>Role</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if managers %}
-                        {% for manager in managers %}
-                            <tr>
-                                <td>{{ manager.full_name }}</td>
-                                <td>{{ manager.role }}</td>
-                                <td>
-                                    <a href="{% url 'managers:detail' manager.pk %}">View</a> |
-                                    <a href="{% url 'managers:update' manager.pk %}">Update</a> |
-                                    <a href="{% url 'managers:delete' manager.pk %}">Delete</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    {% else %}
-                        <tr>
-                            <td colspan="3" class="text-center">No managers in this department. <a href="{% url 'managers:create' %}">Add a new manager</a>.</td>
-                        </tr>
-                    {% endif %}
-                </tbody>
-            </table>
-        {% endfor %}
-    {% else %}
-        <p>No departments found. <a href="{% url 'departments:create' %}">Please add some departments.</a></p>
-    {% endif %}
+  <!-- Displaying Managers Grouped by Department -->
+  {% if managers_grouped %} 
+  {% for department, managers in managers_grouped %}
+  <div class="card mb-4">
+    <div class="card-header h3">
+      {% trans "Department" %}:
+      <a href="{% url 'departments:detail' department.id %}"
+        >{{ department.name }}</a
+      >
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th>{% trans "#" %}</th>
+            <th>{% trans "Full Name" %}</th>
+            <th>{% trans "Role" %}</th>
+            <th>{% trans "Phone Number" %}</th>
+            <th>{% trans "Contact Email" %}</th>
+            {% if user.is_authenticated and user.is_staff %}
+            <th>{% trans "Actions" %}</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for manager in managers %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              <a href="{% url 'managers:detail' manager.pk %}" class="fw-bold"
+                >{{ manager.full_name }}</a
+              >
+            </td>
+            <td>{{ manager.role }}</td>
+            <td>{{ manager.phone_number }}</td>
+            <td>{{ manager.contact_email }}</td>
+            {% if user.is_authenticated and user.is_staff %}
+            <td>
+              <a
+                href="{% url 'managers:update' manager.pk %}"
+                class="btn btn-link btn-lg"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              |
+              <a
+                href="{% url 'managers:delete' manager.pk %}"
+                class="btn btn-link text-danger btn-lg"
+              >
+                <i class="bi bi-trash-fill"></i>
+              </a>
+            </td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- Pagination for Department Group -->
+      <ul class="pagination justify-content-center">
+        {% if managers.has_previous %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_dept_{{ department.id }}={{ managers.previous_page_number }}"
+          >
+            {% trans "Previous" %}
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Previous" %}</span>
+        </li>
+        {% endif %} 
+        {% for num in managers.paginator.page_range %} 
+        {% if managers.number == num %}
+        <li class="page-item active">
+          <span class="page-link">{{ num }}</span>
+        </li>
+        {% else %}
+        <li class="page-item">
+          <a class="page-link" href="?page_dept_{{ department.id }}={{ num }}"
+            >{{ num }}</a
+          >
+        </li>
+        {% endif %} 
+        {% endfor %} 
+        {% if managers.has_next %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_dept_{{ department.id }}={{ managers.next_page_number }}"
+          >
+            {% trans "Next" %}
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Next" %}</span>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %} 
+  {% endif %}
+
+  <!-- Managers Without Departments -->
+  {% if without_departments_paginated %}
+  <h2>{% trans "Managers Without Departments" %}</h2>
+  <div class="card mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th>{% trans "#" %}</th>
+            <th>{% trans "Full Name" %}</th>
+            <th>{% trans "Role" %}</th>
+            <th>{% trans "Phone Number" %}</th>
+            <th>{% trans "Contact Email" %}</th>
+            {% if user.is_authenticated and user.is_staff %}
+            <th>{% trans "Actions" %}</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for manager in without_departments_paginated %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              <a href="{% url 'managers:detail' manager.pk %}" class="fw-bold"
+                >{{ manager.full_name }}</a
+              >
+            </td>
+            <td>{{ manager.role }}</td>
+            <td>{{ manager.phone_number }}</td>
+            <td>{{ manager.contact_email }}</td>
+            {% if user.is_authenticated and user.is_staff %}
+            <td>
+              <a
+                href="{% url 'managers:update' manager.pk %}"
+                class="btn btn-link"
+                >Edit</a
+              >
+              |
+              <a
+                href="{% url 'managers:delete' manager.pk %}"
+                class="btn btn-link text-danger"
+                >Delete</a
+              >
+            </td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!-- Pagination for Managers Without Departments -->
+      <ul class="pagination justify-content-center">
+        {% if without_departments_paginated.has_previous %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_without_dept={{ without_departments_paginated.previous_page_number }}"
+          >
+            {% trans "Previous" %}
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Previous" %}</span>
+        </li>
+        {% endif %}
+        {% for num in        without_departments_paginated.paginator.page_range %} 
+        {% if   without_departments_paginated.number == num %}
+        <li class="page-item active">
+          <span class="page-link">{{ num }}</span>
+        </li>
+        {% else %}
+        <li>
+          <a class="page-link" href="?page_without_dept={{ num }}">{{ num }}</a>
+        </li>
+        {% endif %} 
+        {% endfor %} 
+        {% if without_departments_paginated.has_next %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_without_dept={{ without_departments_paginated.next_page_number }}"
+          >
+            {% trans "Next" %}
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Next" %}</span>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% else %}
+  <div class="alert alert-warning">
+    <i class="bi bi-exclamation-triangle-fill"></i> {% blocktrans %}The database
+    currently has no data; it's completely empty.{% endblocktrans %}
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

@@ -1,0 +1,29 @@
+{% load i18n %}
+<div class="row justify-content-center p-3">
+  <div class="col-md-8">
+    <form class="d-flex" method="GET" action="{% url 'core:search' %}">
+      <input
+        type="text"
+        name="q"
+        value="{{ request.GET.q }}"
+        class="form-control me-2"
+        placeholder="What are you looking for..."
+      />
+      <input
+        type="submit"
+        class="btn btn-primary gradient-custom"
+        style="color: white"
+        value="Search"
+      />
+    </form>
+
+    <!-- Help text -->
+    <ul class="list-inline text-muted small mt-2"> <!-- inline list, muted text, smaller font -->
+      <li class="list-inline-item">{% trans "Quick search" %}:</li>
+      <li class="list-inline-item"><strong>@</strong>{% trans "username" %}</li>
+      <li class="list-inline-item"><strong>*</strong>{% trans "department" %}</li>
+      <li class="list-inline-item"><strong>#</strong>{% trans "certificate organization" %}</li>
+      <li class="list-inline-item"><strong>!</strong>{% trans "certificate number" %}</li>
+    </ul>
+  </div>
+</div>

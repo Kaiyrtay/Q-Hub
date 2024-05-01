@@ -1,13 +1,36 @@
+"""
+Manager Model Definition
+
+This file defines the `Manager` model, representing department managers in the system.
+Each `Manager` has a one-to-one relationship with a `User` and belongs to a `Department`.
+The model includes additional information like role, appointed date, middle name, phone 
+number, and contact email.
+
+Key Features:
+- The `save()` method ensures that the associated `User` is added to the "Managers" 
+  group by default if not already in a group.
+- The `full_name()` method returns the complete name of the manager, including 
+  the middle name if available.
+- The `__str__()` method provides a string representation of the manager, typically
+  including the full name and role.
+
+Dependencies:
+- Relies on `User` from `django.contrib.auth.models` for user-related information.
+- Uses `Department` from `departments.models` to establish a department association.
+- Utilizes `Group` from `django.contrib.auth.models` for managing user groups.
+
+Author: Kaiyrtay
+"""
+
 from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
-
 class Manager(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="manager")
     department = models.ForeignKey(
         Department, on_delete=models.CASCADE, related_name="managers")
-    # for now is char fields.
     role = models.CharField(max_length=100, default="Department Manager")
     appointed_date = models.DateField(null=True, blank=True)
     middle_name = models.CharField(max_length=100, blank=True, null=True)

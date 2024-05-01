@@ -1,11 +1,28 @@
 {% extends "../base.html" %}
-{% block title %}Department Delete{% endblock title %}
+{% load i18n %}  <!-- Load translation tag library -->
+
+{% block title %}{% trans "Delete Department" %}{% endblock %}
+
 {% block content %}
-<h1>Delete Department: {{ department.name }}</h1>
-<p>Are you sure you want to delete this department?</p>
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">Delete</button>
-</form>
-<a href="{% url 'departments:list' %}">Back to List</a>
-{%endblock%}
+<div class="m-3">
+  <div class="container mt-4">
+    <h1 class="mb-4">{% trans "Delete Department" %}: {{ department.name }}</h1>
+    
+    <div class="alert alert-warning">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      {% trans "Are you sure you want to delete this" %} "{{ department.name }}" {% trans "department" %}?
+    </div>
+    
+    <form method="post" class="d-inline">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">
+        <i class="bi bi-trash-fill"></i> {% trans "Delete" %}
+      </button>
+    </form>
+
+    <a href="{% url 'departments:list' %}" class="btn btn-secondary ms-2">
+      <i class="bi bi-arrow-left-circle-fill"></i> {% trans "Back to List" %}
+    </a>
+  </div>
+</div>
+{% endblock %}

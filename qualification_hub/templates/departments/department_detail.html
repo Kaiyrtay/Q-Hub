@@ -1,18 +1,45 @@
 {% extends "../base.html" %}
-{% block title %}Department {{department.name}}{% endblock title %}
+{% load i18n %}  <!-- Load translation tags -->
+
+{% block title %}{% trans "Department" %}: {{ department.name }}{% endblock %}
+
 {% block content %}
-<h1>Department: {{ department.name }}</h1>
-<h3>Head of department:{{department.head}}</h3>
-<hr>
-<p>Number of Managers: {{ manager_count }}</p>
-<p>Number of Teachers: {{ teacher_count }}</p>
-<p>Number of Students: {{ student_count }}</p>
-
-<a href="{% url 'departments:update' department.id %}">Edit</a>
-<form method="post" action="{% url 'departments:delete' department.id %}">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-</form>
-
-<a href="{% url 'departments:list' %}">Back to List</a>
-{%endblock%}
+<div class="container mt-4 mb-4">
+    <h1 class="display-5">{% trans "Department" %}: {{ department.name }}</h1>
+    
+    <div class="card mt-3">
+        <div class="card-body">
+            <h3 class="card-title">{% trans "Head of Department" %}: {{ department.head }}</h3>
+            <hr>
+            <p class="card-text">
+                <strong>{% trans "Number of Managers" %}:</strong> {{ manager_count }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Number of Teachers" %}:</strong> {{ teacher_count }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Number of Students" %}:</strong> {{ student_count }}
+            </p>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'departments:update' department.id %}" class="btn btn-warning">
+            <i class="bi bi-pencil-square"></i> {% trans "Edit" %}
+        </a>
+        
+        <form method="post" action="{% url 'departments:delete' department.id %}" style="display: inline-block;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash"></i> {% trans "Delete" %}
+            </button>
+        </form>
+        {% endif %}
+        
+        <a href="{% url 'departments:list' %}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+        </a>
+    </div>
+</div>
+{% endblock %}

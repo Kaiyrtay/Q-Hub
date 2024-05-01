@@ -1,40 +1,215 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
+{% load i18n %}
+{% load core_tags %}
+{% block title %}{% trans "Students List" %}{% endblock %} 
 {% block content %}
-<h1>Students List</h1>
+<div class="container mt-4 mb-4">
+  {% if user.is_authenticated and user|in_group:'Managers' %}
+  <div class="d-flex justify-content-between mb-4">
+    <a href="{% url 'students:create' %}" class="btn btn-primary"
+      >{% trans "Create New Student" %}</a
+    >
+  </div>
+  {%endif%}
+  <!-- Displaying the list of students by department -->
+  {% if students_grouped %} 
+  {% for department, students in students_grouped %}
+  <div class="card">
+    <div class="card-header  h3">
+      {% trans "Department" %}: <a href="{% url 'departments:detail' department.id %}"> {{ department.name }}</a>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th>#</th>
+            <th>{% trans "Full Name" %}</th>
+            <th>{% trans "Major" %}</th>
+            <th>{% trans "Phone Number" %}</th>
+            <th>{% trans "Contact Email" %}</th>
+            <th>{% trans "Enrollment Date" %}</th>
+            {% if user.is_authenticated and user|in_group:'Managers' %}
+            <th>{% trans "Actions" %}</th>
+            {%endif%}
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              <a href="{% url 'students:detail' student.pk %}" class="fw-bold"
+                >{{ student.full_name }}</a
+              >
+            </td>
+            <td>{{ student.major }}</td>
+            <td>{{ student.phone_number }}</td>
+            <td>{{ student.contact_email }}</td>
+            <td>{{ student.enrollment_date|date:"d M Y" }}</td>
+            {% if user.is_authenticated and user|in_group:'Managers' %}
+            <td>
+              <a
+                href="{% url 'students:update' student.pk %}"
+                class="btn btn-link btn-lg"
+                ><i class="bi bi-pencil-square"></i></a
+              >
+              |
+              <a
+                href="{% url 'students:delete' student.pk %}"
+                class="btn btn-link text-danger btn-lg"
+                ><i class="bi bi-trash-fill"></i></a
+              >
+            </td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 
-{% if students_grouped %}
-    {% for department, students in students_grouped %}
-    <h2>Department: {{ department.name }}</h2>
-    <ul>
-        {% for student in students %}
-        <li>
-            <!-- Link to the student's detail view -->
-            <a href="{% url 'students:detail' student.pk %}">
-                {{ student.full_name }} - {{ student.role }}
-            </a>
-            (Enrolled: {{ student.enrollment_date }})
+      <ul class="pagination justify-content-center">
+        {% if students.has_previous %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_dept_{{ department.id }}={{ students.previous_page_number }}"
+            >{% trans "Previous" %}</a
+          >
         </li>
-        {% endfor %}
-    </ul>
-    {% endfor %}
-{% else %}
-    <p>No students found.</p>
-{% endif %}
-<h2>Teachers without Departments</h2>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Previous" %}</span>
+        </li>
+        {% endif %} 
+        {% for num in students.paginator.page_range %} 
+        {% if  students.number == num %}
+        <li class="page-item active">
+          <span class="page-link">{{ num }}</span>
+        </li>
+        {% else %}
+        <li class="page-item">
+          <a class="page-link" href="?page_dept_{{ department.id }}={{ num }}"
+            >{{ num }}</a
+          >
+        </li>
+        {% endif %} 
+        {% endfor %} 
+        {% if students.has_next %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_dept_{{ department.id }}={{ students.next_page_number }}"
+            >{% trans "Next" %}</a
+          >
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Next" %}</span>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %} 
+  {% endif %}
 
-{% if without_departments_students %}
-    <ul>
-    {% for student in without_departments_students %}
-        <li>{{ student.full_name }} - No Department <a href="{% url 'students:edit' student.pk%}">Edit</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No students are currently without departments.</p>
-{% endif %}
-<!-- Link to create a new student -->
-<p>
-    <a href="{% url 'students:create' %}">Add New Student</a>
-</p>
+  <!-- Students Without Departments -->
+  {% if without_departments_paginated %}
+  <h2>{% trans "Students Without Departments" %}</h2>
+  <div class="card mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="bg-dark text-light">
+          <tr>
+            <th>#</th>
+            <th>{% trans "Full Name" %}</th>
+            <th>{% trans "Major" %}</th>
+            <th>{% trans "Phone Number" %}</th>
+            <th>{% trans "Contact Email" %}</th>
+            <th>{% trans "Enrollment Date" %}</th>
+            {% if user.is_authenticated and user|in_group:'Managers' %}
+            <th>{% trans "Actions" %}</th>
+            {%endif%}
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in without_departments_paginated %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              <a href="{% url 'students:detail' student.pk %}" class="fw-bold"
+                >{{ student.full_name }}</a
+              >
+            </td>
+            <td>{{ student.major }}</td>
+            <td>{{ student.phone_number }}</td>
+            <td>{{ student.contact_email }}</td>
+            <td>{{ student.enrollment_date|date:"d M Y" }}</td>
+            {% if user.is_authenticated and user|in_group:'Managers' %}
+            <td>
+              <a
+                href="{% url 'students:update' student.pk %}"
+                class="btn btn-link btn-lg"
+                ><i class="bi bi-pencil-square"></i></a
+              >
+              |
+              <a
+                href="{% url 'students:delete' student.pk %}"
+                class="btn btn-link text-danger btn-lg"
+                ><i class="bi bi-trash-fill"></i></a
+              >
+            </td>
+            {%endif%}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 
+      <ul class="pagination justify-content-center">
+        {% if without_departments_paginated.has_previous %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_without_dept={{ without_departments_paginated.previous_page_number }}"
+            >{% trans "Previous" %}</a
+          >
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Previous" %}</span>
+        </li>
+        {% endif %} 
+        {% for num in without_departments_paginated.paginator.page_range %} 
+        {% if  without_departments_paginated.number == num %}
+        <li class="page-item active">
+          <span class="page-link">{{ num }}</span>
+        </li>
+        {% else %}
+        <li>
+          <a class="page-link" href="?page_without_dept={{ num }}">{{ num }}</a>
+        </li>
+        {% endif %} 
+        {% endfor %} 
+        {% if without_departments_paginated.has_next %}
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="?page_without_dept={{ without_departments_paginated.next_page_number }}"
+            >{% trans "Next" %}</a
+          >
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">{% trans "Next" %}</span>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% else %}
+  <div class="alert alert-warning">
+    <i class="bi bi-exclamation-triangle-fill"></i> {% blocktrans %}The database
+    currently has no data; it's completely empty.{% endblocktrans %}
+  </div>
+  {% endif %}
+</div>
 {% endblock %}

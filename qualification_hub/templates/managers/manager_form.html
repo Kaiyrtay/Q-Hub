@@ -1,55 +1,52 @@
 {% extends "../base.html" %}
+{% load crispy_forms_tags i18n %}
 
 {% block title %}
     {% if object %}
-        Edit Manager: {{ object.full_name }}
+        {% trans "Edit Manager" %}: {{ object.full_name }}
     {% else %}
-        Create New Manager
+        {% trans "Create New Manager" %}
     {% endif %}
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Conditional Heading for Edit/Create -->
-    {% if object %}
-        <h1>Edit Manager: {{ object.full_name }}</h1>
-    {% else %}
-        <h1>Create New Manager</h1>
-    {% endif %}
+<div class="container mt-4 mb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">  <!-- Restrict the form width -->
 
-    <!-- Form with CSRF Token -->
-    <form method="post">
+      <!-- Conditional Heading with Margin -->
+      {% if object %}
+        <h2>{% trans "Edit Manager" %}: {{ object.full_name }}</h2>
+      {% else %}
+        <h2>{% trans "Create New Manager" %}</h2>
+      {% endif %}
+
+      <!-- Form with CSRF Token -->
+      <form method="post">
         {% csrf_token %}
-        
-        <!-- Display form errors, if any -->
-        {% if form.errors %}
-            <div class="alert alert-danger">
-                <ul>
-                    {% for field in form %}
-                        {% for error in field.errors %}
-                            <li>{{ field.label }}: {{ error }}</li>
-                        {% endfor %}
-                    {% endfor %}
-                    {% for error in form.non_field_errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
 
-        {{ form.as_p }}  <!-- Render form fields as paragraphs -->
-        
-        <!-- Conditional Button Label -->
-        <button type="submit" class="btn btn-primary">
+        <!-- Display the form with Crispy Forms -->
+        {{ form|crispy }}
+
+        <!-- Flex container to align buttons on the same line -->
+        <div class="d-flex justify-content-between mt-3">
+          <!-- Submit Button aligned to the left -->
+          <button type="submit" class="btn btn-primary">
             {% if object %}
-                Save Changes
+              {% trans "Save Changes" %}
             {% else %}
-                Create
+              {% trans "Create" %}
             {% endif %}
-        </button>
-    </form>
+          </button>
 
-    <!-- Link back to the list of managers -->
-    <a href="{% url 'managers:list' %}" class="btn btn-secondary">Back to List</a>
+          <!-- Back to List Button aligned to the right -->
+          <a href="{% url 'managers:list' %}" class="btn btn-secondary">
+            {% trans "Back to List" %}
+          </a>
+        </div>
+      </form>
+      
+    </div>
+  </div>
 </div>
 {% endblock %}

@@ -1,17 +1,49 @@
 {% extends 'base.html' %}
-{% block title %}Manager:{{manager.user}}{% endblock title %}
+{% load core_tags i18n %}
+{% block title %}{% trans "Manager" %}: {{ manager.full_name }}{% endblock %}
+
 {% block content %}
-<h1>Manager Details</h1>
+<div class="container mt-4 mb-4">
+    <h1 class="display-5">{% trans "Manager Details" %}</h1>
+    
+    <div class="card mt-3">
+        <div class="card-body">
+            <p class="card-text">
+                <strong>{% trans "Full Name" %}:</strong> {{ manager.full_name }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Department" %}:</strong> {{ manager.department.name }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Role" %}:</strong> {{ manager.role }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Appointed Date" %}:</strong> {{ manager.appointed_date }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Phone Number" %}:</strong> {{ manager.phone_number }}
+            </p>
+            <p class="card-text">
+                <strong>{% trans "Contact Email" %}:</strong> {{ manager.contact_email }}
+            </p>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+      {% if user.is_authenticated %}
+        {% if user.is_staff or user.pk == manager.user.pk %}
+          <a href="{% url 'managers:update' manager.pk %}" class="btn btn-warning">
+              <i class="bi bi-pencil-square"></i> {% trans "Update" %}
+          </a>
+          <a href="{% url 'managers:delete' manager.pk %}" class="btn btn-danger">
+              <i class="bi bi-trash"></i> {% trans "Delete" %}
+          </a>
+        {% endif %}
+      {% endif %}
 
-<p><strong>Full Name:</strong> {{ manager.full_name }}</p>
-<p><strong>Department:</strong> {{ manager.department.name }}</p>
-<p><strong>Role:</strong> {{ manager.role }}</p>
-<p><strong>Appointed Date:</strong> {{ manager.appointed_date }}</p>
-<p><strong>Phone Number:</strong> {{ manager.phone_number }}</p>
-<p><strong>Contact Email:</strong> {{ manager.contact_email }}</p>
-
-<a href="{% url 'managers:update' manager.pk %}">Update</a> |
-<a href="{% url 'managers:delete' manager.pk %}">Delete</a> |
-<a href="{% url 'managers:list' %}">Back to List</a>
-
+      <a href="{% url 'managers:list' %}" class="btn btn-secondary">
+          <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+      </a>
+    </div>
+</div>
 {% endblock %}

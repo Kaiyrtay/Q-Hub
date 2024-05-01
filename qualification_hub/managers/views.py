@@ -1,3 +1,38 @@
+"""
+Manager Views for Managing Managers in Django
+
+This file contains views for listing, creating, updating, and deleting 
+`Manager` instances, as well as displaying detailed information about 
+individual managers. It uses Django's generic class-based views for common 
+operations like `ListView`, `DetailView`, `CreateView`, `UpdateView`, and 
+`DeleteView`.
+
+Key Classes:
+- `ManagerListView`: Lists managers, grouped by department, with pagination.
+- `ManagerDetailView`: Displays detailed information about a specific manager.
+- `ManagerCreateView`: Allows creation of new manager instances, with associated 
+  user information.
+- `ManagerUpdateView`: Updates existing manager records, supporting user-related 
+  updates like username and email.
+- `ManagerDeleteView`: Handles the deletion of manager records and the associated 
+  `User` object.
+
+Important Features:
+- The `ManagerListView` uses a `defaultdict` to group managers by department and 
+  provides pagination.
+- The `ManagerCreateView` creates a new `User` when adding a manager.
+- The `ManagerDeleteView` deletes the associated `User` when removing a manager.
+
+Dependencies:
+- Uses the `Manager` model from the current module.
+- Relies on `User` from `django.contrib.auth.models` to handle user information.
+- Interacts with the `Department` model to group managers by department.
+- Utilizes mixins like `StaffRequiredMixin` and `OwnerOrStaffRequiredMixin` for 
+  permission control and access checks.
+
+Author: Kaiyrtay
+"""
+
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.shortcuts import redirect, get_object_or_404
@@ -7,36 +42,34 @@ from .forms import UserManagerForm
 from departments.models import Department
 from collections import defaultdict
 from core.mixins import StaffRequiredMixin, OwnerOrStaffRequiredMixin
+from django.core.paginator import Paginator
 
 
-# List View for displaying all managers
 class ManagerListView(ListView):
     model = Manager
     template_name = 'managers/manager_list.html'
+    context_object_name = 'managers'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Get all departments
         departments = Department.objects.all()
-        context['departments'] = departments
 
-        # Group managers by their department ID
         grouped_managers = defaultdict(list)
         for manager in Manager.objects.all():
-            if manager.department:  # Ensure department is not None
+            if manager.department:
                 grouped_managers[manager.department.id].append(manager)
 
-        # Ensure every department has a key in the dictionary (even if it's an empty list)
-        for department in departments:
-            if department.id not in grouped_managers:
-                grouped_managers[department.id] = []
+        managers_grouped = []
+        for dept_id, managers in grouped_managers.items():
+            paginator = Paginator(managers, 5)  # Paginate by 5
+            page_number = self.request.GET.get(f'page_dept_{dept_id}')
+            managers_paginated = paginator.get_page(page_number)
+            department = Department.objects.get(id=dept_id)
+            managers_grouped.append((department, managers_paginated))
 
-        # Convert the defaultdict to a list of tuples for template iteration
-        context['managers_grouped'] = [
-            (Department.objects.get(id=dept_id), managers)
-            for dept_id, managers in grouped_managers.items()
-        ]
+        context['managers_grouped'] = managers_grouped
+        context['departments'] = departments
 
         return context
 
@@ -54,7 +87,6 @@ class ManagerCreateView(StaffRequiredMixin, CreateView):
     success_url = reverse_lazy('managers:list')
 
     def form_valid(self, form):
-        # Create a new User and link it to the new Manager
         user = User.objects.create_user(
             username=form.cleaned_data['username'],
             email=form.cleaned_data['email'],
@@ -65,7 +97,6 @@ class ManagerCreateView(StaffRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-# Form View for updating an existing manager
 class ManagerUpdateView(OwnerOrStaffRequiredMixin, UpdateView):
     model = Manager
     form_class = UserManagerForm
@@ -73,7 +104,6 @@ class ManagerUpdateView(OwnerOrStaffRequiredMixin, UpdateView):
     success_url = reverse_lazy('managers:list')
 
     def get_object(self):
-        # Retrieve the Certificate object to check ownership
         obj = super().get_object()
         return obj
 
@@ -84,19 +114,17 @@ class ManagerUpdateView(OwnerOrStaffRequiredMixin, UpdateView):
         user.email = form.cleaned_data['email']
         user.first_name = form.cleaned_data['first_name']
         user.last_name = form.cleaned_data['last_name']
-        user.save()  # Save changes to the user
+        user.save()
 
         return super().form_valid(form)
 
 
-# Delete View for deleting a manager
 class ManagerDeleteView(OwnerOrStaffRequiredMixin, DeleteView):
     model = Manager
     template_name = 'managers/manager_confirm_delete.html'
     success_url = reverse_lazy('managers:list')
 
     def get_object(self):
-        # Retrieve the Certificate object to check ownership
         obj = super().get_object()
         return obj
 

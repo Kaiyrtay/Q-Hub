@@ -1,29 +1,98 @@
-{% extends "../base.html" %}
+{% extends "base.html" %}
+{% load static i18n %}
 
-{% block title %}Log In{% endblock %}
+{% block title %}{% trans "Login" %}{% endblock %}
 
 {% block content %}
-<h2>Welcome Back!</h2>
-<p>We've missed you! Please enter your username or email, and your password, to log in to your account.</p>
+<section class="p-3 p-md-4 p-xl-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 bsb-tpl-bg-platinum">
+        <div class="d-flex flex-column justify-content-between h-100 p-3 p-md-4 p-xl-5" style="background:#cecece">
+          <h3>{% trans "Welcome" %}!</h3>
+          <img
+            class="img-fluid rounded mx-auto my-4"
+            loading="lazy"
+            src="{% static 'assets/registration/image/login.jpg' %}"
+            alt="{% trans 'Login Image' %}"
+            style="object-fit: cover; width: 100%; height: 100%;"
+          >
+          <p>
+            {% trans "Not a member yet" %}?
+            <a href="{% url 'core:register' %}" class="link-secondary text-decoration-none">{% trans "Register now" %}</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 bsb-tpl-bg-lotion">
+        <div class="p-3 p-md-4 p-xl-5">
+          <h3>{% trans "Log in" %}</h3>
 
-<form method="post">
-    {% csrf_token %}
-    <div>
-        <label for="username">Username or Email:</label>
-        <input type="text" id="username" name="username" required placeholder="Enter your username or email" />
+          <!-- Display error messages if any -->
+          {% if messages %}
+          <div class="alert alert-danger">
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <!-- Login form -->
+          <form method="post">
+            {% csrf_token %}
+            <div class="row gy-3 gy-md-4">
+              <div class="col-12">
+                <label for="username" class="form-label">{% trans "Email or Username" %}</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  name="username" 
+                  id="username" 
+                  placeholder="{% trans 'name@example.com' %}" 
+                  required
+                >
+              </div>
+              <div class="col-12">
+                <label for="password" class="form-label">{% trans "Password" %}</label>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  name="password" 
+                  id="password" 
+                  required
+                >
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input 
+                    class="form-check-input" 
+                    type="checkbox" 
+                    name="remember_me" 
+                    id="remember_me"
+                  >
+                  <label 
+                    class="form-check-label" 
+                    for="remember_me"
+                  >
+                    {% trans "Keep me logged in" %}
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 d-grid">
+                <button type="submit" class="btn btn-primary">{% trans "Log in now" %}</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="text-end mt-3">
+            <a href="{% url 'password_reset' %}" class="link-secondary text-decoration-none">
+              {% trans "Forgot password" %}?
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder="Enter your password" />
-    </div>
-    <button type="submit">Log In</button>
-</form>
-
-<p>
-  Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.
-</p>
-
-<p>
-  Don't have an account? <a href="{% url 'core:register' %}">Sign up here</a> to create a new one.
-</p>
+  </div>
+</section>
 {% endblock %}

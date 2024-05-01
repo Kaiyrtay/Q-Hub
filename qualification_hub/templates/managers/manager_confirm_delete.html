@@ -1,11 +1,28 @@
 {% extends "../base.html" %}
-{% block title %}Delete Manager{% endblock title %}
+{% load i18n %}  <!-- Load the translation tags library -->
+
+{% block title %}{% trans "Delete Manager" %}{% endblock %}
+
 {% block content %}
-<h1>Are you sure you want to delete this manager?</h1>
-<p>This will also delete the associated user. This action cannot be undone.</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, delete</button>
-    <a href="{% url 'managers:list' %}">No, cancel</a>
-</form>
+<div class="m-3">
+  <div class="container mt-4">
+    <h1 class="mb-4">{% trans "Delete manager" %}:{{ manager.user }}</h1>
+    <div class="alert alert-warning">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      {% trans "Are you sure you want to delete this" %} "{{ manager.user }}" 
+      {% trans "manager? This will also delete the associated user. This action cannot be undone." %}
+    </div>
+
+    <form method="post" class="d-inline">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">
+        <i class="bi bi-trash-fill"></i> {% trans "Delete" %}
+      </button>
+    </form>
+
+    <a href="{% url 'managers:list' %}" class="btn btn-secondary ms-2">
+      <i class="bi bi-arrow-left-circle-fill"></i> {% trans "Back to List" %}
+    </a>
+  </div>
+</div>
 {% endblock %}

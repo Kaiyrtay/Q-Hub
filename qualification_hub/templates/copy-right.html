@@ -1,0 +1,189 @@
+{% load bootstrap5 %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Qualification Hub</title>
+    <!-- Include Bootstrap CSS -->
+    {% bootstrap_css %}
+    <!-- Include Optional Syntax Highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <style>
+      /* Custom Styles for a Dark Theme */
+      body {
+        background-color: #343a40; /* Bootstrap dark theme */
+        color: #f8f9fa; /* Light text for contrast */
+      }
+
+      /* Styling for code blocks */
+      pre {
+        background-color: #2d2d2d; /* Darker background for code */
+        padding: 10px; /* Padding for better readability */
+        border-radius: 5px; /* Rounded corners for smoother look */
+      }
+      code {
+        border-radius: 5px;
+      }
+      /* Styling for links */
+      a {
+        color: #007bff; /* Bootstrap primary color */
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Qualification Hub</h1>
+      <p>
+        <strong>Qualification Hub</strong>is a Django-based project designed to
+        manage and track educational qualifications, certificates, and related
+        information. It supports various user roles such as teachers, students,
+        managers, and administrators, allowing them to manage certificates and
+        track qualifications.
+      </p>
+
+      <h2>Features</h2>
+      <ul>
+        <li>
+          Certificate Management: Create, view, update, and delete certificates.
+        </li>
+        <li>
+          User Roles and Permissions: Different roles with varying access levels
+          (Owner, Admin, Manager, Teacher, Student, Guest).
+        </li>
+        <li>
+          Search Functionality: Search across multiple models for certificates,
+          users, departments, and more.
+        </li>
+        <li>
+          Authentication and Authorization: Handles user login, logout, and
+          registration with appropriate permissions.
+        </li>
+      </ul>
+
+      <h2>User Roles and Permissions</h2>
+      <ul>
+        <li>
+          
+          <strong>Owner</strong>:Superuser with full access to the project.
+        </li>
+        <li>
+          
+          <strong>Admin</strong>:Staff member with access to managers,
+          departments, and faculties.
+        </li>
+        <li><strong>Manager</strong>:Access to teachers and students.</li>
+        <li><strong>Teacher</strong>:Access to certificates.</li>
+        <li><strong>Student</strong>:Access to certificates.</li>
+        <li>
+          <strong>Guest</strong>:Non-authenticated user with read-only access
+          to public information.
+        </li>
+      </ul>
+
+      <h2>Visual representation of project</h2>
+      <h4>Entity-Relationship Diagram</h4>
+      <p>Below is the Entity-Relationship Diagram for the project:</p>
+      <img src="{% static "docs/jpg/ERD_v1.0.jpg" %}" alt="ERD">
+      <h4>Unified Modeling Language (UML)</h4>
+      <p>
+        Here's a UML class diagram showing the relationships between classes:
+      </p>
+      <img src="{% static "docs/jpg/UML_v1.0.jpg" %}" alt="UML">
+      <h4>Flowchart</h4>
+      <p>
+        This flowchart describes the process of creating a certificate in the
+        system:
+      </p>
+      <img src="{% static "docs/jpg/Certificates_flowcharts.jpg" %}"
+      alt="Certificate Creation Flowchart">
+      <br />
+      <br />
+      <h2>Setup Instructions</h2>
+      <ol>
+        <li>
+          <strong>Clone the Repository</strong>
+          <pre><code class="language-bash">git clone https://github.com/yourusername/qualification-hub.git</code></pre>
+        </li>
+        <li>
+          <strong>Install Dependencies</strong>
+          <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <strong>Run Migrations</strong>
+          <pre><code class="language-bash">python manage.py makemigrations</code></pre>
+          <pre><code class="language-bash">python manage.py migrate</code></pre>
+        </li>
+        <li>
+          <strong>Create Groups and Permissions</strong>
+          <pre><code class="language-bash">python manage.py create_groups_and_permissions</code></pre>
+        </li>
+        <li>
+          <strong>Create Superuser </strong>
+          <pre><code class="language-bash">python manage.py createsuperuser</code></pre>
+        </li>
+        <li>
+          <strong>Start the Development Server</strong>
+          <pre><code class="language-bash">python manage.py runserver</code></pre>
+        </li>
+        <li>
+          <strong>Access the Application</strong>
+          <pre><code>Open a browser and go to http://127.0.0.1:8000/</code></pre>
+        </li>
+      </ol>
+
+      <h2>Documentation</h2>
+      <ul>
+        <li>
+          Project Structure: Refer to the comments in the codebase for detailed
+          explanations of various components.
+        </li>
+        <li>
+          Mixins: Custom mixins are used to control permissions and access
+          levels.
+        </li>
+        <li>
+          Models: The main models are `Certificate`, `Teacher`, `Student`,
+          `Manager`, `Department`, and `Faculty`.
+        </li>
+      </ul>
+
+      <h2>Contributing</h2>
+      <p>
+        Contributions are welcome! Please create a pull request or open an issue
+        if you find bugs or have suggestions for improvements.
+      </p>
+
+      <h2>License</h2>
+      <p>
+        This project is licensed under the
+        <a href="https://opensource.org/licenses/MIT">MIT License</a>.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For further questions or support, contact kaiyrtaygabbassov@gmail.com.
+      </p>
+
+      <h2>Author</h2>
+      <p>Created by Kaiyrtay.</p>
+    </div>
+
+    <!-- Include Bootstrap JS and Highlight.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    {% bootstrap_javascript %}
+  </body>
+</html>

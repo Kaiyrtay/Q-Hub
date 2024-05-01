@@ -1,50 +1,33 @@
 {% extends "../base.html" %}
+{% load crispy_forms_tags i18n %}
 
-{% block title %}
-    {% if object %}
-        Edit Certificate: {{ object.certificate_name }}
-    {% else %}
-        Create New Certificate
-    {% endif %}
-{% endblock %}
+{% block title %}{% trans "Create Certificate" %}{% endblock %}
 
 {% block content %}
-<div class="container">
-    {% if object %}
-        <h1>Edit Certificate: {{ object.certificate_name }}</h1>
-    {% else %}
-        <h1>Create New Certificate</h1>
-    {% endif %}
+<div class="container mt-4">
+  <div class="mb-3 row justify-content-center">
+    <div class="col-md-8">
+      <h2>{% trans "Create New Certificate" %}</h2>
 
-    <form method="post">
+      <form method="post">
         {% csrf_token %}
+        
+        {{ form|crispy }}  <!-- Render the form with crispy forms -->
 
-        {% if form.errors %}
-            <div class="alert alert-danger">
-                <ul>
-                    {% for field in form %}
-                        {% for error in field.errors %}
-                            <li>{{ field.label }}: {{ error }}</li>
-                        {% endfor %}
-                    {% endfor %}
-                    {% for error in form.non_field_errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
+        <!-- Flex container for buttons -->
+        <div class="d-flex justify-content-between mt-3">
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary">
+            {% trans "Create" %}
+          </button>
 
-        {{ form.as_p }}
-
-        <button type="submit" class="btn btn-primary">
-            {% if object %}
-                Save Changes
-            {% else %}
-                Create
-            {% endif %}
-        </button>
-    </form>
-
-    <a href="{% url 'certificates:list' %}" class="btn btn-secondary">Back to List</a>
+          <!-- Back to List Button -->
+          <a href="{% url 'certificates:list' %}" class="btn btn-secondary">
+            {% trans "Back to Certificates List" %}
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 {% endblock %}

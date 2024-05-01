@@ -1,18 +1,43 @@
 {% extends "../base.html" %}
-{% block title %}Department Form{% endblock title %}
+{% load crispy_forms_tags i18n %}
+{% block title %}{% trans "Department Form" %}{% endblock %}
+
 {% block content %}
-{% if object %}
-<h1>Edit Department: {{ object.name }}</h1>
-{% else %}
-<h1>Create New Department</h1>
-{% endif %}
+<div class="container mt-4 mb-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">  <!-- Keep the form within a manageable width -->
 
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">
-    {% if object %}Save Changes{% else %}Create{% endif %}
-  </button>
-</form>
+      <!-- Heading with Conditionals -->
+      {% if object %}
+        <h2>{% trans "Edit Department" %}: {{ object.name }}</h2>
+      {% else %}
+        <h2>{% trans "Create New Department" %}</h2>
+      {% endif %}
 
-<a href="{% url 'departments:list' %}">Back to List</a>
-{%endblock%}
+      <!-- Form with CSRF Token -->
+      <form method="post">
+        {% csrf_token %} 
+        {{ form|crispy }}  <!-- Render form fields with crispy forms -->
+
+        <!-- Flex container for aligning buttons -->
+        <div class="d-flex justify-content-between mt-3">
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary">
+            {% if object %}
+              {% trans "Save Changes" %}
+            {% else %}
+              {% trans "Create" %}
+            {% endif %}
+          </button>
+
+          <!-- Back to List Button -->
+          <a href="{% url 'departments:list' %}" class="btn btn-secondary">
+            {% trans "Back to List" %}
+          </a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

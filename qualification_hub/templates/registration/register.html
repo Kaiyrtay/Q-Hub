@@ -1,15 +1,44 @@
-{% extends "../base.html" %}
-{% load crispy_forms_tags %}
-{% block title %}Register{% endblock %}
+{% extends "base.html" %}
+{% load crispy_forms_tags i18n %}
+{% load static %}
+{% block title %}{% trans "Register" %}{% endblock %}
+
 {% block content %}
-<h2 class="btn">Sign Up</h2>
-<p>Welcome! Please fill out the form below to create your account. Once registered, you'll have full access to our platform.</p>
-
-<form method="post">
-    {% csrf_token %}
-    {{form|crispy}}
-    <button class="btn btn-primary" type="submit">Register</button>
-</form>
-
-<p>Already have an account? <a href="{% url 'core:login' %}">Log in here</a>.</p>
+<section class="p-3 p-md-4 p-xl-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 bsb-tpl-bg-platinum">
+        <div class="d-flex flex-column justify-content-between h-100 p-3 p-md-4 p-xl-5" style="background: #cecece">
+          <h3>{% trans "Welcome to Registration" %}</h3>
+          <img
+            class="img-fluid rounded mx-auto my-4"
+            loading="lazy"
+            src="{% static 'assets/registration/image/register.jpg' %}"
+            alt="{% trans "Registration Image" %}"
+            style="object-fit: cover; width: 100%;"
+          >
+          <p>
+            {% trans "Already have an account" %}?
+            <a href="{% url 'core:login' %}" class="link-secondary text-decoration-none">{% trans "Log in now" %}</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 bsb-tpl-bg-lotion">
+        <div class="p-3 p-md-4 p-xl-5">
+          <h3>{% trans "Register" %}</h3>
+          <form method="post">
+            {% csrf_token %}
+            <div class="row gy-3 gy-md-4">
+              {{ form|crispy }} <!-- This uses your crispy form helper layout -->
+              <div class="col-12 d-grid">
+                <button type="submit" class="btn btn-primary btn-block">{% trans "Register" %}</button> <!-- Primary button style -->
+              </div>
+            </div>
+          </form>
+          <hr class="mt-5 mb-4 border-secondary-subtle">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

@@ -1,0 +1,162 @@
+{% extends "../base.html" %}
+{% load i18n %}  <!-- Load the translation tags library -->
+
+{% block title %}{% trans "Search Results" %}{% endblock %}
+
+{% block content %}
+<div class="container col-md-8">
+  <h1 class="mb-2">{% trans "Search Results" %}</h1>
+
+  <!-- Display error message if provided -->
+  {% if message %}
+  <div class="alert alert-danger">
+    <strong>{% trans "Error" %}:</strong> {{ message }}
+  </div>
+  {% endif %}
+
+  <!-- Display certificates by organization if available -->
+  {% if organization %}
+  <div class="row justify-content-center">
+    <h2>{{ organization }} {% trans "certificates" %}:</h2>
+    <div class="list-group">
+      {% for certificate in organization_certificates %}
+      <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center m-2">
+        <!-- Certificate details on the left -->
+        <span>
+          <strong>{{ certificate.organization }}</strong> -
+          <a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }}</a>
+          <span class="text-muted">({{ certificate.date_earned }})</span>
+        </span>
+
+        <!-- Owner information on the right -->
+        <div>
+          {% if certificate.teacher_owner %}
+          <a href="{% url 'teachers:detail' certificate.teacher_owner.pk %}" class="badge btn btn-primary p-2">
+            {% trans "Teacher" %}: {{ certificate.teacher_owner.user.get_full_name }}
+          </a>
+          {% elif certificate.student_owner %}
+          <a href="{% url 'students:detail' certificate.student_owner.pk %}" class="badge btn btn-secondary p-2">
+            {% trans "Student" %}: {{ certificate.student_owner.user.get_full_name }}
+          </a>
+          {% else %}
+          <span class="badge bg-warning text-dark">{% trans "No owner assigned" %}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+      <div class="alert alert-warning">
+        <strong>{% trans "Warning" %}:</strong> {% trans "No certificates from" %} <strong>{{ organization }}</strong>.
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Display departments -->
+  {% if departments %}
+  <div class="row justify-content-center">
+    <h2>{% trans "Departments" %}:</h2>
+    <div class="list-group">
+      {% for department in departments %}
+      <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center m-2">
+        <span>
+          <a href="{% url 'departments:detail' department.pk %}">{{ department.name }}</a>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Display certificates -->
+  {% if certificates %}
+  <div class="row justify-content-center">
+    <h2>{{ organization }} {% trans "certificates" %}:</h2>
+    <div class="list-group">
+      {% for certificate in certificates %}
+      <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center m-2">
+        <span>
+          <strong>{{ certificate.organization }}</strong> -
+          <a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }}</a>
+          <span class="text-muted">({{ certificate.date_earned }})</span>
+        </span>
+
+        <!-- Owner information -->
+        <div>
+          {% if certificate.teacher_owner %}
+          <a href="{% url 'teachers:detail' certificate.teacher_owner.pk %}" class="badge btn btn-primary p-2">
+            {% trans "Teacher" %}: {{ certificate.teacher_owner.user.get_full_name }}
+          </a>
+          {% elif certificate.student_owner %}
+          <a href="{% url 'students:detail' certificate.student_owner.pk %}" class="badge btn btn-secondary p-2">
+            {% trans "Student" %}: {{ certificate.student_owner.user.get_full_name }}
+          </a>
+          {% else %}
+          <span class="badge bg-warning text-dark">{% trans "No owner assigned" %}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+      <div class="alert alert-warning">
+        <strong>{% trans "Warning" %}:</strong> {% trans "No certificates found." %} 
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Display managers -->
+  {% if managers %}
+  <div class="row justify-content-center">
+    <h2>{% trans "Managers" %}:</h2>
+    <div class="list-group">
+      {% for manager in managers %}
+      <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center m-2">
+        <span>
+          <strong>{{ manager.department }}</strong> -
+          <a href="{% url 'managers:detail' manager.pk %}" class="fw-bold">{{ manager.full_name }}</a>
+          <span class="text-muted">({{ manager.appointed_date }})</span>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Display teachers -->
+  {% if teachers %}
+  <div class="row justify-content-center">
+    <h2>{% trans "Teachers" %}:</h2>
+    <div class="list-group">
+      {% for teacher in teachers %}
+      <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center m-2">
+        <span>
+          <strong>{{ teacher.department }}</strong> -
+          <a href="{% url 'teachers:detail' teacher.pk %}" class="fw-bold">{{ teacher.full_name }}</a>
+          <span class="text-muted">({{ teacher.hired_date }})</span>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Display students -->
+  {% if students %}
+  <div class="row justify-content-center">
+    <h2>{% trans "Students" %}:</h2>
+    <div class="list-group">
+      {% for student in students %}
+      <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center m-2">
+        <span>
+          <strong>{{ student.department }}</strong> -
+          <a href="{% url 'students:detail' student.pk %}" class="fw-bold">{{ student.full_name }}</a>
+          <span class="text-muted">({{ student.enrollment_date }})</span>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

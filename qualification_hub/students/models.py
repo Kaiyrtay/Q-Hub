@@ -1,10 +1,33 @@
+"""
+Student Model Definition
+
+This file defines the `Student` model, representing students in the system.
+Each `Student` has a one-to-one relationship with a `User` and can belong 
+to a `Department`. The model also includes additional information like role, 
+enrollment date, graduation date, middle name, phone number, contact email, 
+and major.
+
+Key Features:
+- `full_name()`: Returns the full name of the student, including the middle name if available.
+- `save()`: Ensures the associated `User` is added to the "Students" group by default if not already in a group.
+- `__str__()`: Returns a string representation of the student, including their full name, role, and department.
+
+Dependencies:
+- Requires `User` from `django.contrib.auth.models` to manage user-related information.
+- Uses `Department` from `departments.models` for the department association.
+- Utilizes `Group` from `django.contrib.auth.models` to manage user groups.
+
+Author: Kaiyrtay
+"""
+
 from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
 
 class Student(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="student")
     department = models.ForeignKey(
         Department, on_delete=models.SET_NULL, null=True, blank=True, related_name='students')
     role = models.CharField(max_length=100, default="Student")

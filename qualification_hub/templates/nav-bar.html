@@ -1,0 +1,122 @@
+{% load i18n %}
+<nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
+  <div class="container-fluid">
+    <!-- Navbar Brand -->
+    <a class="navbar-brand" href="{% url 'home' %}">Q-hub</a>
+
+    <!-- Navbar Toggle Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Section -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Main Navigation Links -->
+      <!-- Navigation Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'faculties:list' %}"
+            >{% trans "Faculty" %}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'departments:list' %}"
+            >{% trans "Department" %}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'managers:list' %}"
+            >{% trans "Managers" %}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'teachers:list' %}"
+            >{% trans "Teachers" %}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'students:list' %}"
+            >{% trans "Students" %}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'certificates:list' %}"
+            >{% trans "Certificates" %}</a
+          >
+        </li>
+      </ul>
+
+       <!-- Language Dropdown -->
+      <ul class="navbar-nav">
+        {% get_current_language as CURRENT_LANGUAGE %} 
+        {% get_available_languages as AVAILABLE_LANGUAGES %} 
+        {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarLanguageDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {% trans "Language" %}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarLanguageDropdown">
+            {% for language in languages %}
+              <li>
+                <form method="post" action="{% url 'set_language' %}">
+                  {% csrf_token %}
+                  <input type="hidden" name="language" value="{{ language.code }}">
+                  <input type="hidden" name="next" value="{{ request.path }}">
+                  <button type="submit" class="dropdown-item {% if language.code == CURRENT_LANGUAGE %} active {% endif %}">
+                    {{ language.name_local }}
+                  </button>
+                </form>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <!-- User Authentication Links -->
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          {% if user.is_staff %}
+          <a class="nav-link" href="/admin">
+            {% trans "Hello" %}, {{ user.username }}!</a
+          >
+          {% else %}
+          <span class="nav-link"
+            >{% trans "Hello" %}, {{ user.username }}!</span
+          >
+          {% endif %}
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'core:logout' %}"
+            >{% trans "Logout" %}</a
+          >
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'core:register' %}"
+            >{% trans "Sign Up" %}</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'core:login' %}"
+            >{% trans "Sign In" %}</a
+          >
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
