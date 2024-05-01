@@ -1,5 +1,4 @@
-{% load bootstrap5 %} 
-{% load static %}
+{% load bootstrap5 static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,11 +71,9 @@
       <h2>User Roles and Permissions</h2>
       <ul>
         <li>
-          
           <strong>Owner</strong>:Superuser with full access to the project.
         </li>
         <li>
-          
           <strong>Admin</strong>:Staff member with access to managers,
           departments, and faculties.
         </li>
@@ -84,8 +81,8 @@
         <li><strong>Teacher</strong>:Access to certificates.</li>
         <li><strong>Student</strong>:Access to certificates.</li>
         <li>
-          <strong>Guest</strong>:Non-authenticated user with read-only access
-          to public information.
+          <strong>Guest</strong>:Non-authenticated user with read-only access to
+          public information.
         </li>
       </ul>
 
@@ -111,7 +108,7 @@
       <ol>
         <li>
           <strong>Clone the Repository</strong>
-          <pre><code class="language-bash">git clone https://github.com/yourusername/qualification-hub.git</code></pre>
+          <pre><code class="language-bash">git clone https://github.com/Kaiyrtay/Thesis-project.git</code></pre>
         </li>
         <li>
           <strong>Install Dependencies</strong>
@@ -155,6 +152,9 @@
           `Manager`, `Department`, and `Faculty`.
         </li>
       </ul>
+
+      <h3>User Guide</h3>
+      <a href="{% static 'docs/user-guide.md' %}">click to download</a>
 
       <h2>Contributing</h2>
       <p>

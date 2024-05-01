@@ -90,6 +90,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',  # Needed for language switching
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # WhiteNoise
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -184,6 +185,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Allows Django's static files finders to work with WhiteNoise
+WHITENOISE_USE_FINDERS = True
+# Disable autorefresh in production for better performance
+WHITENOISE_AUTOREFRESH = False
 
 # Crispy form
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

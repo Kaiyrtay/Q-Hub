@@ -40,7 +40,7 @@ This flowchart describes the process of creating a certificate in the system:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/kaiyrtay/qualification-hub.git
+   git clone https://github.com/Kaiyrtay/Thesis-project.git
 
    ```
 
