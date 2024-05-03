@@ -18,22 +18,25 @@
 - **Student**: Access to certificates.
 - **Guest**: Non-authenticated user with read-only access to public information.
 
-## Visual representation  of project
+## Visual representation of project
 
 ### Entity-Relationship Diagram
+
 Below is the Entity-Relationship Diagram for the project:
 
 ![ERD](./qualification_hub/static/docs/jpg/ERD_v1.0.jpg)
 
 ### Unified Modeling Language (UML)
+
 Here's a UML class diagram showing the relationships between classes:
 
 ![UML Class Diagram](./qualification_hub/static/docs/jpg/UML_v1.0.jpg)
+
 ### Flowchart
+
 This flowchart describes the process of creating a certificate in the system:
 
 ![Certificate Creation Flowchart](./qualification_hub/static/docs/jpg/Certificates_flowcharts.jpg)
-
 
 ## Setup Instructions
 
@@ -99,6 +102,34 @@ This flowchart describes the process of creating a certificate in the system:
 ### User Guide
 
 For a detailed user guide, please check the [documentation](./qualification_hub/static/docs/user-guide.md).
+
+### Core
+
+For a detailed core docs, please check the [documentation](./qualification_hub/static/docs/core-docs.md).
+
+### Faculty
+
+For a detailed faculty docs, please check the [documentation](./qualification_hub/static/docs/faculty-docs.md).
+
+### Department
+
+For a detailed department docs, please check the [documentation](./qualification_hub/static/docs/department-docs.md).
+
+### Manager
+
+For a detailed manager docs, please check the [documentation](./qualification_hub/static/docs/manager-docs.md).
+
+### Teacher
+
+For a detailed teacher docs, please check the [documentation](./qualification_hub/static/docs/teacher-docs.md).
+
+### Student
+
+For a detailed student docs, please check the [documentation](./qualification_hub/static/docs/student-docs.md).
+
+### Certificate
+
+For a detailed certificate docs, please check the [documentation](./qualification_hub/static/docs/certificate-docs.md).
 
 ## Contributing
 

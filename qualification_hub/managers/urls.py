@@ -10,13 +10,12 @@ from .views import (
 app_name = 'managers'
 
 urlpatterns = [
-    path('', ManagerListView.as_view(), name='list'),  # List of all managers
+    path('', ManagerListView.as_view(), name='list'), 
     path('create/', ManagerCreateView.as_view(),
-         name='create'),  # Create a new manager
-    # Detail view of a specific manager
+         name='create'),  
     path('<int:pk>/', ManagerDetailView.as_view(), name='detail'),
     path('<int:pk>/update/', ManagerUpdateView.as_view(),
-         name='update'),  # Update a specific manager
+         name='update'),  
     path('<int:pk>/delete/', ManagerDeleteView.as_view(),
-         name='delete'),  # Delete a specific manager
+         name='delete'),  
 ]
