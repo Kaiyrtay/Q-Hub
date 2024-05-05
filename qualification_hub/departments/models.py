@@ -39,5 +39,8 @@ class Department(models.Model):
         Faculty, on_delete=models.SET_NULL, null=True, blank=True, related_name="departments"
     )
 
+    class Meta:
+        ordering = ['faculty__name', 'name',]
+
     def __str__(self):
         return self.name

@@ -57,5 +57,8 @@ class Certificate(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['-date_earned', 'organization', 'certificate_name']
+
     def __str__(self):
         return f"{self.certificate_name} - {self.organization}"

@@ -25,6 +25,7 @@ from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
+
 class Teacher(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="teacher")
@@ -37,6 +38,9 @@ class Teacher(models.Model):
     contact_email = models.EmailField(blank=True, null=True)
     subject_taught = models.CharField(max_length=100, blank=True, null=True)
     room_number = models.CharField(max_length=10, blank=True, null=True)
+
+    class Meta:
+        ordering = ['user__first_name', 'middle_name', 'user__last_name']
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

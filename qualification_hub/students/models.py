@@ -40,6 +40,9 @@ class Student(models.Model):
         blank=True, null=True)
     major = models.CharField(max_length=100, blank=True, null=True)
 
+    class Meta:
+        ordering = ['user__first_name', 'middle_name', 'user__last_name']
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
