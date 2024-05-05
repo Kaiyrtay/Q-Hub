@@ -1,8 +1,12 @@
 {% extends "../base.html" %}
 {% load crispy_forms_tags i18n %}
-
-{% block title %}{% trans "Create Certificate" %}{% endblock %}
-
+{% block title %}
+    {% if object %}
+       {% trans "Edit Certificate" %} : {{ object.certificate_name }}
+    {% else %}
+        {% trans "Create New Certificate" %} 
+    {% endif %}
+{% endblock %}
 {% block content %}
 <div class="container mt-4">
   <div class="mb-3 row justify-content-center">
@@ -18,7 +22,11 @@
         <div class="d-flex justify-content-between mt-3">
           <!-- Submit Button -->
           <button type="submit" class="btn btn-primary">
-            {% trans "Create" %}
+            {% if object %}
+              {% trans "Save changes" %}
+            {% else %}
+                {% trans "Create" %}
+            {% endif %}
           </button>
 
           <!-- Back to List Button -->
