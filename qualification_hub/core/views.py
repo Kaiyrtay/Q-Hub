@@ -97,6 +97,16 @@ def get_department_by_name(name):
         return {"message": f"Department with name '{name}' not found."}
 
 
+def get_certificates(text: str):
+    certificates = Certificate.objects.filter(
+        Q(certificate_name__icontains=text) |
+        Q(description__icontains=text)
+    )
+    organization_certificates = get_organization_certificates(text)
+    merged_certificates = certificates | organization_certificates
+    return merged_certificates
+
+
 def full_search(query):
     context = {}
 
@@ -124,9 +134,7 @@ def full_search(query):
     if managers:
         context['managers'] = managers
 
-    certificates = Certificate.objects.filter(
-        certificate_name__icontains=query
-    )
+    certificates = get_certificates(query)
     if certificates:
         context['certificates'] = certificates
 
@@ -164,11 +172,15 @@ def search_view(request):
                 context['organization'] = q[1:]
                 return render(request, 'core/search.html', context)
 
-            elif q[0] == '$':
+            elif q[0] == '!':
                 result = get_department_by_name(q[1:])
                 if isinstance(result, dict) and "message" in result:
                     return render(request, 'core/search.html', result)
                 return result
+            elif q[0] == '$':
+                result = get_certificates(q[1:])
+                if result:
+                    return render(request, 'core/search.html', {"certificates": result})
             else:
                 result = full_search(q)
                 if not result:
