@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static i18n %}
-
 {% block title %}{% trans "Faculties" %}{% endblock %}
-
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-3">
   <h1>{% trans "Faculties" %}</h1>
-  
   {% if user.is_authenticated and user.is_staff %}
   <div class="mb-3">
     <a href="{% url 'faculties:create' %}" class="btn btn-primary">
@@ -14,7 +11,6 @@
     </a>
   </div>
   {% endif %}
-  
   <table class="table align-middle bg-white">
     <thead class="bg-dark text-light">
       <tr>

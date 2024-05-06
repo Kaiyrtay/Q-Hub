@@ -2,11 +2,9 @@
 {% load core_tags %}
 {% load i18n %}
 {% block title %}{% trans "Teacher" %}: {{ teacher.full_name }}{% endblock title %}
-
 {% block content %}
 <div class="container mt-4 mb-4">
     <h1 class="display-5">{% trans "Teacher Details" %}</h1>
-    
     <div class="card mt-3 mb-3">
         <div class="card-body">
             <p class="card-text">
@@ -29,7 +27,6 @@
             </p>
         </div>
     </div>
-    
     <h2 class="h4">{% trans "Certificates" %}</h2>
     <ul class="list-group">
         {% for certificate in teacher.certificates.all %}
@@ -50,7 +47,6 @@
             {% endif %}
         {% endfor %}
     </ul>
-    
     <div class="mt-4">
       {% if user.is_authenticated%}
         {% if user|in_group:'Managers' or user.pk == teacher.user.pk%}

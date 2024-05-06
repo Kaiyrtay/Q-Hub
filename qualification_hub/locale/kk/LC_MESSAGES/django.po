@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-01 15:12+0600\n"
-"PO-Revision-Date: 2024-05-01 16:04+0000\n"
-"Last-Translator: M M <manager@mail.com>\n"
+"POT-Creation-Date: 2024-05-05 21:58+0600\n"
+"PO-Revision-Date: 2024-05-06 15:30+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,391 +19,398 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\qualification_hub\settings.py:161
+#: .\qualification_hub\settings.py:163
 msgid "English"
 msgstr "Ағылшын тілі"
 
-#: .\qualification_hub\settings.py:162
+#: .\qualification_hub\settings.py:164
 msgid "Russian"
 msgstr "Орыс тілі"
 
-#: .\qualification_hub\settings.py:163
+#: .\qualification_hub\settings.py:165
 msgid "Kazakh"
 msgstr "Қазақ тілі"
 
-#: .\templates\certificates\certificate_confirm_delete.html:4
-#: .\templates\certificates\certificate_detail.html:62
+#: .\templates\certificates\certificate_confirm_delete.html:3
+#: .\templates\certificates\certificate_detail.html:54
 msgid "Delete Certificate"
 msgstr "Сертификатты жою"
 
-#: .\templates\certificates\certificate_confirm_delete.html:9
+#: .\templates\certificates\certificate_confirm_delete.html:7
 msgid "Delete certificate"
 msgstr "Сертификатты жою"
 
-#: .\templates\certificates\certificate_confirm_delete.html:12
+#: .\templates\certificates\certificate_confirm_delete.html:10
 msgid "Are you sure you want to delete"
 msgstr "Жойғыңыз келетініне сенімдісіз бе"
 
-#: .\templates\certificates\certificate_confirm_delete.html:18
-#: .\templates\departments\department_confirm_delete.html:19
-#: .\templates\departments\department_detail.html:35
-#: .\templates\faculties\faculty_confirm_delete.html:18
-#: .\templates\faculties\faculty_detail.html:59
-#: .\templates\managers\manager_confirm_delete.html:19
-#: .\templates\managers\manager_detail.html:39
-#: .\templates\students\student_confirm_delete.html:15
-#: .\templates\students\student_detail.html:59
-#: .\templates\teachers\teacher_confirm_delete.html:19
-#: .\templates\teachers\teacher_detail.html:61
+#: .\templates\certificates\certificate_confirm_delete.html:15
+#: .\templates\departments\department_confirm_delete.html:15
+#: .\templates\departments\department_detail.html:30
+#: .\templates\faculties\faculty_confirm_delete.html:15
+#: .\templates\faculties\faculty_detail.html:52
+#: .\templates\managers\manager_confirm_delete.html:16
+#: .\templates\managers\manager_detail.html:36
+#: .\templates\students\student_confirm_delete.html:14
+#: .\templates\students\student_detail.html:55
+#: .\templates\teachers\teacher_confirm_delete.html:18
+#: .\templates\teachers\teacher_detail.html:57
 msgid "Delete"
 msgstr "Жою"
 
-#: .\templates\certificates\certificate_confirm_delete.html:23
-#: .\templates\departments\department_confirm_delete.html:24
-#: .\templates\departments\department_detail.html:41
-#: .\templates\departments\department_form.html:35
-#: .\templates\faculties\faculty_confirm_delete.html:23
-#: .\templates\faculties\faculty_detail.html:64
-#: .\templates\managers\manager_confirm_delete.html:24
-#: .\templates\managers\manager_detail.html:45
-#: .\templates\managers\manager_form.html:44
-#: .\templates\students\student_confirm_delete.html:20
-#: .\templates\students\student_detail.html:65
-#: .\templates\students\student_form.html:60
-#: .\templates\teachers\teacher_confirm_delete.html:24
-#: .\templates\teachers\teacher_detail.html:66
-#: .\templates\teachers\teacher_form.html:44
+#: .\templates\certificates\certificate_confirm_delete.html:19
+#: .\templates\departments\department_confirm_delete.html:19
+#: .\templates\departments\department_detail.html:35
+#: .\templates\departments\department_form.html:30
+#: .\templates\faculties\faculty_confirm_delete.html:19
+#: .\templates\faculties\faculty_detail.html:57
+#: .\templates\managers\manager_confirm_delete.html:20
+#: .\templates\managers\manager_detail.html:41
+#: .\templates\managers\manager_form.html:37
+#: .\templates\students\student_confirm_delete.html:18
+#: .\templates\students\student_detail.html:60
+#: .\templates\students\student_form.html:53
+#: .\templates\teachers\teacher_confirm_delete.html:22
+#: .\templates\teachers\teacher_detail.html:62
+#: .\templates\teachers\teacher_form.html:38
 msgid "Back to List"
 msgstr "Тізімге оралу"
 
-#: .\templates\certificates\certificate_detail.html:4
+#: .\templates\certificates\certificate_detail.html:3
 msgid "Certificate Detail"
-msgstr "Сертификат мәліметтері"
+msgstr "Сертификат туралы мәліметтер"
 
-#: .\templates\certificates\certificate_detail.html:13
+#: .\templates\certificates\certificate_detail.html:10
 msgid "Organization"
 msgstr "Ұйым"
 
-#: .\templates\certificates\certificate_detail.html:16
-#: .\templates\certificates\certificate_list.html:31
-#: .\templates\faculties\faculty_detail.html:14
+#: .\templates\certificates\certificate_detail.html:13
+#: .\templates\certificates\certificate_list.html:30
+#: .\templates\faculties\faculty_detail.html:11
 msgid "Description"
-msgstr "Сипаттамасы"
+msgstr "Сипаттама"
 
-#: .\templates\certificates\certificate_detail.html:25
+#: .\templates\certificates\certificate_detail.html:16
+#| msgid "Registration Image"
+msgid "Expiration Date"
+msgstr "Жарамдылық мерзімі"
+
+#: .\templates\certificates\certificate_detail.html:20
 msgid "Issued By"
 msgstr "Берілген"
 
-#: .\templates\certificates\certificate_detail.html:28
+#: .\templates\certificates\certificate_detail.html:23
 msgid "Certificate Number"
 msgstr "Сертификат нөмірі"
 
-#: .\templates\certificates\certificate_detail.html:31
+#: .\templates\certificates\certificate_detail.html:26
 msgid "Date Earned"
-msgstr "Табылған күні"
+msgstr "Алынған күні"
 
-#: .\templates\certificates\certificate_detail.html:34
+#: .\templates\certificates\certificate_detail.html:29
 msgid "Verification URL"
 msgstr "Растау URL мекенжайы"
 
-#: .\templates\certificates\certificate_detail.html:42
-#: .\templates\certificates\certificate_detail.html:46
+#: .\templates\certificates\certificate_detail.html:36
+#: .\templates\certificates\certificate_detail.html:40
 msgid "Owner"
 msgstr "Иесі"
 
-#: .\templates\certificates\certificate_detail.html:56
+#: .\templates\certificates\certificate_detail.html:49
+#: .\templates\certificates\certificate_form.html:5
 msgid "Edit Certificate"
 msgstr "Сертификатты өңдеу"
 
-#: .\templates\certificates\certificate_detail.html:69
+#: .\templates\certificates\certificate_detail.html:60
 msgid "Back to Certificate List"
-msgstr "Сертификаттар тізіміне қайта келу"
+msgstr "Сертификаттар тізіміне оралу"
 
-#: .\templates\certificates\certificate_form.html:4
-msgid "Create Certificate"
-msgstr "Cертификатты енгізіңіз"
-
-#: .\templates\certificates\certificate_form.html:10
-#: .\templates\certificates\certificate_list.html:12
+#: .\templates\certificates\certificate_form.html:7
+#: .\templates\certificates\certificate_form.html:14
+#: .\templates\certificates\certificate_list.html:11
 msgid "Create New Certificate"
-msgstr "Жаңа сертификатты енгізіңіз"
+msgstr "Жаңа сертификат қосу"
 
-#: .\templates\certificates\certificate_form.html:21
-#: .\templates\departments\department_form.html:29
-#: .\templates\faculties\faculty_form.html:30
-#: .\templates\managers\manager_form.html:38
-#: .\templates\students\student_form.html:54
-#: .\templates\teachers\teacher_form.html:38
+#: .\templates\certificates\certificate_form.html:23
+#| msgid "Save Changes"
+msgid "Save changes"
+msgstr "Өзгерістерді сақтау"
+
+#: .\templates\certificates\certificate_form.html:25
+#: .\templates\departments\department_form.html:25
+#: .\templates\faculties\faculty_form.html:25
+#: .\templates\managers\manager_form.html:32
+#: .\templates\students\student_form.html:48
+#: .\templates\teachers\teacher_form.html:33
 msgid "Create"
 msgstr "Жасау"
 
-#: .\templates\certificates\certificate_form.html:26
+#: .\templates\certificates\certificate_form.html:30
 msgid "Back to Certificates List"
-msgstr "Сертификаттар Тізіміне оралу"
+msgstr "Сертификаттар тізіміне оралу"
 
 #: .\templates\certificates\certificate_list.html:4
 msgid "Certificate List"
-msgstr "Сертификаттар Тізімі"
+msgstr "Сертификаттар тізімі"
 
-#: .\templates\certificates\certificate_list.html:34
+#: .\templates\certificates\certificate_list.html:33
 msgid "View Details"
-msgstr "Мәліметтерді Қарау"
+msgstr "Мәліметтерді қарау"
 
-#: .\templates\certificates\certificate_list.html:46
+#: .\templates\certificates\certificate_list.html:45
 msgid "@None"
 msgstr ""
 
-#: .\templates\certificates\certificate_list.html:57
+#: .\templates\certificates\certificate_list.html:55
 msgid "Page navigation"
-msgstr "Бетті шарлау"
+msgstr "Беттерді шарлау"
 
-#: .\templates\certificates\certificate_list.html:62
-#: .\templates\managers\manager_list.html:67
-#: .\templates\managers\manager_list.html:72
-#: .\templates\managers\manager_list.html:150
-#: .\templates\managers\manager_list.html:155
-#: .\templates\students\student_list.html:75
-#: .\templates\students\student_list.html:80
-#: .\templates\students\student_list.html:173
-#: .\templates\students\student_list.html:178
-#: .\templates\teachers\teacher_list.html:74
-#: .\templates\teachers\teacher_list.html:78
-#: .\templates\teachers\teacher_list.html:170
-#: .\templates\teachers\teacher_list.html:174
+#: .\templates\certificates\certificate_list.html:60
+#: .\templates\managers\manager_list.html:79
+#: .\templates\managers\manager_list.html:84
+#: .\templates\managers\manager_list.html:176
+#: .\templates\managers\manager_list.html:181
+#: .\templates\students\student_list.html:74
+#: .\templates\students\student_list.html:79
+#: .\templates\students\student_list.html:170
+#: .\templates\students\student_list.html:175
+#: .\templates\teachers\teacher_list.html:71
+#: .\templates\teachers\teacher_list.html:75
+#: .\templates\teachers\teacher_list.html:163
+#: .\templates\teachers\teacher_list.html:167
 msgid "Previous"
 msgstr "Алдыңғы"
 
-#: .\templates\certificates\certificate_list.html:77
-#: .\templates\managers\manager_list.html:91
-#: .\templates\managers\manager_list.html:96
-#: .\templates\managers\manager_list.html:176
-#: .\templates\managers\manager_list.html:181
-#: .\templates\students\student_list.html:101
-#: .\templates\students\student_list.html:106
-#: .\templates\students\student_list.html:197
-#: .\templates\students\student_list.html:202
-#: .\templates\teachers\teacher_list.html:99
-#: .\templates\teachers\teacher_list.html:103
-#: .\templates\teachers\teacher_list.html:193
-#: .\templates\teachers\teacher_list.html:197
+#: .\templates\certificates\certificate_list.html:73
+#: .\templates\managers\manager_list.html:106
+#: .\templates\managers\manager_list.html:111
+#: .\templates\managers\manager_list.html:201
+#: .\templates\managers\manager_list.html:206
+#: .\templates\students\student_list.html:100
+#: .\templates\students\student_list.html:105
+#: .\templates\students\student_list.html:194
+#: .\templates\students\student_list.html:199
+#: .\templates\teachers\teacher_list.html:94
+#: .\templates\teachers\teacher_list.html:98
+#: .\templates\teachers\teacher_list.html:186
+#: .\templates\teachers\teacher_list.html:190
 msgid "Next"
 msgstr "Келесі"
 
-#: .\templates\core\search.html:4 .\templates\core\search.html:8
+#: .\templates\core\search.html:3 .\templates\core\search.html:6
 msgid "Search Results"
-msgstr "Іздеу Нәтижелері"
+msgstr "Іздеу нәтижелері"
 
-#: .\templates\core\search.html:13
+#: .\templates\core\search.html:10
 msgid "Error"
 msgstr "Қате"
 
-#: .\templates\core\search.html:20 .\templates\core\search.html:74
+#: .\templates\core\search.html:16 .\templates\core\search.html:67
 msgid "certificates"
 msgstr "сертификаттар"
 
-#: .\templates\core\search.html:35 .\templates\core\search.html:88
+#: .\templates\core\search.html:30 .\templates\core\search.html:80
 #: .\templates\teachers\teacher_detail.html:4
 msgid "Teacher"
 msgstr "Мұғалім"
 
-#: .\templates\core\search.html:39 .\templates\core\search.html:92
+#: .\templates\core\search.html:34 .\templates\core\search.html:84
 #: .\templates\students\student_detail.html:4
 msgid "Student"
 msgstr "Студент"
 
-#: .\templates\core\search.html:42 .\templates\core\search.html:95
+#: .\templates\core\search.html:37 .\templates\core\search.html:87
 msgid "No owner assigned"
 msgstr "Иесі тағайындалмаған"
 
-#: .\templates\core\search.html:48 .\templates\core\search.html:101
+#: .\templates\core\search.html:43 .\templates\core\search.html:93
 msgid "Warning"
 msgstr "Ескерту"
 
-#: .\templates\core\search.html:48
+#: .\templates\core\search.html:43
 msgid "No certificates from"
 msgstr "Сертификаттар жоқ"
 
-#: .\templates\core\search.html:58
-#: .\templates\departments\department_list.html:4
-#: .\templates\departments\department_list.html:8 .\templates\footer.html:32
+#: .\templates\core\search.html:52
+#: .\templates\departments\department_list.html:3
+#: .\templates\departments\department_list.html:6 .\templates\footer.html:31
 msgid "Departments"
-msgstr "Департаменттер"
+msgstr "Кафедралар"
 
-#: .\templates\core\search.html:101
-#: .\templates\students\student_detail.html:43
-#: .\templates\teachers\teacher_detail.html:43
+#: .\templates\core\search.html:93 .\templates\students\student_detail.html:40
+#: .\templates\teachers\teacher_detail.html:40
 msgid "No certificates found."
-msgstr "Сертификаттар табылмады."
+msgstr "Сертификаттар табылған жоқ."
 
-#: .\templates\core\search.html:111 .\templates\nav-bar.html:37
+#: .\templates\core\search.html:102 .\templates\nav-bar.html:35
 msgid "Managers"
 msgstr "Менеджерлер"
 
-#: .\templates\core\search.html:129 .\templates\footer.html:29
-#: .\templates\nav-bar.html:42
+#: .\templates\core\search.html:119 .\templates\footer.html:28
+#: .\templates\nav-bar.html:40
 msgid "Teachers"
 msgstr "Мұғалімдер"
 
-#: .\templates\core\search.html:147 .\templates\nav-bar.html:47
+#: .\templates\core\search.html:136 .\templates\nav-bar.html:45
 msgid "Students"
 msgstr "Студенттер"
 
-#: .\templates\departments\department_confirm_delete.html:4
-#: .\templates\departments\department_confirm_delete.html:9
+#: .\templates\departments\department_confirm_delete.html:3
+#: .\templates\departments\department_confirm_delete.html:7
 msgid "Delete Department"
-msgstr "Бөлімді Жою"
+msgstr "Кафедраны алып тастау"
 
-#: .\templates\departments\department_confirm_delete.html:13
-#: .\templates\faculties\faculty_confirm_delete.html:12
-#: .\templates\managers\manager_confirm_delete.html:12
+#: .\templates\departments\department_confirm_delete.html:10
+#: .\templates\faculties\faculty_confirm_delete.html:10
+#: .\templates\managers\manager_confirm_delete.html:10
 msgid "Are you sure you want to delete this"
 msgstr "Сіз мұны жойғыңыз келетініне сенімдісіз бе"
 
-#: .\templates\departments\department_confirm_delete.html:13
-#: .\templates\search-bar.html:24
+#: .\templates\departments\department_confirm_delete.html:10
+#: .\templates\search-bar.html:23
 msgid "department"
-msgstr "бөлім"
+msgstr "кафедра"
 
-#: .\templates\departments\department_detail.html:4
-#: .\templates\departments\department_detail.html:8
-#: .\templates\managers\manager_detail.html:15
-#: .\templates\managers\manager_list.html:19 .\templates\nav-bar.html:32
-#: .\templates\students\student_detail.html:16
+#: .\templates\departments\department_detail.html:3
+#: .\templates\departments\department_detail.html:6
+#: .\templates\managers\manager_detail.html:13
+#: .\templates\managers\manager_list.html:19 .\templates\nav-bar.html:30
+#: .\templates\students\student_detail.html:14
 #: .\templates\students\student_list.html:19
-#: .\templates\teachers\teacher_detail.html:16
-#: .\templates\teachers\teacher_list.html:18
+#: .\templates\teachers\teacher_detail.html:14
+#: .\templates\teachers\teacher_list.html:16
 msgid "Department"
-msgstr "Бөлім"
+msgstr "Kафедра"
+
+#: .\templates\departments\department_detail.html:9
+msgid "Head of Department"
+msgstr "Кафедра басшысы"
 
 #: .\templates\departments\department_detail.html:12
-msgid "Head of Department"
-msgstr "Бөлім басшысы"
-
-#: .\templates\departments\department_detail.html:15
 msgid "Number of Managers"
 msgstr "Менеджерлер саны"
 
-#: .\templates\departments\department_detail.html:18
+#: .\templates\departments\department_detail.html:15
 msgid "Number of Teachers"
 msgstr "Мұғалімдер саны"
 
-#: .\templates\departments\department_detail.html:21
+#: .\templates\departments\department_detail.html:18
 msgid "Number of Students"
 msgstr "Студенттер саны"
 
-#: .\templates\departments\department_detail.html:29
-#: .\templates\faculties\faculty_detail.html:53
+#: .\templates\departments\department_detail.html:25
+#: .\templates\faculties\faculty_detail.html:47
 msgid "Edit"
 msgstr "Өңдеу"
 
 #: .\templates\departments\department_form.html:3
 msgid "Department Form"
-msgstr "Бөлім Нысаны"
+msgstr "Кафедра формасы"
+
+#: .\templates\departments\department_form.html:10
+msgid "Edit Department"
+msgstr "Кафедраны редакциялау"
 
 #: .\templates\departments\department_form.html:12
-msgid "Edit Department"
-msgstr "Редакциялау Бөлімі"
-
-#: .\templates\departments\department_form.html:14
-#: .\templates\departments\department_list.html:13
+#: .\templates\departments\department_list.html:10
 msgid "Create New Department"
-msgstr "Жаңа Бөлім Құру"
+msgstr "Жаңа кафедра қосу"
 
-#: .\templates\departments\department_form.html:27
-#: .\templates\faculties\faculty_form.html:28
-#: .\templates\managers\manager_form.html:36
-#: .\templates\students\student_form.html:52
-#: .\templates\teachers\teacher_form.html:36
+#: .\templates\departments\department_form.html:23
+#: .\templates\faculties\faculty_form.html:23
+#: .\templates\managers\manager_form.html:30
+#: .\templates\students\student_form.html:46
+#: .\templates\teachers\teacher_form.html:31
 msgid "Save Changes"
-msgstr "Өзгерістерді Сақтау"
+msgstr "Өзгерістерді сақтау"
 
-#: .\templates\departments\department_list.html:21
+#: .\templates\departments\department_list.html:17
 msgid "Department Name"
-msgstr "Бөлімнің Атауы"
+msgstr "Кафедра атауы"
 
-#: .\templates\departments\department_list.html:22
+#: .\templates\departments\department_list.html:18
 msgid "Department Head"
-msgstr "Бөлім Басшысы"
+msgstr "Кафедра басшысы"
 
-#: .\templates\departments\department_list.html:23
-#: .\templates\faculties\faculty_detail.html:4
-#: .\templates\faculties\faculty_detail.html:8 .\templates\nav-bar.html:27
+#: .\templates\departments\department_list.html:19
+#: .\templates\faculties\faculty_detail.html:3
+#: .\templates\faculties\faculty_detail.html:6 .\templates\nav-bar.html:25
 msgid "Faculty"
 msgstr "Факультет"
 
-#: .\templates\departments\department_list.html:25
-#: .\templates\faculties\faculty_list.html:28
-#: .\templates\managers\manager_list.html:32
-#: .\templates\managers\manager_list.html:119
+#: .\templates\departments\department_list.html:21
+#: .\templates\faculties\faculty_list.html:24
+#: .\templates\managers\manager_list.html:34
+#: .\templates\managers\manager_list.html:133
 #: .\templates\students\student_list.html:32
-#: .\templates\students\student_list.html:130
-#: .\templates\teachers\teacher_list.html:33
-#: .\templates\teachers\teacher_list.html:129
+#: .\templates\students\student_list.html:128
+#: .\templates\teachers\teacher_list.html:31
+#: .\templates\teachers\teacher_list.html:123
 msgid "Actions"
 msgstr "Әрекеттер"
 
-#: .\templates\departments\department_list.html:44
+#: .\templates\departments\department_list.html:40
 msgid "Not Assigned"
-msgstr "Тағайындалмаған"
+msgstr "Тағайындалған жоқ"
 
-#: .\templates\departments\department_list.html:63
+#: .\templates\departments\department_list.html:58
 msgid "No departments found."
-msgstr "Бөлімдер табылған жоқ."
+msgstr "Бірде-бір кафедра табылған жоқ"
 
-#: .\templates\departments\department_list.html:64
+#: .\templates\departments\department_list.html:59
 msgid "Create a new department"
-msgstr "Жаңа бөлім құру"
+msgstr "Жаңа кафедра қосу"
 
-#: .\templates\faculties\faculty_confirm_delete.html:4
-#: .\templates\faculties\faculty_confirm_delete.html:9
+#: .\templates\faculties\faculty_confirm_delete.html:3
+#: .\templates\faculties\faculty_confirm_delete.html:7
 msgid "Delete Faculty"
-msgstr "Факультетті Жою"
+msgstr "Факультетті жою"
 
-#: .\templates\faculties\faculty_confirm_delete.html:12
+#: .\templates\faculties\faculty_confirm_delete.html:10
 msgid "faculty? This action cannot be undone."
 msgstr "факультет? Бұл әрекетті қайтару мүмкін емес."
 
-#: .\templates\faculties\faculty_detail.html:12
+#: .\templates\faculties\faculty_detail.html:9
 msgid "Dean of Faculty"
 msgstr "Факультет деканы"
 
-#: .\templates\faculties\faculty_detail.html:17
-#: .\templates\faculties\faculty_list.html:25
+#: .\templates\faculties\faculty_detail.html:14
+#: .\templates\faculties\faculty_list.html:21
 msgid "Location"
-msgstr "Орналасуы"
+msgstr "Орналасқан жері"
 
-#: .\templates\faculties\faculty_detail.html:20
-#: .\templates\faculties\faculty_list.html:23
+#: .\templates\faculties\faculty_detail.html:17
+#: .\templates\faculties\faculty_list.html:19
 msgid "Website"
-msgstr "Сайты"
+msgstr "Веб-сайт"
 
-#: .\templates\faculties\faculty_detail.html:22
+#: .\templates\faculties\faculty_detail.html:19
 msgid "Visit Website"
-msgstr "Веб-Сайтқа Кіріңіз"
+msgstr "Веб-сайтқа кіріңіз"
 
-#: .\templates\faculties\faculty_detail.html:24
+#: .\templates\faculties\faculty_detail.html:21
 msgid "Not Available"
-msgstr "Жоқ"
+msgstr "Қол жетімді емес"
 
-#: .\templates\faculties\faculty_detail.html:28
-#: .\templates\faculties\faculty_list.html:24
-#: .\templates\managers\manager_detail.html:27
-#: .\templates\managers\manager_list.html:30
-#: .\templates\managers\manager_list.html:117
-#: .\templates\students\student_detail.html:28
+#: .\templates\faculties\faculty_detail.html:25
+#: .\templates\faculties\faculty_list.html:20
+#: .\templates\managers\manager_detail.html:25
+#: .\templates\managers\manager_list.html:32
+#: .\templates\managers\manager_list.html:131
+#: .\templates\students\student_detail.html:26
 #: .\templates\students\student_list.html:29
-#: .\templates\students\student_list.html:127
-#: .\templates\teachers\teacher_detail.html:28
-#: .\templates\teachers\teacher_list.html:30
-#: .\templates\teachers\teacher_list.html:126
+#: .\templates\students\student_list.html:125
+#: .\templates\teachers\teacher_detail.html:26
+#: .\templates\teachers\teacher_list.html:28
+#: .\templates\teachers\teacher_list.html:120
 msgid "Contact Email"
-msgstr "байланыс электрондық поштасы"
+msgstr "Байланыс электрондық поштасы"
 
-#: .\templates\faculties\faculty_detail.html:34
+#: .\templates\faculties\faculty_detail.html:29
 msgid "Number of Departments"
 msgstr "Кафедралар саны"
 
-#: .\templates\faculties\faculty_detail.html:44
+#: .\templates\faculties\faculty_detail.html:39
 msgid "No departments are associated with this faculty."
 msgstr "Бұл факультетпен ешқандай кафедралар байланысы жоқ."
 
@@ -411,43 +418,43 @@ msgstr "Бұл факультетпен ешқандай кафедралар б
 msgid "Faculty Form"
 msgstr "Факультет формасы"
 
-#: .\templates\faculties\faculty_form.html:12
+#: .\templates\faculties\faculty_form.html:10
 msgid "Edit Faculty"
 msgstr "Факультетті өңдеу"
 
-#: .\templates\faculties\faculty_form.html:14
-#: .\templates\faculties\faculty_list.html:13
+#: .\templates\faculties\faculty_form.html:12
+#: .\templates\faculties\faculty_list.html:10
 msgid "Create New Faculty"
-msgstr "Жаңа факультет құру"
+msgstr "Жаңа факультет қосу"
 
-#: .\templates\faculties\faculty_form.html:36
+#: .\templates\faculties\faculty_form.html:30
 msgid "Back to Faculty List"
-msgstr "Факультеттер тізімі дегенге қайта келу"
+msgstr "Факультеттер тізіміне оралу"
 
-#: .\templates\faculties\faculty_list.html:4
-#: .\templates\faculties\faculty_list.html:8 .\templates\footer.html:26
+#: .\templates\faculties\faculty_list.html:3
+#: .\templates\faculties\faculty_list.html:6 .\templates\footer.html:25
 msgid "Faculties"
 msgstr "Факультеттер"
 
-#: .\templates\faculties\faculty_list.html:21
+#: .\templates\faculties\faculty_list.html:17
 msgid "Faculty Name"
 msgstr "Факультет атауы"
 
-#: .\templates\faculties\faculty_list.html:22
+#: .\templates\faculties\faculty_list.html:18
 msgid "Dean"
 msgstr "Декан"
 
-#: .\templates\faculties\faculty_list.html:26
+#: .\templates\faculties\faculty_list.html:22
 msgid "Created At"
 msgstr "Құрылған"
 
-#: .\templates\faculties\faculty_list.html:70
+#: .\templates\faculties\faculty_list.html:66
 msgid "No faculties found."
-msgstr "Факультеттер табылмады."
+msgstr "Факультеттер табылған жоқ."
 
-#: .\templates\faculties\faculty_list.html:71
+#: .\templates\faculties\faculty_list.html:67
 msgid "Create a new faculty"
-msgstr "Жаңа факультет құру"
+msgstr "Жаңа факультет қосу"
 
 #: .\templates\footer.html:9
 msgid "About Us"
@@ -463,37 +470,37 @@ msgstr ""
 "\n"
 "Q-hub - бұл студенттерді, мұғалімдерді және кәсіби мамандарды байланыстыруға арналған платформа. Біздің миссиямыз, көзқарасымыз және құндылықтарымыз туралы көбірек біліңіз."
 
-#: .\templates\footer.html:20
+#: .\templates\footer.html:19
 msgid "Quick Links"
 msgstr "Жылдам сілтемелер"
 
-#: .\templates\footer.html:23
+#: .\templates\footer.html:22
 msgid "Home"
 msgstr "Басты бет"
 
-#: .\templates\footer.html:35 .\templates\nav-bar.html:52
-#: .\templates\students\student_detail.html:33
-#: .\templates\teachers\teacher_detail.html:33
+#: .\templates\footer.html:34 .\templates\nav-bar.html:50
+#: .\templates\students\student_detail.html:30
+#: .\templates\teachers\teacher_detail.html:30
 msgid "Certificates"
 msgstr "Сертификаттар"
 
-#: .\templates\footer.html:42
+#: .\templates\footer.html:40
 msgid "Contact Us"
 msgstr "Бізбен байланысыңыз"
 
-#: .\templates\footer.html:44
+#: .\templates\footer.html:42
 msgid "Email"
 msgstr "Электрондық пошта (e-mail)"
 
-#: .\templates\footer.html:45
+#: .\templates\footer.html:43
 msgid "Phone"
 msgstr "Телефон"
 
-#: .\templates\footer.html:46
+#: .\templates\footer.html:44
 msgid "Address"
 msgstr "Мекенжайы (адрес)"
 
-#: .\templates\footer.html:62
+#: .\templates\footer.html:58
 msgid "All rights reserved."
 msgstr "Барлық құқықтар қорғалған."
 
@@ -501,7 +508,7 @@ msgstr "Барлық құқықтар қорғалған."
 msgid "Welcome to Qualification Hub"
 msgstr "Қош келдіңіз Qualification Hub-қа!"
 
-#: .\templates\home.html:39
+#: .\templates\home.html:38
 msgid ""
 " \n"
 "              Easily upload, organize, and access your\n"
@@ -510,27 +517,23 @@ msgid ""
 "              institutions. \n"
 "              "
 msgstr ""
-"Университеттік сертификаттарыңызды бір жерде оңай жүктеп, ұйымдастырып және "
-"қол жеткізіңіз. Академиялық жетістіктеріңізді бақылап, оларды жұмыс "
-"берушілермен немесе оқу орындарымен бөлісіңіз."
+"Ыңғайлы жүктеу, жүйелеу және қол жетімділік\n"
+"жеке сертификаттар бір жерде. Академиялық сабақтарыңызды қадағалаңыз\n"
+"және оларды жұмыс берушілермен немесе оқу орындарымен бөлісіңіз."
 
-#: .\templates\home.html:54
+#: .\templates\home.html:52
 msgid " Join to us!"
-msgstr "Бізге қосылыңыз!"
+msgstr "Қосылыңыз!"
 
-#: .\templates\home.html:61
-msgid " Business collaboration based on trust"
-msgstr "Сенімге негізделген бизнес ынтымақтастығы."
-
-#: .\templates\managers\manager_confirm_delete.html:4
+#: .\templates\managers\manager_confirm_delete.html:3
 msgid "Delete Manager"
-msgstr "Менеджерді жою."
+msgstr "Менеджерді жою"
 
-#: .\templates\managers\manager_confirm_delete.html:9
+#: .\templates\managers\manager_confirm_delete.html:7
 msgid "Delete manager"
-msgstr "Менеджерді жою."
+msgstr "Менеджерді жою"
 
-#: .\templates\managers\manager_confirm_delete.html:13
+#: .\templates\managers\manager_confirm_delete.html:11
 msgid ""
 "manager? This will also delete the associated user. This action cannot be "
 "undone."
@@ -542,151 +545,161 @@ msgstr ""
 msgid "Manager"
 msgstr "Менеджер"
 
-#: .\templates\managers\manager_detail.html:7
+#: .\templates\managers\manager_detail.html:6
 msgid "Manager Details"
-msgstr "Менеджердің мәліметтері"
+msgstr "Менеджер туралы мәліметтер"
 
-#: .\templates\managers\manager_detail.html:12
-#: .\templates\managers\manager_list.html:27
-#: .\templates\managers\manager_list.html:114
-#: .\templates\students\student_detail.html:13
+#: .\templates\managers\manager_detail.html:10
+#: .\templates\managers\manager_list.html:29
+#: .\templates\managers\manager_list.html:128
+#: .\templates\students\student_detail.html:11
 #: .\templates\students\student_list.html:26
-#: .\templates\students\student_list.html:124
-#: .\templates\teachers\teacher_detail.html:13
-#: .\templates\teachers\teacher_list.html:25
-#: .\templates\teachers\teacher_list.html:121
+#: .\templates\students\student_list.html:122
+#: .\templates\teachers\teacher_detail.html:11
+#: .\templates\teachers\teacher_list.html:23
+#: .\templates\teachers\teacher_list.html:115
 msgid "Full Name"
 msgstr "Толық аты-жөні"
 
-#: .\templates\managers\manager_detail.html:18
-#: .\templates\managers\manager_list.html:28
-#: .\templates\managers\manager_list.html:115
-#: .\templates\students\student_detail.html:19
-#: .\templates\teachers\teacher_detail.html:19
-#: .\templates\teachers\teacher_list.html:26
-#: .\templates\teachers\teacher_list.html:122
+#: .\templates\managers\manager_detail.html:16
+#: .\templates\managers\manager_list.html:30
+#: .\templates\managers\manager_list.html:129
+#: .\templates\students\student_detail.html:17
+#: .\templates\teachers\teacher_detail.html:17
+#: .\templates\teachers\teacher_list.html:24
+#: .\templates\teachers\teacher_list.html:116
 msgid "Role"
 msgstr "Рөлі"
 
-#: .\templates\managers\manager_detail.html:21
+#: .\templates\managers\manager_detail.html:19
 msgid "Appointed Date"
 msgstr "Тағайындалған күні"
 
-#: .\templates\managers\manager_detail.html:24
-#: .\templates\managers\manager_list.html:29
-#: .\templates\managers\manager_list.html:116
-#: .\templates\students\student_detail.html:25
+#: .\templates\managers\manager_detail.html:22
+#: .\templates\managers\manager_list.html:31
+#: .\templates\managers\manager_list.html:130
+#: .\templates\students\student_detail.html:23
 #: .\templates\students\student_list.html:28
-#: .\templates\students\student_list.html:126
-#: .\templates\teachers\teacher_detail.html:25
-#: .\templates\teachers\teacher_list.html:29
-#: .\templates\teachers\teacher_list.html:125
+#: .\templates\students\student_list.html:124
+#: .\templates\teachers\teacher_detail.html:23
+#: .\templates\teachers\teacher_list.html:27
+#: .\templates\teachers\teacher_list.html:119
 msgid "Phone Number"
 msgstr "Телефон нөмірі"
 
-#: .\templates\managers\manager_detail.html:36
-#: .\templates\students\student_detail.html:56
-#: .\templates\teachers\teacher_detail.html:58
+#: .\templates\managers\manager_detail.html:33
+#: .\templates\students\student_detail.html:52
+#: .\templates\teachers\teacher_detail.html:54
 msgid "Update"
 msgstr "Жаңарту"
 
-#: .\templates\managers\manager_form.html:6
-#: .\templates\managers\manager_form.html:19
+#: .\templates\managers\manager_form.html:5
+#: .\templates\managers\manager_form.html:16
 msgid "Edit Manager"
 msgstr "Менеджерді өңдеу"
 
-#: .\templates\managers\manager_form.html:8
-#: .\templates\managers\manager_form.html:21
+#: .\templates\managers\manager_form.html:7
+#: .\templates\managers\manager_form.html:18
 #: .\templates\managers\manager_list.html:10
 msgid "Create New Manager"
-msgstr "Жаңа менеджер құру"
+msgstr "Жаңа менеджер қосу"
 
 #: .\templates\managers\manager_list.html:3
 msgid "Managers List"
 msgstr "Менеджерлер тізімі"
 
-#: .\templates\managers\manager_list.html:26
-#: .\templates\managers\manager_list.html:113
+#: .\templates\managers\manager_list.html:28
+#: .\templates\managers\manager_list.html:127
 msgid "#"
 msgstr ""
 
-#: .\templates\managers\manager_list.html:107
+#: .\templates\managers\manager_list.html:121
 msgid "Managers Without Departments"
-msgstr "Бөлімдері жоқ менеджерлер"
+msgstr "Тағайындалмаған менеджерлер"
 
-#: .\templates\nav-bar.html:71
+#: .\templates\managers\manager_list.html:214
+#: .\templates\students\student_list.html:207
+#: .\templates\teachers\teacher_list.html:198
+msgid ""
+"The database\n"
+"    currently has no data; it's completely empty."
+msgstr ""
+"Мәліметтер базасы\n"
+"қазіргі уақытта деректер жоқ; ол мүлдем бос."
+
+#: .\templates\nav-bar.html:68
 msgid "Language"
-msgstr "Тіл"
+msgstr "Тілдер"
 
-#: .\templates\nav-bar.html:92 .\templates\nav-bar.html:96
+#: .\templates\nav-bar.html:96 .\templates\nav-bar.html:101
 msgid "Hello"
 msgstr "Сәлем"
 
-#: .\templates\nav-bar.html:102
+#: .\templates\nav-bar.html:107
 msgid "Logout"
 msgstr "Шығу"
 
-#: .\templates\nav-bar.html:108
+#: .\templates\nav-bar.html:113
 msgid "Sign Up"
 msgstr "Тіркелу"
 
-#: .\templates\nav-bar.html:113
+#: .\templates\nav-bar.html:118
 msgid "Sign In"
 msgstr "Кіру"
 
-#: .\templates\registration\login.html:4
+#: .\templates\registration\login.html:3
 msgid "Login"
 msgstr "Кіру"
 
-#: .\templates\registration\login.html:12
+#: .\templates\registration\login.html:10
 #: .\templates\registration\password_reset_complete.html:12
 msgid "Welcome"
 msgstr "Қош келдіңіз"
 
-#: .\templates\registration\login.html:17
+#: .\templates\registration\login.html:15
 #: .\templates\registration\password_reset_complete.html:17
 msgid "Login Image"
 msgstr "Кіру суреті"
 
-#: .\templates\registration\login.html:21
+#: .\templates\registration\login.html:19
 #: .\templates\registration\password_reset_complete.html:21
 msgid "Not a member yet"
-msgstr "Әлі мүшесі емессіз бе?"
+msgstr "Әлі тіркелмеген сіз бе?"
 
-#: .\templates\registration\login.html:22
+#: .\templates\registration\login.html:20
 #: .\templates\registration\password_reset_complete.html:22
 #: .\templates\registration\password_reset_confirm.html:21
 msgid "Register now"
 msgstr "Қазір тіркеліңіз"
 
-#: .\templates\registration\login.html:28
+#: .\templates\registration\login.html:26
 #: .\templates\registration\password_reset_form.html:63
 msgid "Log in"
 msgstr "Кіру"
 
-#: .\templates\registration\login.html:44
+#: .\templates\registration\login.html:40
 msgid "Email or Username"
-msgstr "Электрондық пошта немесе пайдаланушы аты"
+msgstr "Email немесе пайдаланушы аты"
 
-#: .\templates\registration\login.html:50
+#: .\templates\registration\login.html:46
 msgid "name@example.com"
 msgstr ""
 
-#: .\templates\registration\login.html:55
+#: .\templates\registration\login.html:51
 msgid "Password"
 msgstr "Құпия сөз"
 
-#: .\templates\registration\login.html:77
+#: .\templates\registration\login.html:72
 msgid "Keep me logged in"
 msgstr "Мені жүйеде қалдыру"
 
-#: .\templates\registration\login.html:83
+#: .\templates\registration\login.html:77
 #: .\templates\registration\password_reset_complete.html:45
-#: .\templates\registration\register.html:22
+#: .\templates\registration\register.html:21
 msgid "Log in now"
 msgstr "Қазір кіру"
 
-#: .\templates\registration\login.html:90
+#: .\templates\registration\login.html:83
 msgid "Forgot password"
 msgstr "Құпия сөзді ұмыттыңыз ба?"
 
@@ -819,20 +832,19 @@ msgstr ""
 
 #: .\templates\registration\password_reset_done.html:21
 msgid "Ensure the email address you entered is correct."
-msgstr ""
-"Сіз енгізген электрондық пошта мекенжайының дұрыс екеніне көз жеткізіңіз."
+msgstr "Электрондық пошта мекенжайын дұрыс көрсеткеніңізге көз жеткізіңіз."
 
 #: .\templates\registration\password_reset_done.html:22
 msgid ""
 "Check your spam or junk folder; sometimes the email might end up there."
 msgstr ""
-"Спам немесе қалаусыз қалтаңызды тексеріңіз; кейде электрондық пошта сонда "
-"аяқталуы мүмкін."
+"Спам қалтасын тексеріңіз; кейде электрондық пошта дәл сол жерде болуы "
+"мүмкін."
 
 #: .\templates\registration\password_reset_done.html:23
 msgid "Give it a few minutes, as email delivery can sometimes be delayed."
 msgstr ""
-"Оған бірнеше минут беріңіз, себебі электрондық поштаны жеткізу кейде "
+"Бұған бірнеше минут бөліңіз, өйткені электрондық поштаны жеткізу кейде "
 "кешіктірілуі мүмкін."
 
 #: .\templates\registration\password_reset_done.html:27
@@ -883,36 +895,45 @@ msgstr ""
 
 #: .\templates\registration\password_reset_form.html:64
 #: .\templates\registration\register.html:4
-#: .\templates\registration\register.html:28
-#: .\templates\registration\register.html:34
+#: .\templates\registration\register.html:27
+#: .\templates\registration\register.html:33
 msgid "Register"
 msgstr "Тіркелу"
 
-#: .\templates\registration\register.html:12
+#: .\templates\registration\register.html:11
 msgid "Welcome to Registration"
 msgstr "Тіркеуге қош келдіңіз"
 
-#: .\templates\registration\register.html:17
+#: .\templates\registration\register.html:16
 msgid "Registration Image"
 msgstr "Тіркеу суреті"
 
-#: .\templates\registration\register.html:21
+#: .\templates\registration\register.html:20
 msgid "Already have an account"
 msgstr "Тіркелгі бар"
 
-#: .\templates\search-bar.html:22
+#: .\templates\search-bar.html:10
+msgid "What are you looking for"
+msgstr "Сіз не іздейсіз"
+
+#: .\templates\search-bar.html:16
+#| msgid "Search Results"
+msgid "Search"
+msgstr "Іздеу"
+
+#: .\templates\search-bar.html:21
 msgid "Quick search"
 msgstr "Жылдам іздеу"
 
-#: .\templates\search-bar.html:23
+#: .\templates\search-bar.html:22
 msgid "username"
 msgstr "пайдаланушы аты"
 
-#: .\templates\search-bar.html:25
+#: .\templates\search-bar.html:24
 msgid "certificate organization"
 msgstr "сертификаттау ұйымы"
 
-#: .\templates\search-bar.html:26
+#: .\templates\search-bar.html:25
 msgid "certificate number"
 msgstr "сертификат нөмірі"
 
@@ -936,52 +957,52 @@ msgstr ""
 "студент?Бұл сонымен қатар байланысты пайдаланушыны жояды. Бұл әрекетті "
 "қайтару мүмкін емес."
 
-#: .\templates\students\student_detail.html:8
+#: .\templates\students\student_detail.html:7
 msgid "Student Details"
 msgstr "Студенттік Мәліметтер"
 
-#: .\templates\students\student_detail.html:22
+#: .\templates\students\student_detail.html:20
 #: .\templates\students\student_list.html:30
-#: .\templates\students\student_list.html:128
+#: .\templates\students\student_list.html:126
 msgid "Enrollment Date"
-msgstr "Тіркеу Күні"
+msgstr "Қабылдау күні"
 
-#: .\templates\students\student_detail.html:46
-#: .\templates\teachers\teacher_detail.html:47
+#: .\templates\students\student_detail.html:43
+#: .\templates\teachers\teacher_detail.html:44
 msgid "Add New Certificate"
-msgstr "Жаңа Сертификат Қосыңыз"
+msgstr "Жаңа сертификат қоcy"
 
 #: .\templates\students\student_form.html:6
-#: .\templates\students\student_form.html:19
+#: .\templates\students\student_form.html:17
 msgid "Edit Student"
-msgstr "Студентті Өңдеу"
+msgstr "Студент деректерін өңдеу"
 
 #: .\templates\students\student_form.html:8
-#: .\templates\students\student_form.html:21
+#: .\templates\students\student_form.html:19
 #: .\templates\students\student_list.html:10
 msgid "Create New Student"
-msgstr "Жаңа Студент Жасаңыз"
+msgstr "Жаңа студент қосу"
 
 #: .\templates\students\student_list.html:4
 msgid "Students List"
-msgstr "Студенттер Тізімі"
+msgstr "Студенттер тізімі"
 
 #: .\templates\students\student_list.html:27
-#: .\templates\students\student_list.html:125
+#: .\templates\students\student_list.html:123
 msgid "Major"
-msgstr "Мамандығы"
+msgstr "Oсновная степень"
 
-#: .\templates\students\student_list.html:117
+#: .\templates\students\student_list.html:115
 msgid "Students Without Departments"
-msgstr "Кафедрасыз Студенттер"
+msgstr "Не закрепленные студенты"
 
 #: .\templates\teachers\teacher_confirm_delete.html:3
 msgid "Delete Teacher"
-msgstr "Мұғалімді Жою"
+msgstr "Мұғалімді жою"
 
 #: .\templates\teachers\teacher_confirm_delete.html:8
 msgid "Delete teacher"
-msgstr "Мұғалімді Жою"
+msgstr "Мұғалімді жою"
 
 #: .\templates\teachers\teacher_confirm_delete.html:12
 msgid " Are you sure you want to delete this "
@@ -995,41 +1016,47 @@ msgstr ""
 "мұғалім?Бұл да болады\n"
 "байланысты пайдаланушыны жойыңыз. Бұл әрекетті қайтару мүмкін емес."
 
-#: .\templates\teachers\teacher_detail.html:8
+#: .\templates\teachers\teacher_detail.html:7
 msgid "Teacher Details"
-msgstr "Мұғалім Туралы Мәліметтер"
+msgstr "Мұғалім туралы мәліметтер"
 
-#: .\templates\teachers\teacher_detail.html:22
-#: .\templates\teachers\teacher_list.html:31
-#: .\templates\teachers\teacher_list.html:127
+#: .\templates\teachers\teacher_detail.html:20
+#: .\templates\teachers\teacher_list.html:29
+#: .\templates\teachers\teacher_list.html:121
 msgid "Hire Date"
-msgstr "Жалдау Күні"
+msgstr "Жұмысқа қабылдау күні"
 
 #: .\templates\teachers\teacher_form.html:6
-#: .\templates\teachers\teacher_form.html:19
+#: .\templates\teachers\teacher_form.html:17
 msgid "Edit Teacher"
-msgstr "Мұғалімді Өңдеу"
+msgstr "Мұғалім деректерін өңдеу"
 
 #: .\templates\teachers\teacher_form.html:8
-#: .\templates\teachers\teacher_form.html:21
-#: .\templates\teachers\teacher_list.html:10
+#: .\templates\teachers\teacher_form.html:19
+#: .\templates\teachers\teacher_list.html:9
 msgid "Create New Teacher"
-msgstr "Жаңа Мұғалім Жасаңыз"
+msgstr "Жаңа мұғалім қосy"
 
 #: .\templates\teachers\teacher_list.html:4
 msgid "Teachers List"
-msgstr "Мұғалімдер Тізімі"
+msgstr "Мұғалімдер тізімі"
 
-#: .\templates\teachers\teacher_list.html:27
-#: .\templates\teachers\teacher_list.html:123
+#: .\templates\teachers\teacher_list.html:25
+#: .\templates\teachers\teacher_list.html:117
 msgid "Subject Taught"
-msgstr "Оқытылатын Пән"
+msgstr "Оқытылатын пән"
 
-#: .\templates\teachers\teacher_list.html:28
-#: .\templates\teachers\teacher_list.html:124
+#: .\templates\teachers\teacher_list.html:26
+#: .\templates\teachers\teacher_list.html:118
 msgid "Room Number"
-msgstr "Бөлме Нөмірі"
+msgstr "Аудитория"
 
-#: .\templates\teachers\teacher_list.html:114
+#: .\templates\teachers\teacher_list.html:108
 msgid "Teachers Without Departments"
-msgstr "Кафедрасыз Оқытушылар"
+msgstr "Мұғалімдер тағайындалмаған"
+
+#~ msgid "Create Certificate"
+#~ msgstr "Cертификатты енгізіңіз"
+
+#~ msgid " Business collaboration based on trust"
+#~ msgstr "Сенімге негізделген бизнес ынтымақтастығы."

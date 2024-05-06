@@ -1,12 +1,9 @@
 {% extends '../base.html' %}
 {% load core_tags i18n %}  <!-- Load the translation tag library -->
-
 {% block title %}{% trans "Certificate Detail" %}{% endblock %}
-
 {% block content %}
 <div class="container mt-4 mb-4">
     <h1 class="display-5">{{ certificate.certificate_name }}</h1>
-    
     <div class="card mt-3">
         <div class="card-body">
             <p class="card-text">
@@ -34,7 +31,6 @@
                     {{ certificate.verification_url }}
                 </a>
             </p>
-            
             {% if certificate.teacher_owner %}
                 <p class="card-text">
                     <strong>{% trans "Owner" %}:</strong> {{ certificate.teacher_owner.user.username }}
@@ -46,14 +42,12 @@
             {% endif %}
         </div>
     </div>
-
     <div class="mt-4">
         {% if user.is_authenticated %}
         {% if user.pk == certificate.teacher_owner.user.pk or user.pk == certificate.student_owner.user.pk or user|in_group:'Managers' %}
         <a href="{% url 'certificates:update' certificate.pk %}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i> {% trans "Edit Certificate" %}
         </a>
-        
         <form method="post" action="{% url 'certificates:delete' certificate.pk %}" style="display: inline-block;">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">
@@ -62,7 +56,6 @@
         </form>
         {% endif %}
         {% endif %}
-        
         <a href="{% url 'certificates:list' %}" class="btn btn-secondary">
             <i class="bi bi-arrow-left"></i> {% trans "Back to Certificate List" %}
         </a>

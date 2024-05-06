@@ -2,15 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-01 15:12+0600\n"
-"PO-Revision-Date: 2024-04-30 23:04+0000\n"
-"Last-Translator: Anonymous User <anonymous@user.tld>\n"
+"POT-Creation-Date: 2024-05-05 21:58+0600\n"
+"PO-Revision-Date: 2024-05-06 15:14+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,890 +19,925 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\qualification_hub\settings.py:161
+#: .\qualification_hub\settings.py:163
 msgid "English"
 msgstr "English"
 
-#: .\qualification_hub\settings.py:162
+#: .\qualification_hub\settings.py:164
 msgid "Russian"
 msgstr "Russian"
 
-#: .\qualification_hub\settings.py:163
+#: .\qualification_hub\settings.py:165
 msgid "Kazakh"
 msgstr "Kazakh"
 
-#: .\templates\certificates\certificate_confirm_delete.html:4
-#: .\templates\certificates\certificate_detail.html:62
+#: .\templates\certificates\certificate_confirm_delete.html:3
+#: .\templates\certificates\certificate_detail.html:54
 msgid "Delete Certificate"
-msgstr "Delete Certificate"
+msgstr "Delete the certificate"
 
-#: .\templates\certificates\certificate_confirm_delete.html:9
-#, fuzzy
-#| msgid "Delete certificate:"
+#: .\templates\certificates\certificate_confirm_delete.html:7
 msgid "Delete certificate"
-msgstr "Delete certificate:"
+msgstr "Delete the certificate"
 
-#: .\templates\certificates\certificate_confirm_delete.html:12
+#: .\templates\certificates\certificate_confirm_delete.html:10
 msgid "Are you sure you want to delete"
-msgstr "Are you sure you want to delete"
+msgstr "Are you sure that you want to delete the"
 
-#: .\templates\certificates\certificate_confirm_delete.html:18
-#: .\templates\departments\department_confirm_delete.html:19
-#: .\templates\departments\department_detail.html:35
-#: .\templates\faculties\faculty_confirm_delete.html:18
-#: .\templates\faculties\faculty_detail.html:59
-#: .\templates\managers\manager_confirm_delete.html:19
-#: .\templates\managers\manager_detail.html:39
-#: .\templates\students\student_confirm_delete.html:15
-#: .\templates\students\student_detail.html:59
-#: .\templates\teachers\teacher_confirm_delete.html:19
-#: .\templates\teachers\teacher_detail.html:61
+#: .\templates\certificates\certificate_confirm_delete.html:15
+#: .\templates\departments\department_confirm_delete.html:15
+#: .\templates\departments\department_detail.html:30
+#: .\templates\faculties\faculty_confirm_delete.html:15
+#: .\templates\faculties\faculty_detail.html:52
+#: .\templates\managers\manager_confirm_delete.html:16
+#: .\templates\managers\manager_detail.html:36
+#: .\templates\students\student_confirm_delete.html:14
+#: .\templates\students\student_detail.html:55
+#: .\templates\teachers\teacher_confirm_delete.html:18
+#: .\templates\teachers\teacher_detail.html:57
 msgid "Delete"
 msgstr "Delete"
 
-#: .\templates\certificates\certificate_confirm_delete.html:23
-#: .\templates\departments\department_confirm_delete.html:24
-#: .\templates\departments\department_detail.html:41
-#: .\templates\departments\department_form.html:35
-#: .\templates\faculties\faculty_confirm_delete.html:23
-#: .\templates\faculties\faculty_detail.html:64
-#: .\templates\managers\manager_confirm_delete.html:24
-#: .\templates\managers\manager_detail.html:45
-#: .\templates\managers\manager_form.html:44
-#: .\templates\students\student_confirm_delete.html:20
-#: .\templates\students\student_detail.html:65
-#: .\templates\students\student_form.html:60
-#: .\templates\teachers\teacher_confirm_delete.html:24
-#: .\templates\teachers\teacher_detail.html:66
-#: .\templates\teachers\teacher_form.html:44
+#: .\templates\certificates\certificate_confirm_delete.html:19
+#: .\templates\departments\department_confirm_delete.html:19
+#: .\templates\departments\department_detail.html:35
+#: .\templates\departments\department_form.html:30
+#: .\templates\faculties\faculty_confirm_delete.html:19
+#: .\templates\faculties\faculty_detail.html:57
+#: .\templates\managers\manager_confirm_delete.html:20
+#: .\templates\managers\manager_detail.html:41
+#: .\templates\managers\manager_form.html:37
+#: .\templates\students\student_confirm_delete.html:18
+#: .\templates\students\student_detail.html:60
+#: .\templates\students\student_form.html:53
+#: .\templates\teachers\teacher_confirm_delete.html:22
+#: .\templates\teachers\teacher_detail.html:62
+#: .\templates\teachers\teacher_form.html:38
 msgid "Back to List"
-msgstr "Back to List"
+msgstr "Go back to the list"
 
-#: .\templates\certificates\certificate_detail.html:4
+#: .\templates\certificates\certificate_detail.html:3
 msgid "Certificate Detail"
-msgstr "Certificate Detail"
+msgstr "Detail of the certificate"
+
+#: .\templates\certificates\certificate_detail.html:10
+msgid "Organization"
+msgstr "The organisation"
 
 #: .\templates\certificates\certificate_detail.html:13
-#, fuzzy
-#| msgid "Organization:"
-msgid "Organization"
-msgstr "Organization:"
+#: .\templates\certificates\certificate_list.html:30
+#: .\templates\faculties\faculty_detail.html:11
+msgid "Description"
+msgstr "The description"
 
 #: .\templates\certificates\certificate_detail.html:16
-#: .\templates\certificates\certificate_list.html:31
-#: .\templates\faculties\faculty_detail.html:14
 #, fuzzy
-#| msgid "Description:"
-msgid "Description"
-msgstr "Description:"
+#| msgid "Expiration Date:"
+msgid "Expiration Date"
+msgstr "Expiration Date:"
 
-#: .\templates\certificates\certificate_detail.html:25
-#, fuzzy
-#| msgid "Issued By:"
+#: .\templates\certificates\certificate_detail.html:20
 msgid "Issued By"
-msgstr "Issued By:"
+msgstr "Issued by the"
 
-#: .\templates\certificates\certificate_detail.html:28
-#, fuzzy
-#| msgid "Certificate Number:"
+#: .\templates\certificates\certificate_detail.html:23
 msgid "Certificate Number"
-msgstr "Certificate Number:"
+msgstr "Number of the certificate (ID)"
 
-#: .\templates\certificates\certificate_detail.html:31
-#, fuzzy
-#| msgid "Date Earned:"
+#: .\templates\certificates\certificate_detail.html:26
 msgid "Date Earned"
-msgstr "Date Earned:"
+msgstr "Date on which earned"
 
-#: .\templates\certificates\certificate_detail.html:34
-#, fuzzy
-#| msgid "Verification URL:"
+#: .\templates\certificates\certificate_detail.html:29
 msgid "Verification URL"
-msgstr "Verification URL:"
+msgstr "URL for verification"
 
-#: .\templates\certificates\certificate_detail.html:42
-#: .\templates\certificates\certificate_detail.html:46
+#: .\templates\certificates\certificate_detail.html:36
+#: .\templates\certificates\certificate_detail.html:40
 msgid "Owner"
-msgstr "Owner"
+msgstr "Owned by"
 
-#: .\templates\certificates\certificate_detail.html:56
+#: .\templates\certificates\certificate_detail.html:49
+#: .\templates\certificates\certificate_form.html:5
 msgid "Edit Certificate"
-msgstr "Edit Certificate"
+msgstr "Edit certificate"
 
-#: .\templates\certificates\certificate_detail.html:69
+#: .\templates\certificates\certificate_detail.html:60
 msgid "Back to Certificate List"
-msgstr "Back to Certificate List"
+msgstr "Back to the list of certificates"
 
-#: .\templates\certificates\certificate_form.html:4
-msgid "Create Certificate"
-msgstr "Create Certificate"
-
-#: .\templates\certificates\certificate_form.html:10
-#: .\templates\certificates\certificate_list.html:12
+#: .\templates\certificates\certificate_form.html:7
+#: .\templates\certificates\certificate_form.html:14
+#: .\templates\certificates\certificate_list.html:11
 msgid "Create New Certificate"
-msgstr "Create New Certificate"
+msgstr "Add a new certificate"
 
-#: .\templates\certificates\certificate_form.html:21
-#: .\templates\departments\department_form.html:29
-#: .\templates\faculties\faculty_form.html:30
-#: .\templates\managers\manager_form.html:38
-#: .\templates\students\student_form.html:54
-#: .\templates\teachers\teacher_form.html:38
+#: .\templates\certificates\certificate_form.html:23
+#, fuzzy
+#| msgid "Save Changes"
+msgid "Save changes"
+msgstr "Save modifications"
+
+#: .\templates\certificates\certificate_form.html:25
+#: .\templates\departments\department_form.html:25
+#: .\templates\faculties\faculty_form.html:25
+#: .\templates\managers\manager_form.html:32
+#: .\templates\students\student_form.html:48
+#: .\templates\teachers\teacher_form.html:33
 msgid "Create"
 msgstr "Create"
 
-#: .\templates\certificates\certificate_form.html:26
+#: .\templates\certificates\certificate_form.html:30
 msgid "Back to Certificates List"
-msgstr "Back to Certificates List"
+msgstr "Back to the list of certificates"
 
 #: .\templates\certificates\certificate_list.html:4
 msgid "Certificate List"
-msgstr "Certificate List"
+msgstr "Certificates"
 
-#: .\templates\certificates\certificate_list.html:34
+#: .\templates\certificates\certificate_list.html:33
 msgid "View Details"
-msgstr "View Details"
+msgstr "See more"
 
-#: .\templates\certificates\certificate_list.html:46
+#: .\templates\certificates\certificate_list.html:45
 msgid "@None"
 msgstr "@None"
 
-#: .\templates\certificates\certificate_list.html:57
+#: .\templates\certificates\certificate_list.html:55
 msgid "Page navigation"
 msgstr "Page navigation"
 
-#: .\templates\certificates\certificate_list.html:62
-#: .\templates\managers\manager_list.html:67
-#: .\templates\managers\manager_list.html:72
-#: .\templates\managers\manager_list.html:150
-#: .\templates\managers\manager_list.html:155
-#: .\templates\students\student_list.html:75
-#: .\templates\students\student_list.html:80
-#: .\templates\students\student_list.html:173
-#: .\templates\students\student_list.html:178
-#: .\templates\teachers\teacher_list.html:74
-#: .\templates\teachers\teacher_list.html:78
-#: .\templates\teachers\teacher_list.html:170
-#: .\templates\teachers\teacher_list.html:174
+#: .\templates\certificates\certificate_list.html:60
+#: .\templates\managers\manager_list.html:79
+#: .\templates\managers\manager_list.html:84
+#: .\templates\managers\manager_list.html:176
+#: .\templates\managers\manager_list.html:181
+#: .\templates\students\student_list.html:74
+#: .\templates\students\student_list.html:79
+#: .\templates\students\student_list.html:170
+#: .\templates\students\student_list.html:175
+#: .\templates\teachers\teacher_list.html:71
+#: .\templates\teachers\teacher_list.html:75
+#: .\templates\teachers\teacher_list.html:163
+#: .\templates\teachers\teacher_list.html:167
 msgid "Previous"
 msgstr "Previous"
 
-#: .\templates\certificates\certificate_list.html:77
-#: .\templates\managers\manager_list.html:91
-#: .\templates\managers\manager_list.html:96
-#: .\templates\managers\manager_list.html:176
-#: .\templates\managers\manager_list.html:181
-#: .\templates\students\student_list.html:101
-#: .\templates\students\student_list.html:106
-#: .\templates\students\student_list.html:197
-#: .\templates\students\student_list.html:202
-#: .\templates\teachers\teacher_list.html:99
-#: .\templates\teachers\teacher_list.html:103
-#: .\templates\teachers\teacher_list.html:193
-#: .\templates\teachers\teacher_list.html:197
+#: .\templates\certificates\certificate_list.html:73
+#: .\templates\managers\manager_list.html:106
+#: .\templates\managers\manager_list.html:111
+#: .\templates\managers\manager_list.html:201
+#: .\templates\managers\manager_list.html:206
+#: .\templates\students\student_list.html:100
+#: .\templates\students\student_list.html:105
+#: .\templates\students\student_list.html:194
+#: .\templates\students\student_list.html:199
+#: .\templates\teachers\teacher_list.html:94
+#: .\templates\teachers\teacher_list.html:98
+#: .\templates\teachers\teacher_list.html:186
+#: .\templates\teachers\teacher_list.html:190
 msgid "Next"
 msgstr "Next"
 
-#: .\templates\core\search.html:4 .\templates\core\search.html:8
+#: .\templates\core\search.html:3 .\templates\core\search.html:6
 msgid "Search Results"
-msgstr ""
+msgstr "Results of the search"
 
-#: .\templates\core\search.html:13
+#: .\templates\core\search.html:10
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
-#: .\templates\core\search.html:20 .\templates\core\search.html:74
-#, fuzzy
-#| msgid "Certificate List"
+#: .\templates\core\search.html:16 .\templates\core\search.html:67
 msgid "certificates"
-msgstr "Certificate List"
+msgstr "certificates"
 
-#: .\templates\core\search.html:35 .\templates\core\search.html:88
+#: .\templates\core\search.html:30 .\templates\core\search.html:80
 #: .\templates\teachers\teacher_detail.html:4
 msgid "Teacher"
 msgstr "Teacher"
 
-#: .\templates\core\search.html:39 .\templates\core\search.html:92
+#: .\templates\core\search.html:34 .\templates\core\search.html:84
 #: .\templates\students\student_detail.html:4
 msgid "Student"
 msgstr "Student"
 
-#: .\templates\core\search.html:42 .\templates\core\search.html:95
+#: .\templates\core\search.html:37 .\templates\core\search.html:87
 msgid "No owner assigned"
-msgstr ""
+msgstr "No owner has been assigned"
 
-#: .\templates\core\search.html:48 .\templates\core\search.html:101
+#: .\templates\core\search.html:43 .\templates\core\search.html:93
 msgid "Warning"
-msgstr ""
+msgstr "Warning"
 
-#: .\templates\core\search.html:48
+#: .\templates\core\search.html:43
 msgid "No certificates from"
-msgstr ""
+msgstr "There are no certificates from"
 
-#: .\templates\core\search.html:58
-#: .\templates\departments\department_list.html:4
-#: .\templates\departments\department_list.html:8 .\templates\footer.html:32
+#: .\templates\core\search.html:52
+#: .\templates\departments\department_list.html:3
+#: .\templates\departments\department_list.html:6 .\templates\footer.html:31
 msgid "Departments"
-msgstr ""
+msgstr "Departments"
 
-#: .\templates\core\search.html:101
-#: .\templates\students\student_detail.html:43
-#: .\templates\teachers\teacher_detail.html:43
+#: .\templates\core\search.html:93 .\templates\students\student_detail.html:40
+#: .\templates\teachers\teacher_detail.html:40
 msgid "No certificates found."
-msgstr ""
+msgstr "No certificates have been found."
 
-#: .\templates\core\search.html:111 .\templates\nav-bar.html:37
+#: .\templates\core\search.html:102 .\templates\nav-bar.html:35
 msgid "Managers"
-msgstr ""
+msgstr "Managers"
 
-#: .\templates\core\search.html:129 .\templates\footer.html:29
-#: .\templates\nav-bar.html:42
+#: .\templates\core\search.html:119 .\templates\footer.html:28
+#: .\templates\nav-bar.html:40
 msgid "Teachers"
-msgstr ""
+msgstr "Teachers"
 
-#: .\templates\core\search.html:147 .\templates\nav-bar.html:47
+#: .\templates\core\search.html:136 .\templates\nav-bar.html:45
 msgid "Students"
-msgstr ""
+msgstr "Students"
 
-#: .\templates\departments\department_confirm_delete.html:4
-#: .\templates\departments\department_confirm_delete.html:9
+#: .\templates\departments\department_confirm_delete.html:3
+#: .\templates\departments\department_confirm_delete.html:7
 msgid "Delete Department"
-msgstr ""
+msgstr "Delete a department"
 
-#: .\templates\departments\department_confirm_delete.html:13
-#: .\templates\faculties\faculty_confirm_delete.html:12
-#: .\templates\managers\manager_confirm_delete.html:12
+#: .\templates\departments\department_confirm_delete.html:10
+#: .\templates\faculties\faculty_confirm_delete.html:10
+#: .\templates\managers\manager_confirm_delete.html:10
 msgid "Are you sure you want to delete this"
-msgstr ""
+msgstr "Are you sure that you want to delete this"
 
-#: .\templates\departments\department_confirm_delete.html:13
-#: .\templates\search-bar.html:24
+#: .\templates\departments\department_confirm_delete.html:10
+#: .\templates\search-bar.html:23
 msgid "department"
-msgstr ""
+msgstr "department"
 
-#: .\templates\departments\department_detail.html:4
-#: .\templates\departments\department_detail.html:8
-#: .\templates\managers\manager_detail.html:15
-#: .\templates\managers\manager_list.html:19 .\templates\nav-bar.html:32
-#: .\templates\students\student_detail.html:16
+#: .\templates\departments\department_detail.html:3
+#: .\templates\departments\department_detail.html:6
+#: .\templates\managers\manager_detail.html:13
+#: .\templates\managers\manager_list.html:19 .\templates\nav-bar.html:30
+#: .\templates\students\student_detail.html:14
 #: .\templates\students\student_list.html:19
-#: .\templates\teachers\teacher_detail.html:16
-#: .\templates\teachers\teacher_list.html:18
+#: .\templates\teachers\teacher_detail.html:14
+#: .\templates\teachers\teacher_list.html:16
 msgid "Department"
-msgstr ""
+msgstr "Department"
+
+#: .\templates\departments\department_detail.html:9
+msgid "Head of Department"
+msgstr "Head of the department"
 
 #: .\templates\departments\department_detail.html:12
-msgid "Head of Department"
-msgstr ""
+msgid "Number of Managers"
+msgstr "Number of managers"
 
 #: .\templates\departments\department_detail.html:15
-msgid "Number of Managers"
-msgstr ""
+msgid "Number of Teachers"
+msgstr "Number of teachers"
 
 #: .\templates\departments\department_detail.html:18
-msgid "Number of Teachers"
-msgstr ""
-
-#: .\templates\departments\department_detail.html:21
 msgid "Number of Students"
-msgstr ""
+msgstr "Number of students"
 
-#: .\templates\departments\department_detail.html:29
-#: .\templates\faculties\faculty_detail.html:53
+#: .\templates\departments\department_detail.html:25
+#: .\templates\faculties\faculty_detail.html:47
 msgid "Edit"
-msgstr ""
+msgstr "Editing"
 
 #: .\templates\departments\department_form.html:3
 msgid "Department Form"
-msgstr ""
+msgstr "Departmental form"
+
+#: .\templates\departments\department_form.html:10
+msgid "Edit Department"
+msgstr "Edit department"
 
 #: .\templates\departments\department_form.html:12
-msgid "Edit Department"
-msgstr ""
-
-#: .\templates\departments\department_form.html:14
-#: .\templates\departments\department_list.html:13
+#: .\templates\departments\department_list.html:10
 msgid "Create New Department"
-msgstr ""
+msgstr "Add a new department"
 
-#: .\templates\departments\department_form.html:27
-#: .\templates\faculties\faculty_form.html:28
-#: .\templates\managers\manager_form.html:36
-#: .\templates\students\student_form.html:52
-#: .\templates\teachers\teacher_form.html:36
+#: .\templates\departments\department_form.html:23
+#: .\templates\faculties\faculty_form.html:23
+#: .\templates\managers\manager_form.html:30
+#: .\templates\students\student_form.html:46
+#: .\templates\teachers\teacher_form.html:31
 msgid "Save Changes"
-msgstr ""
+msgstr "Save modifications"
+
+#: .\templates\departments\department_list.html:17
+msgid "Department Name"
+msgstr "Department name"
+
+#: .\templates\departments\department_list.html:18
+msgid "Department Head"
+msgstr "Head of department"
+
+#: .\templates\departments\department_list.html:19
+#: .\templates\faculties\faculty_detail.html:3
+#: .\templates\faculties\faculty_detail.html:6 .\templates\nav-bar.html:25
+msgid "Faculty"
+msgstr "Faculty"
 
 #: .\templates\departments\department_list.html:21
-msgid "Department Name"
-msgstr ""
-
-#: .\templates\departments\department_list.html:22
-msgid "Department Head"
-msgstr ""
-
-#: .\templates\departments\department_list.html:23
-#: .\templates\faculties\faculty_detail.html:4
-#: .\templates\faculties\faculty_detail.html:8 .\templates\nav-bar.html:27
-msgid "Faculty"
-msgstr ""
-
-#: .\templates\departments\department_list.html:25
-#: .\templates\faculties\faculty_list.html:28
-#: .\templates\managers\manager_list.html:32
-#: .\templates\managers\manager_list.html:119
+#: .\templates\faculties\faculty_list.html:24
+#: .\templates\managers\manager_list.html:34
+#: .\templates\managers\manager_list.html:133
 #: .\templates\students\student_list.html:32
-#: .\templates\students\student_list.html:130
-#: .\templates\teachers\teacher_list.html:33
-#: .\templates\teachers\teacher_list.html:129
+#: .\templates\students\student_list.html:128
+#: .\templates\teachers\teacher_list.html:31
+#: .\templates\teachers\teacher_list.html:123
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
-#: .\templates\departments\department_list.html:44
+#: .\templates\departments\department_list.html:40
 msgid "Not Assigned"
-msgstr ""
+msgstr "Not allocated"
 
-#: .\templates\departments\department_list.html:63
+#: .\templates\departments\department_list.html:58
 msgid "No departments found."
-msgstr ""
+msgstr "There are no departments found."
 
-#: .\templates\departments\department_list.html:64
+#: .\templates\departments\department_list.html:59
 msgid "Create a new department"
-msgstr ""
+msgstr "Add a new department"
 
-#: .\templates\faculties\faculty_confirm_delete.html:4
-#: .\templates\faculties\faculty_confirm_delete.html:9
+#: .\templates\faculties\faculty_confirm_delete.html:3
+#: .\templates\faculties\faculty_confirm_delete.html:7
 msgid "Delete Faculty"
-msgstr ""
+msgstr "Delete a faculty"
 
-#: .\templates\faculties\faculty_confirm_delete.html:12
+#: .\templates\faculties\faculty_confirm_delete.html:10
 msgid "faculty? This action cannot be undone."
-msgstr ""
+msgstr "faculty? This action cannot be undone"
 
-#: .\templates\faculties\faculty_detail.html:12
+#: .\templates\faculties\faculty_detail.html:9
 msgid "Dean of Faculty"
-msgstr ""
+msgstr "Dean of the Faculty"
+
+#: .\templates\faculties\faculty_detail.html:14
+#: .\templates\faculties\faculty_list.html:21
+msgid "Location"
+msgstr "Location"
 
 #: .\templates\faculties\faculty_detail.html:17
-#: .\templates\faculties\faculty_list.html:25
-msgid "Location"
-msgstr ""
-
-#: .\templates\faculties\faculty_detail.html:20
-#: .\templates\faculties\faculty_list.html:23
+#: .\templates\faculties\faculty_list.html:19
 msgid "Website"
-msgstr ""
+msgstr "Web site"
 
-#: .\templates\faculties\faculty_detail.html:22
+#: .\templates\faculties\faculty_detail.html:19
 msgid "Visit Website"
-msgstr ""
+msgstr "Visit the website"
 
-#: .\templates\faculties\faculty_detail.html:24
+#: .\templates\faculties\faculty_detail.html:21
 msgid "Not Available"
-msgstr ""
+msgstr "Unavailable"
 
-#: .\templates\faculties\faculty_detail.html:28
-#: .\templates\faculties\faculty_list.html:24
-#: .\templates\managers\manager_detail.html:27
-#: .\templates\managers\manager_list.html:30
-#: .\templates\managers\manager_list.html:117
-#: .\templates\students\student_detail.html:28
+#: .\templates\faculties\faculty_detail.html:25
+#: .\templates\faculties\faculty_list.html:20
+#: .\templates\managers\manager_detail.html:25
+#: .\templates\managers\manager_list.html:32
+#: .\templates\managers\manager_list.html:131
+#: .\templates\students\student_detail.html:26
 #: .\templates\students\student_list.html:29
-#: .\templates\students\student_list.html:127
-#: .\templates\teachers\teacher_detail.html:28
-#: .\templates\teachers\teacher_list.html:30
-#: .\templates\teachers\teacher_list.html:126
+#: .\templates\students\student_list.html:125
+#: .\templates\teachers\teacher_detail.html:26
+#: .\templates\teachers\teacher_list.html:28
+#: .\templates\teachers\teacher_list.html:120
 msgid "Contact Email"
-msgstr ""
+msgstr "E-mail contact"
 
-#: .\templates\faculties\faculty_detail.html:34
+#: .\templates\faculties\faculty_detail.html:29
 msgid "Number of Departments"
-msgstr ""
+msgstr "Number of departments"
 
-#: .\templates\faculties\faculty_detail.html:44
+#: .\templates\faculties\faculty_detail.html:39
 msgid "No departments are associated with this faculty."
-msgstr ""
+msgstr "There are no departments associated with this faculty."
 
 #: .\templates\faculties\faculty_form.html:3
 msgid "Faculty Form"
-msgstr ""
+msgstr "Form for the faculty"
+
+#: .\templates\faculties\faculty_form.html:10
+msgid "Edit Faculty"
+msgstr "Editing a faculty"
 
 #: .\templates\faculties\faculty_form.html:12
-msgid "Edit Faculty"
-msgstr ""
-
-#: .\templates\faculties\faculty_form.html:14
-#: .\templates\faculties\faculty_list.html:13
+#: .\templates\faculties\faculty_list.html:10
 msgid "Create New Faculty"
-msgstr ""
+msgstr "Add a new faculty"
 
-#: .\templates\faculties\faculty_form.html:36
+#: .\templates\faculties\faculty_form.html:30
 msgid "Back to Faculty List"
-msgstr ""
+msgstr "Back to the list of faculties"
 
-#: .\templates\faculties\faculty_list.html:4
-#: .\templates\faculties\faculty_list.html:8 .\templates\footer.html:26
+#: .\templates\faculties\faculty_list.html:3
+#: .\templates\faculties\faculty_list.html:6 .\templates\footer.html:25
 msgid "Faculties"
-msgstr ""
+msgstr "Faculties"
 
-#: .\templates\faculties\faculty_list.html:21
+#: .\templates\faculties\faculty_list.html:17
 msgid "Faculty Name"
-msgstr ""
+msgstr "Name of faculty"
+
+#: .\templates\faculties\faculty_list.html:18
+msgid "Dean"
+msgstr "Dean"
 
 #: .\templates\faculties\faculty_list.html:22
-msgid "Dean"
-msgstr ""
-
-#: .\templates\faculties\faculty_list.html:26
 msgid "Created At"
-msgstr ""
+msgstr "Date of creation"
 
-#: .\templates\faculties\faculty_list.html:70
+#: .\templates\faculties\faculty_list.html:66
 msgid "No faculties found."
-msgstr ""
+msgstr "No faculties have been found."
 
-#: .\templates\faculties\faculty_list.html:71
+#: .\templates\faculties\faculty_list.html:67
 msgid "Create a new faculty"
-msgstr ""
+msgstr "Add a faculty"
 
 #: .\templates\footer.html:9
 msgid "About Us"
-msgstr ""
+msgstr "About us"
 
 #: .\templates\footer.html:11
 msgid ""
 "\n"
-"          Q-hub is a platform dedicated to connecting students, teachers, "
-"and\n"
+"          Q-hub is a platform dedicated to connecting students, teachers, and\n"
 "          professionals. Learn more about our mission, vision, and values.\n"
 "          "
 msgstr ""
+"\n"
+"Q-hub is a platform dedicated to connecting students, teachers and professionals.\n"
+"professionals. Find out more about our mission, vision and values."
 
-#: .\templates\footer.html:20
+#: .\templates\footer.html:19
 msgid "Quick Links"
-msgstr ""
+msgstr "Fast links"
 
-#: .\templates\footer.html:23
+#: .\templates\footer.html:22
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
-#: .\templates\footer.html:35 .\templates\nav-bar.html:52
-#: .\templates\students\student_detail.html:33
-#: .\templates\teachers\teacher_detail.html:33
+#: .\templates\footer.html:34 .\templates\nav-bar.html:50
+#: .\templates\students\student_detail.html:30
+#: .\templates\teachers\teacher_detail.html:30
 msgid "Certificates"
-msgstr ""
+msgstr "Certificates"
+
+#: .\templates\footer.html:40
+msgid "Contact Us"
+msgstr "Contact us"
 
 #: .\templates\footer.html:42
-msgid "Contact Us"
-msgstr ""
+msgid "Email"
+msgstr "e-mail"
+
+#: .\templates\footer.html:43
+msgid "Phone"
+msgstr "Phone number"
 
 #: .\templates\footer.html:44
-msgid "Email"
-msgstr ""
-
-#: .\templates\footer.html:45
-msgid "Phone"
-msgstr ""
-
-#: .\templates\footer.html:46
 msgid "Address"
-msgstr ""
+msgstr "Our address"
 
-#: .\templates\footer.html:62
+#: .\templates\footer.html:58
 msgid "All rights reserved."
-msgstr ""
+msgstr "All rights are reserved."
 
 #: .\templates\home.html:31
 msgid "Welcome to Qualification Hub"
-msgstr ""
+msgstr "Welcome to the Qualification Hub"
 
-#: .\templates\home.html:39
+#: .\templates\home.html:38
 msgid ""
 " \n"
 "              Easily upload, organize, and access your\n"
-"              university certificates in one place. Keep track of your "
-"academic\n"
+"              university certificates in one place. Keep track of your academic\n"
 "              achievements and share them with employers or educational\n"
 "              institutions. \n"
 "              "
 msgstr ""
+"Easily upload, organise and access your\n"
+"certificates in one place. Keep track of your academic\n"
+"and share them with employers or educational\n"
+"institutions."
 
-#: .\templates\home.html:54
+#: .\templates\home.html:52
 msgid " Join to us!"
-msgstr ""
+msgstr "Part of our team?"
 
-#: .\templates\home.html:61
-msgid " Business collaboration based on trust"
-msgstr ""
-
-#: .\templates\managers\manager_confirm_delete.html:4
+#: .\templates\managers\manager_confirm_delete.html:3
 msgid "Delete Manager"
-msgstr ""
+msgstr "Delete a manager"
 
-#: .\templates\managers\manager_confirm_delete.html:9
-#, fuzzy
-#| msgid "Delete"
+#: .\templates\managers\manager_confirm_delete.html:7
 msgid "Delete manager"
-msgstr "Delete"
+msgstr "Delete a manager"
 
-#: .\templates\managers\manager_confirm_delete.html:13
+#: .\templates\managers\manager_confirm_delete.html:11
 msgid ""
 "manager? This will also delete the associated user. This action cannot be "
 "undone."
 msgstr ""
+"manager? This will also delete the associated user. This action cannot be "
+"undone."
 
 #: .\templates\managers\manager_detail.html:3
 msgid "Manager"
 msgstr "Manager"
 
-#: .\templates\managers\manager_detail.html:7
+#: .\templates\managers\manager_detail.html:6
 msgid "Manager Details"
-msgstr ""
+msgstr "Manager information"
 
-#: .\templates\managers\manager_detail.html:12
-#: .\templates\managers\manager_list.html:27
-#: .\templates\managers\manager_list.html:114
-#: .\templates\students\student_detail.html:13
-#: .\templates\students\student_list.html:26
-#: .\templates\students\student_list.html:124
-#: .\templates\teachers\teacher_detail.html:13
-#: .\templates\teachers\teacher_list.html:25
-#: .\templates\teachers\teacher_list.html:121
-msgid "Full Name"
-msgstr ""
-
-#: .\templates\managers\manager_detail.html:18
-#: .\templates\managers\manager_list.html:28
-#: .\templates\managers\manager_list.html:115
-#: .\templates\students\student_detail.html:19
-#: .\templates\teachers\teacher_detail.html:19
-#: .\templates\teachers\teacher_list.html:26
-#: .\templates\teachers\teacher_list.html:122
-msgid "Role"
-msgstr ""
-
-#: .\templates\managers\manager_detail.html:21
-msgid "Appointed Date"
-msgstr ""
-
-#: .\templates\managers\manager_detail.html:24
+#: .\templates\managers\manager_detail.html:10
 #: .\templates\managers\manager_list.html:29
-#: .\templates\managers\manager_list.html:116
-#: .\templates\students\student_detail.html:25
+#: .\templates\managers\manager_list.html:128
+#: .\templates\students\student_detail.html:11
+#: .\templates\students\student_list.html:26
+#: .\templates\students\student_list.html:122
+#: .\templates\teachers\teacher_detail.html:11
+#: .\templates\teachers\teacher_list.html:23
+#: .\templates\teachers\teacher_list.html:115
+msgid "Full Name"
+msgstr "Full name"
+
+#: .\templates\managers\manager_detail.html:16
+#: .\templates\managers\manager_list.html:30
+#: .\templates\managers\manager_list.html:129
+#: .\templates\students\student_detail.html:17
+#: .\templates\teachers\teacher_detail.html:17
+#: .\templates\teachers\teacher_list.html:24
+#: .\templates\teachers\teacher_list.html:116
+msgid "Role"
+msgstr "Role"
+
+#: .\templates\managers\manager_detail.html:19
+msgid "Appointed Date"
+msgstr "Date of appointment"
+
+#: .\templates\managers\manager_detail.html:22
+#: .\templates\managers\manager_list.html:31
+#: .\templates\managers\manager_list.html:130
+#: .\templates\students\student_detail.html:23
 #: .\templates\students\student_list.html:28
-#: .\templates\students\student_list.html:126
-#: .\templates\teachers\teacher_detail.html:25
-#: .\templates\teachers\teacher_list.html:29
-#: .\templates\teachers\teacher_list.html:125
+#: .\templates\students\student_list.html:124
+#: .\templates\teachers\teacher_detail.html:23
+#: .\templates\teachers\teacher_list.html:27
+#: .\templates\teachers\teacher_list.html:119
 msgid "Phone Number"
-msgstr ""
+msgstr "Telephone number"
 
-#: .\templates\managers\manager_detail.html:36
-#: .\templates\students\student_detail.html:56
-#: .\templates\teachers\teacher_detail.html:58
+#: .\templates\managers\manager_detail.html:33
+#: .\templates\students\student_detail.html:52
+#: .\templates\teachers\teacher_detail.html:54
 msgid "Update"
-msgstr ""
+msgstr "Upgrade"
 
-#: .\templates\managers\manager_form.html:6
-#: .\templates\managers\manager_form.html:19
+#: .\templates\managers\manager_form.html:5
+#: .\templates\managers\manager_form.html:16
 #, fuzzy
 #| msgid "Manager"
 msgid "Edit Manager"
 msgstr "Manager"
 
-#: .\templates\managers\manager_form.html:8
-#: .\templates\managers\manager_form.html:21
+#: .\templates\managers\manager_form.html:7
+#: .\templates\managers\manager_form.html:18
 #: .\templates\managers\manager_list.html:10
 msgid "Create New Manager"
-msgstr ""
+msgstr "Add new manager"
 
 #: .\templates\managers\manager_list.html:3
 msgid "Managers List"
-msgstr ""
+msgstr "List of managers"
 
-#: .\templates\managers\manager_list.html:26
-#: .\templates\managers\manager_list.html:113
+#: .\templates\managers\manager_list.html:28
+#: .\templates\managers\manager_list.html:127
 msgid "#"
-msgstr ""
+msgstr "#"
 
-#: .\templates\managers\manager_list.html:107
+#: .\templates\managers\manager_list.html:121
 msgid "Managers Without Departments"
-msgstr ""
+msgstr "Managers without a department"
 
-#: .\templates\nav-bar.html:71
+#: .\templates\managers\manager_list.html:214
+#: .\templates\students\student_list.html:207
+#: .\templates\teachers\teacher_list.html:198
+msgid ""
+"The database\n"
+"    currently has no data; it's completely empty."
+msgstr ""
+"The database\n"
+"does not contain any data at present; it is completely empty."
+
+#: .\templates\nav-bar.html:68
 msgid "Language"
-msgstr "Language"
+msgstr "Languages"
 
-#: .\templates\nav-bar.html:92 .\templates\nav-bar.html:96
+#: .\templates\nav-bar.html:96 .\templates\nav-bar.html:101
 msgid "Hello"
-msgstr ""
+msgstr "Hello"
 
-#: .\templates\nav-bar.html:102
+#: .\templates\nav-bar.html:107
 msgid "Logout"
-msgstr ""
-
-#: .\templates\nav-bar.html:108
-msgid "Sign Up"
-msgstr ""
+msgstr "Log out"
 
 #: .\templates\nav-bar.html:113
+msgid "Sign Up"
+msgstr "Sign up"
+
+#: .\templates\nav-bar.html:118
 msgid "Sign In"
-msgstr ""
+msgstr "Sign in"
 
-#: .\templates\registration\login.html:4
+#: .\templates\registration\login.html:3
 msgid "Login"
-msgstr ""
+msgstr "Log in"
 
-#: .\templates\registration\login.html:12
+#: .\templates\registration\login.html:10
 #: .\templates\registration\password_reset_complete.html:12
 msgid "Welcome"
-msgstr ""
+msgstr "Welcome"
 
-#: .\templates\registration\login.html:17
+#: .\templates\registration\login.html:15
 #: .\templates\registration\password_reset_complete.html:17
 msgid "Login Image"
-msgstr ""
+msgstr "Login picture"
 
-#: .\templates\registration\login.html:21
+#: .\templates\registration\login.html:19
 #: .\templates\registration\password_reset_complete.html:21
 msgid "Not a member yet"
-msgstr ""
+msgstr "Not registered yet"
 
-#: .\templates\registration\login.html:22
+#: .\templates\registration\login.html:20
 #: .\templates\registration\password_reset_complete.html:22
 #: .\templates\registration\password_reset_confirm.html:21
 msgid "Register now"
-msgstr ""
+msgstr "Register today"
 
-#: .\templates\registration\login.html:28
+#: .\templates\registration\login.html:26
 #: .\templates\registration\password_reset_form.html:63
 msgid "Log in"
-msgstr ""
+msgstr "Log in"
 
-#: .\templates\registration\login.html:44
+#: .\templates\registration\login.html:40
 msgid "Email or Username"
-msgstr ""
+msgstr "Email or username"
 
-#: .\templates\registration\login.html:50
+#: .\templates\registration\login.html:46
 msgid "name@example.com"
-msgstr ""
+msgstr "name@example.com"
 
-#: .\templates\registration\login.html:55
+#: .\templates\registration\login.html:51
 msgid "Password"
-msgstr ""
+msgstr "Your password"
+
+#: .\templates\registration\login.html:72
+msgid "Keep me logged in"
+msgstr "Keep me signed in to my account"
 
 #: .\templates\registration\login.html:77
-msgid "Keep me logged in"
-msgstr ""
+#: .\templates\registration\password_reset_complete.html:45
+#: .\templates\registration\register.html:21
+msgid "Log in now"
+msgstr "Sign up now"
 
 #: .\templates\registration\login.html:83
-#: .\templates\registration\password_reset_complete.html:45
-#: .\templates\registration\register.html:22
-msgid "Log in now"
-msgstr ""
-
-#: .\templates\registration\login.html:90
 msgid "Forgot password"
-msgstr ""
+msgstr "Forgot your password"
 
 #: .\templates\registration\password_reset_complete.html:4
 #: .\templates\registration\password_reset_complete.html:28
 msgid "Password Reset Successful"
-msgstr ""
+msgstr "Password reset has been successful"
 
 #: .\templates\registration\password_reset_complete.html:30
 msgid ""
 "Congratulations! Your password has been successfully reset. You can now log "
 "in with your new password."
 msgstr ""
+"Congratulations! Your password has been successfully reset. You can now log "
+"in with your new password."
 
 #: .\templates\registration\password_reset_complete.html:31
 msgid "log in"
-msgstr ""
+msgstr "Log in"
 
 #: .\templates\registration\password_reset_complete.html:32
 msgid "with your new password."
-msgstr ""
+msgstr "using your new password."
 
 #: .\templates\registration\password_reset_complete.html:35
 msgid ""
 "If you're using a password manager, don't forget to update it with your new "
 "password for seamless access."
 msgstr ""
+"If you're using a password manager, don't forget to update it with your new "
+"password for seamless access."
 
 #: .\templates\registration\password_reset_complete.html:38
 msgid ""
-"If you encounter any issues logging in or have questions, please contact our "
-"support team for assistance."
+"If you encounter any issues logging in or have questions, please contact our"
+" support team for assistance."
 msgstr ""
+"If you encounter any issues logging in or have questions, please contact our"
+" support team for assistance."
 
 #: .\templates\registration\password_reset_complete.html:41
 msgid "Thank you for choosing our platform. We're glad to have you back!"
-msgstr ""
+msgstr "Thank you for choosing our platform. We're glad to have you back!"
 
 #: .\templates\registration\password_reset_confirm.html:4
 #: .\templates\registration\password_reset_confirm.html:27
 msgid "Set a New Password"
-msgstr ""
+msgstr "Define a new user password"
 
 #: .\templates\registration\password_reset_confirm.html:12
 msgid "Welcome!"
-msgstr ""
+msgstr "Welcome!"
 
 #: .\templates\registration\password_reset_confirm.html:17
 msgid "Password Image"
-msgstr ""
+msgstr "Password Picture"
 
 #: .\templates\registration\password_reset_confirm.html:21
 msgid "Not a member yet? "
-msgstr ""
+msgstr "Are you not a member yet?"
 
 #: .\templates\registration\password_reset_confirm.html:29
 msgid ""
 "To ensure your account's security, please enter your new password twice. "
 "Make sure to choose a unique and secure password."
 msgstr ""
+"To ensure your account's security, please enter your new password twice. "
+"Make sure to choose a unique and secure password."
 
 #: .\templates\registration\password_reset_confirm.html:46
 #: .\templates\registration\password_reset_form.html:4
 msgid "Reset Password"
-msgstr ""
+msgstr "Reset your password"
 
 #: .\templates\registration\password_reset_confirm.html:51
 msgid "Tips for a Strong Password:"
-msgstr ""
+msgstr "Tips for a strong password:"
 
 #: .\templates\registration\password_reset_confirm.html:53
 msgid "Use a mix of uppercase and lowercase letters, numbers, and symbols."
-msgstr ""
+msgstr "Use a mix of uppercase and lowercase letters, numbers, and symbols."
 
 #: .\templates\registration\password_reset_confirm.html:54
 msgid "Avoid common words, phrases, or easily guessed patterns."
-msgstr ""
+msgstr "Avoid common words, phrases, or easily guessed patterns."
 
 #: .\templates\registration\password_reset_confirm.html:55
 msgid ""
 "Consider using a password manager to generate and store secure passwords."
 msgstr ""
+"Consider using a password manager to generate and store secure passwords."
 
 #: .\templates\registration\password_reset_confirm.html:60
 msgid ""
 "If you encounter any issues during this process, please contact our support "
 "team for assistance."
 msgstr ""
+"If you encounter any issues during this process, please contact our support "
+"team for assistance."
 
 #: .\templates\registration\password_reset_confirm.html:64
 #: .\templates\registration\password_reset_done.html:31
 msgid "Back to Home"
-msgstr ""
+msgstr "Go back to home page"
 
 #: .\templates\registration\password_reset_done.html:4
 #: .\templates\registration\password_reset_done.html:12
 msgid "Check Your Email"
-msgstr ""
+msgstr "Check your e-mail"
 
 #: .\templates\registration\password_reset_done.html:14
 msgid ""
 "We have sent password reset instructions to the email address you provided. "
 "If an account with that email exists, you should receive an email shortly."
 msgstr ""
+"We have sent password reset instructions to the email address you provided. "
+"If an account with that email exists, you should receive an email shortly."
 
 #: .\templates\registration\password_reset_done.html:17
 msgid "Didn't receive the email? Here are some things to check:"
-msgstr ""
+msgstr "Didn't receive the email? Here are some things to check:"
 
 #: .\templates\registration\password_reset_done.html:21
 msgid "Ensure the email address you entered is correct."
-msgstr ""
+msgstr "Ensure the email address you entered is correct."
 
 #: .\templates\registration\password_reset_done.html:22
-msgid "Check your spam or junk folder; sometimes the email might end up there."
+msgid ""
+"Check your spam or junk folder; sometimes the email might end up there."
 msgstr ""
+"Check your spam or junk folder; sometimes the email might end up there."
 
 #: .\templates\registration\password_reset_done.html:23
 msgid "Give it a few minutes, as email delivery can sometimes be delayed."
-msgstr ""
+msgstr "Give it a few minutes, as email delivery can sometimes be delayed."
 
 #: .\templates\registration\password_reset_done.html:27
 msgid ""
 "If you've tried these steps and still haven't received the email, please "
 "contact our support team for further assistance."
 msgstr ""
+"If you've tried these steps and still haven't received the email, please "
+"contact our support team for further assistance."
 
 #: .\templates\registration\password_reset_form.html:12
 msgid "Reset Your Password"
-msgstr ""
+msgstr "Reset your password"
 
 #: .\templates\registration\password_reset_form.html:17
 msgid "Password Reset Image"
-msgstr ""
+msgstr "Password reset image"
 
 #: .\templates\registration\password_reset_form.html:21
 msgid ""
-"If you've forgotten your password, enter your email address below, and we'll "
-"send you a link to reset it."
+"If you've forgotten your password, enter your email address below, and we'll"
+" send you a link to reset it."
 msgstr ""
+"If you've forgotten your password, enter your email address below, and we'll"
+" send you a link to reset it."
 
 #: .\templates\registration\password_reset_form.html:42
 msgid "Email Address"
-msgstr ""
+msgstr "Your email address"
 
 #: .\templates\registration\password_reset_form.html:49
 msgid "Enter your email"
-msgstr ""
+msgstr "Please enter your e-mail address"
 
 #: .\templates\registration\password_reset_form.html:53
 msgid "Send Reset Link"
-msgstr ""
+msgstr "Send me a reset link"
 
 #: .\templates\registration\password_reset_form.html:59
 msgid ""
-"After you receive the email, click the link to set your new password. If you "
-"don't get the email, check your spam/junk folder or contact support."
+"After you receive the email, click the link to set your new password. If you"
+" don't get the email, check your spam/junk folder or contact support."
 msgstr ""
+"After you receive the email, click the link to set your new password. If you"
+" don't get the email, check your spam/junk folder or contact support."
 
 #: .\templates\registration\password_reset_form.html:64
 #: .\templates\registration\register.html:4
-#: .\templates\registration\register.html:28
-#: .\templates\registration\register.html:34
+#: .\templates\registration\register.html:27
+#: .\templates\registration\register.html:33
 msgid "Register"
-msgstr ""
+msgstr "Register"
 
-#: .\templates\registration\register.html:12
+#: .\templates\registration\register.html:11
 msgid "Welcome to Registration"
-msgstr ""
+msgstr "Welcome to the registration area"
 
-#: .\templates\registration\register.html:17
+#: .\templates\registration\register.html:16
 msgid "Registration Image"
-msgstr ""
+msgstr "Registration Picture"
 
-#: .\templates\registration\register.html:21
+#: .\templates\registration\register.html:20
 msgid "Already have an account"
-msgstr ""
+msgstr "If you have already registered"
+
+#: .\templates\search-bar.html:10
+msgid "What are you looking for"
+msgstr "What are you looking for?"
+
+#: .\templates\search-bar.html:16
+#, fuzzy
+#| msgid "Search Results"
+msgid "Search"
+msgstr "Results of the search"
+
+#: .\templates\search-bar.html:21
+msgid "Quick search"
+msgstr "Quick search"
 
 #: .\templates\search-bar.html:22
-msgid "Quick search"
-msgstr ""
-
-#: .\templates\search-bar.html:23
 msgid "username"
-msgstr ""
+msgstr "username"
+
+#: .\templates\search-bar.html:24
+msgid "certificate organization"
+msgstr "certificate organization"
 
 #: .\templates\search-bar.html:25
-msgid "certificate organization"
-msgstr ""
-
-#: .\templates\search-bar.html:26
 msgid "certificate number"
-msgstr ""
+msgstr "certificate number"
 
 #: .\templates\students\student_confirm_delete.html:3
 msgid "Delete Student"
-msgstr ""
+msgstr "Delete a student"
 
 #: .\templates\students\student_confirm_delete.html:7
 msgid "Delete student"
-msgstr ""
+msgstr "Delete a student"
 
 #: .\templates\students\student_confirm_delete.html:9
 #, fuzzy
@@ -915,55 +950,55 @@ msgid ""
 " student?This will also delete the associated user. This action cannot be "
 "undone. "
 msgstr ""
+"student?This will also delete the associated user. This action cannot be "
+"undone."
 
-#: .\templates\students\student_detail.html:8
+#: .\templates\students\student_detail.html:7
 msgid "Student Details"
-msgstr ""
+msgstr "Student information"
 
-#: .\templates\students\student_detail.html:22
+#: .\templates\students\student_detail.html:20
 #: .\templates\students\student_list.html:30
-#: .\templates\students\student_list.html:128
+#: .\templates\students\student_list.html:126
 msgid "Enrollment Date"
-msgstr ""
+msgstr "Date of registering"
 
-#: .\templates\students\student_detail.html:46
-#: .\templates\teachers\teacher_detail.html:47
+#: .\templates\students\student_detail.html:43
+#: .\templates\teachers\teacher_detail.html:44
 msgid "Add New Certificate"
-msgstr ""
+msgstr "Add a new certificate"
 
 #: .\templates\students\student_form.html:6
-#: .\templates\students\student_form.html:19
+#: .\templates\students\student_form.html:17
 msgid "Edit Student"
-msgstr ""
+msgstr "Edit student"
 
 #: .\templates\students\student_form.html:8
-#: .\templates\students\student_form.html:21
+#: .\templates\students\student_form.html:19
 #: .\templates\students\student_list.html:10
 msgid "Create New Student"
-msgstr ""
+msgstr "Add a new student"
 
 #: .\templates\students\student_list.html:4
 msgid "Students List"
-msgstr ""
+msgstr "List of students"
 
 #: .\templates\students\student_list.html:27
-#: .\templates\students\student_list.html:125
+#: .\templates\students\student_list.html:123
 msgid "Major"
-msgstr ""
+msgstr "Major"
 
-#: .\templates\students\student_list.html:117
+#: .\templates\students\student_list.html:115
 msgid "Students Without Departments"
-msgstr ""
+msgstr "Students who are not attached to a department"
 
 #: .\templates\teachers\teacher_confirm_delete.html:3
 msgid "Delete Teacher"
-msgstr ""
+msgstr "Delete a teacher"
 
 #: .\templates\teachers\teacher_confirm_delete.html:8
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete teacher"
-msgstr "Delete"
+msgstr "Delete a teacher"
 
 #: .\templates\teachers\teacher_confirm_delete.html:12
 #, fuzzy
@@ -976,54 +1011,56 @@ msgid ""
 " teacher?This will also\n"
 "      delete the associated user. This action cannot be undone."
 msgstr ""
+"teacher?This will also\n"
+"delete the associated user. This action cannot be undone."
 
-#: .\templates\teachers\teacher_detail.html:8
+#: .\templates\teachers\teacher_detail.html:7
 msgid "Teacher Details"
-msgstr ""
+msgstr "Teacher information"
 
-#: .\templates\teachers\teacher_detail.html:22
-#: .\templates\teachers\teacher_list.html:31
-#: .\templates\teachers\teacher_list.html:127
+#: .\templates\teachers\teacher_detail.html:20
+#: .\templates\teachers\teacher_list.html:29
+#: .\templates\teachers\teacher_list.html:121
 msgid "Hire Date"
-msgstr ""
+msgstr "Date of hire"
 
 #: .\templates\teachers\teacher_form.html:6
-#: .\templates\teachers\teacher_form.html:19
+#: .\templates\teachers\teacher_form.html:17
 msgid "Edit Teacher"
-msgstr ""
+msgstr "Edit a teacher"
 
 #: .\templates\teachers\teacher_form.html:8
-#: .\templates\teachers\teacher_form.html:21
-#: .\templates\teachers\teacher_list.html:10
+#: .\templates\teachers\teacher_form.html:19
+#: .\templates\teachers\teacher_list.html:9
 msgid "Create New Teacher"
-msgstr ""
+msgstr "Add a new teacher"
 
 #: .\templates\teachers\teacher_list.html:4
 msgid "Teachers List"
-msgstr ""
+msgstr "List of teachers"
 
-#: .\templates\teachers\teacher_list.html:27
-#: .\templates\teachers\teacher_list.html:123
+#: .\templates\teachers\teacher_list.html:25
+#: .\templates\teachers\teacher_list.html:117
 msgid "Subject Taught"
-msgstr ""
+msgstr "Subject area taught"
 
-#: .\templates\teachers\teacher_list.html:28
-#: .\templates\teachers\teacher_list.html:124
+#: .\templates\teachers\teacher_list.html:26
+#: .\templates\teachers\teacher_list.html:118
 msgid "Room Number"
-msgstr ""
+msgstr "Room number"
 
-#: .\templates\teachers\teacher_list.html:114
+#: .\templates\teachers\teacher_list.html:108
 msgid "Teachers Without Departments"
-msgstr ""
+msgstr "Teachers who are not attached to a department"
+
+#~ msgid "Create Certificate"
+#~ msgstr "Create a certificate"
 
 #~ msgid ""
 #~ " is a Django-based project designed to\n"
-#~ "        manage and track educational qualifications, certificates, and "
-#~ "related\n"
-#~ "        information. It supports various user roles such as teachers, "
-#~ "students,\n"
-#~ "        managers, and administrators, allowing them to manage "
-#~ "certificates and\n"
+#~ "        manage and track educational qualifications, certificates, and related\n"
+#~ "        information. It supports various user roles such as teachers, students,\n"
+#~ "        managers, and administrators, allowing them to manage certificates and\n"
 #~ "        track qualifications.\n"
 #~ "        "
 #~ msgstr ""
@@ -1038,8 +1075,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "\n"
-#~ "          Certificate Management: Create, view, update, and delete "
-#~ "certificates.\n"
+#~ "          Certificate Management: Create, view, update, and delete certificates.\n"
 #~ "          "
 #~ msgstr ""
 #~ "\n"
@@ -1047,8 +1083,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "\n"
-#~ "          User Roles and Permissions: Different roles with varying access "
-#~ "levels\n"
+#~ "          User Roles and Permissions: Different roles with varying access levels\n"
 #~ "          (Owner, Admin, Manager, Teacher, Student, Guest).\n"
 #~ "          "
 #~ msgstr ""
@@ -1058,8 +1093,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "\n"
-#~ "          Search Functionality: Search across multiple models for "
-#~ "certificates,\n"
+#~ "          Search Functionality: Search across multiple models for certificates,\n"
 #~ "          users, departments, and more.\n"
 #~ "          "
 #~ msgstr ""
@@ -1069,8 +1103,7 @@ msgstr ""
 
 #~ msgid ""
 #~ "\n"
-#~ "          Authentication and Authorization: Handles user login, logout, "
-#~ "and\n"
+#~ "          Authentication and Authorization: Handles user login, logout, and\n"
 #~ "          registration with appropriate permissions.\n"
 #~ "          "
 #~ msgstr ""
@@ -1116,9 +1149,6 @@ msgstr ""
 
 #~ msgid "Entity-Relationship Diagram"
 #~ msgstr "Entity-Relationship Diagram"
-
-#~ msgid "Expiration Date:"
-#~ msgstr "Expiration Date:"
 
 #~ msgid "Owner (Teacher):"
 #~ msgstr "Owner (Teacher):"

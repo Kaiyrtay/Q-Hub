@@ -2,7 +2,7 @@
 {% load crispy_forms_tags i18n %} 
 {% block title %}{%trans "Managers List" %}{% endblock %} 
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-3">
   <!-- Create New Manager Button -->
   {% if user.is_authenticated and user.is_staff %}
   <div class="d-flex justify-content-between mb-4">
@@ -11,7 +11,6 @@
     >
   </div>
   {% endif %}
-
   <!-- Displaying Managers Grouped by Department -->
   {% if managers_grouped %} 
   {% for department, managers in managers_grouped %}
@@ -69,7 +68,6 @@
           {% endfor %}
         </tbody>
       </table>
-
       <!-- Pagination for Department Group -->
       <ul class="pagination justify-content-center">
         {% if managers.has_previous %}
@@ -118,7 +116,6 @@
   </div>
   {% endfor %} 
   {% endif %}
-
   <!-- Managers Without Departments -->
   {% if without_departments_paginated %}
   <h2>{% trans "Managers Without Departments" %}</h2>
@@ -168,7 +165,6 @@
           {% endfor %}
         </tbody>
       </table>
-
       <!-- Pagination for Managers Without Departments -->
       <ul class="pagination justify-content-center">
         {% if without_departments_paginated.has_previous %}

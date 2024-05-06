@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% load core_tags i18n %}
 {% block title %}{% trans "Manager" %}: {{ manager.full_name }}{% endblock %}
-
 {% block content %}
 <div class="container mt-4 mb-4">
     <h1 class="display-5">{% trans "Manager Details" %}</h1>
-    
     <div class="card mt-3">
         <div class="card-body">
             <p class="card-text">
@@ -28,7 +26,6 @@
             </p>
         </div>
     </div>
-    
     <div class="mt-4">
       {% if user.is_authenticated %}
         {% if user.is_staff or user.pk == manager.user.pk %}
@@ -40,7 +37,6 @@
           </a>
         {% endif %}
       {% endif %}
-
       <a href="{% url 'managers:list' %}" class="btn btn-secondary">
           <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
       </a>

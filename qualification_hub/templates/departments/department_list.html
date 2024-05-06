@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}  <!-- Load the translation tag library -->
-
 {% block title %}{% trans "Departments" %}{% endblock %}
-
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-3">
   <h1>{% trans "Departments" %}</h1>
-  
   {% if user.is_authenticated and user.is_staff %}
   <div class="mb-3">
     <a href="{% url 'departments:create' %}" class="btn btn-primary">
@@ -14,7 +11,6 @@
     </a>
   </div>
   {% endif %}
-  
   <table class="table align-middle bg-white">
     <thead class="bg-dark text-light">
       <tr>
@@ -44,7 +40,6 @@
             {% trans "Not Assigned" %}
           {% endif %}
         </td>
-        
         {% if user.is_authenticated and user.is_staff %}
         <td>
           <a href="{% url 'departments:update' department.id %}" class="btn btn-link btn-lg">

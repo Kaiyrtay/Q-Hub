@@ -7,16 +7,15 @@
         name="q"
         value="{{ request.GET.q }}"
         class="form-control me-2"
-        placeholder="What are you looking for..."
+        placeholder="{% trans 'What are you looking for' %}"
       />
       <input
         type="submit"
         class="btn btn-primary gradient-custom"
         style="color: white"
-        value="Search"
+        value="{% trans 'Search' %}"
       />
     </form>
-
     <!-- Help text -->
     <ul class="list-inline text-muted small mt-2"> <!-- inline list, muted text, smaller font -->
       <li class="list-inline-item">{% trans "Quick search" %}:</li>

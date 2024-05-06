@@ -2,15 +2,13 @@
 {% load core_tags %}
 {% load i18n %}
 {% block title %}{% trans "Teachers List"%}{% endblock %}
-
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-3">
   {% if user.is_authenticated and user|in_group:'Managers' %}
   <div class="d-flex justify-content-between mb-4">
     <a href="{% url 'teachers:create' %}" class="btn btn-primary">{% trans "Create New Teacher"%}</a>
   </div>
   {%endif%}
-
   {% if teachers_grouped %}
   {% for department, teachers in teachers_grouped %}
   <div class="card mb-4">
@@ -64,7 +62,6 @@
           {% endfor %}
         </tbody>
       </table>
-
       <ul class="pagination justify-content-center">
         {% if teachers.has_previous %}
         <li class="page-item">
@@ -78,7 +75,6 @@
           <span class="page-link">{%trans "Previous"%}</span>
         </li>
         {% endif %}
-
         {% for num in teachers.paginator.page_range %}
         {% if teachers.number == num %}
         <li class="page-item active">
@@ -90,7 +86,6 @@
         </li>
         {% endif %}
         {% endfor %}
-
         {% if teachers.has_next %}
         <li class="page-item">
           <a
@@ -108,7 +103,6 @@
   </div>
   {% endfor %}
   {% endif %}
-
   <!-- Teachers Without Departments -->
   {% if without_departments_paginated %}
   <h2>{%trans "Teachers Without Departments"%}</h2>
@@ -160,7 +154,6 @@
           {% endfor %}
         </tbody>
       </table>
-
       <ul class="pagination justify-content-center">
         {% if without_departments_paginated.has_previous %}
         <li class="page-item">

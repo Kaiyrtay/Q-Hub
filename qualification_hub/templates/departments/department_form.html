@@ -1,24 +1,20 @@
 {% extends "../base.html" %}
 {% load crispy_forms_tags i18n %}
 {% block title %}{% trans "Department Form" %}{% endblock %}
-
 {% block content %}
 <div class="container mt-4 mb-4">
   <div class="row justify-content-center">
     <div class="col-md-8">  <!-- Keep the form within a manageable width -->
-
       <!-- Heading with Conditionals -->
       {% if object %}
         <h2>{% trans "Edit Department" %}: {{ object.name }}</h2>
       {% else %}
         <h2>{% trans "Create New Department" %}</h2>
       {% endif %}
-
       <!-- Form with CSRF Token -->
       <form method="post">
         {% csrf_token %} 
         {{ form|crispy }}  <!-- Render form fields with crispy forms -->
-
         <!-- Flex container for aligning buttons -->
         <div class="d-flex justify-content-between mt-3">
           <!-- Submit Button -->
@@ -29,14 +25,12 @@
               {% trans "Create" %}
             {% endif %}
           </button>
-
           <!-- Back to List Button -->
           <a href="{% url 'departments:list' %}" class="btn btn-secondary">
             {% trans "Back to List" %}
           </a>
         </div>
       </form>
-
     </div>
   </div>
 </div>

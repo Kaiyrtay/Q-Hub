@@ -12,12 +12,9 @@
   <div class="mb-3 row justify-content-center">
     <div class="col-md-8">
       <h2>{% trans "Create New Certificate" %}</h2>
-
       <form method="post">
         {% csrf_token %}
-        
         {{ form|crispy }}  <!-- Render the form with crispy forms -->
-
         <!-- Flex container for buttons -->
         <div class="d-flex justify-content-between mt-3">
           <!-- Submit Button -->
@@ -28,7 +25,6 @@
                 {% trans "Create" %}
             {% endif %}
           </button>
-
           <!-- Back to List Button -->
           <a href="{% url 'certificates:list' %}" class="btn btn-secondary">
             {% trans "Back to Certificates List" %}

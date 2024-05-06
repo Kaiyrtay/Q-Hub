@@ -1,19 +1,15 @@
 {% extends "../base.html" %}
 {% load i18n %}  <!-- Load the translation tags library -->
-
 {% block title %}{% trans "Search Results" %}{% endblock %}
-
 {% block content %}
 <div class="container col-md-8">
   <h1 class="mb-2">{% trans "Search Results" %}</h1>
-
   <!-- Display error message if provided -->
   {% if message %}
   <div class="alert alert-danger">
     <strong>{% trans "Error" %}:</strong> {{ message }}
   </div>
   {% endif %}
-
   <!-- Display certificates by organization if available -->
   {% if organization %}
   <div class="row justify-content-center">
@@ -27,7 +23,6 @@
           <a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }}</a>
           <span class="text-muted">({{ certificate.date_earned }})</span>
         </span>
-
         <!-- Owner information on the right -->
         <div>
           {% if certificate.teacher_owner %}
@@ -51,7 +46,6 @@
     </div>
   </div>
   {% endif %}
-
   <!-- Display departments -->
   {% if departments %}
   <div class="row justify-content-center">
@@ -67,7 +61,6 @@
     </div>
   </div>
   {% endif %}
-
   <!-- Display certificates -->
   {% if certificates %}
   <div class="row justify-content-center">
@@ -80,7 +73,6 @@
           <a href="{% url 'certificates:detail' certificate.pk %}">{{ certificate.certificate_name }}</a>
           <span class="text-muted">({{ certificate.date_earned }})</span>
         </span>
-
         <!-- Owner information -->
         <div>
           {% if certificate.teacher_owner %}
@@ -104,7 +96,6 @@
     </div>
   </div>
   {% endif %}
-
   <!-- Display managers -->
   {% if managers %}
   <div class="row justify-content-center">
@@ -122,7 +113,6 @@
     </div>
   </div>
   {% endif %}
-
   <!-- Display teachers -->
   {% if teachers %}
   <div class="row justify-content-center">
@@ -140,7 +130,6 @@
     </div>
   </div>
   {% endif %}
-
   <!-- Display students -->
   {% if students %}
   <div class="row justify-content-center">

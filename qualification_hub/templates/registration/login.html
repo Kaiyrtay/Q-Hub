@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static i18n %}
-
 {% block title %}{% trans "Login" %}{% endblock %}
-
 {% block content %}
 <section class="p-3 p-md-4 p-xl-5">
   <div class="container">
@@ -26,7 +24,6 @@
       <div class="col-12 col-md-6 bsb-tpl-bg-lotion">
         <div class="p-3 p-md-4 p-xl-5">
           <h3>{% trans "Log in" %}</h3>
-
           <!-- Display error messages if any -->
           {% if messages %}
           <div class="alert alert-danger">
@@ -35,7 +32,6 @@
             {% endfor %}
           </div>
           {% endif %}
-
           <!-- Login form -->
           <form method="post">
             {% csrf_token %}
@@ -61,7 +57,6 @@
                   required
                 >
               </div>
-
               <div class="col-12">
                 <div class="form-check">
                   <input 
@@ -78,13 +73,11 @@
                   </label>
                 </div>
               </div>
-
               <div class="col-12 d-grid">
                 <button type="submit" class="btn btn-primary">{% trans "Log in now" %}</button>
               </div>
             </div>
           </form>
-
           <div class="text-end mt-3">
             <a href="{% url 'password_reset' %}" class="link-secondary text-decoration-none">
               {% trans "Forgot password" %}?

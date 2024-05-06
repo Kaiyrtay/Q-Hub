@@ -1,8 +1,6 @@
 {% extends "../base.html" %}
 {% load i18n %}  <!-- Load translation tags -->
-
 {% block title %}{% trans "Delete Certificate" %}{% endblock %}
-
 {% block content %}
 <div class="m-3">
   <div class="container mt-4">
@@ -11,14 +9,12 @@
       <i class="bi bi-exclamation-triangle-fill"></i> 
       {% trans "Are you sure you want to delete" %} "{{ certificate.certificate_name }}"?
     </div>
-
     <form method="post" class="d-inline">
       {% csrf_token %}
       <button type="submit" class="btn btn-danger">
         <i class="bi bi-trash-fill"></i> {% trans "Delete" %}
       </button>
     </form>
-
     <a href="{% url 'certificates:list' %}" class="btn btn-secondary ms-2">
       <i class="bi bi-arrow-left-circle-fill"></i> {% trans "Back to List" %}
     </a>

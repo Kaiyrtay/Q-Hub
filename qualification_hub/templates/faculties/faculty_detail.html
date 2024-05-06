@@ -1,12 +1,9 @@
 {% extends "../base.html" %}
 {% load i18n %}
-
 {% block title %}{% trans "Faculty" %}: {{ faculty.name }}{% endblock %}
-
 {% block content %}
 <div class="container mt-4 mb-4">
     <h1 class="display-5">{% trans "Faculty" %}: {{ faculty.name }}</h1>
-
     <div class="card mt-3 mb-3">
         <div class="card-body">
             <h3 class="card-title">{% trans "Dean of Faculty" %}: {{ faculty.dean.get_full_name|default:'Not Assigned' }}</h3>
@@ -27,9 +24,7 @@
             <p class="card-text">
                 <strong>{% trans "Contact Email" %}:</strong> {{ faculty.contact_email|default:'Not specified' }}
             </p>
-
             <hr>
-            
             <p class="card-text">
                 <strong>{% trans "Number of Departments" %}:</strong> {{ department_count }}
             </p>
@@ -46,13 +41,11 @@
             </ul>
         </div>
     </div>
-    
     <div class="mt-4">
         {% if user.is_authenticated and user.is_staff %}
         <a href="{% url 'faculties:update' faculty.id %}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i> {% trans "Edit" %}
         </a>
-        
         <form method="post" action="{% url 'faculties:delete' faculty.id %}" style="display: inline-block;">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">

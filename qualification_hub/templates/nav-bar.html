@@ -3,7 +3,6 @@
   <div class="container-fluid">
     <!-- Navbar Brand -->
     <a class="navbar-brand" href="{% url 'home' %}">Q-hub</a>
-
     <!-- Navbar Toggle Button -->
     <button
       class="navbar-toggler"
@@ -16,7 +15,6 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <!-- Collapsible Section -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Main Navigation Links -->
@@ -53,13 +51,11 @@
           >
         </li>
       </ul>
-
        <!-- Language Dropdown -->
       <ul class="navbar-nav">
         {% get_current_language as CURRENT_LANGUAGE %} 
         {% get_available_languages as AVAILABLE_LANGUAGES %} 
         {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -69,7 +65,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {% trans "Language" %}
+          <i class="fas fa-globe"></i> {% trans "Language" %}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarLanguageDropdown">
             {% for language in languages %}
@@ -79,7 +75,7 @@
                   <input type="hidden" name="language" value="{{ language.code }}">
                   <input type="hidden" name="next" value="{{ request.path }}">
                   <button type="submit" class="dropdown-item {% if language.code == CURRENT_LANGUAGE %} active {% endif %}">
-                    {{ language.name_local }}
+                    {{ language.name_translated }}
                   </button>
                 </form>
               </li>
@@ -90,9 +86,16 @@
         {% if user.is_authenticated %}
         <li class="nav-item">
           {% if user.is_staff %}
+          <li class="nav-item">
+          <a class="nav-link" href="/rosetta">
+            Rosetta</a
+          >
+          </li>
+          <li class="nav-item">
           <a class="nav-link" href="/admin">
             {% trans "Hello" %}, {{ user.username }}!</a
           >
+          </li>
           {% else %}
           <span class="nav-link"
             >{% trans "Hello" %}, {{ user.username }}!</span

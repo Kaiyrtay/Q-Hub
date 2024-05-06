@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Home{% endblock %}</title>
-
     <!-- Include Bootstrap and Bootstrap Icons -->
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/gradient-costom.css' %}" />
@@ -19,6 +18,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <!-- Include Flag Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.8.1/css/flag-icon.min.css">
     <!-- Include Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
   </head>
@@ -28,10 +29,8 @@
     {% include "search-bar.html" %}
     <!-- Main Content -->
     {% block content %} {% endblock %}
-
     <!-- Footer -->
     {% include "footer.html" %}
-
     <!-- Include Flatpickr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
     <!-- Initialize Flatpickr -->

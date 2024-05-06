@@ -1,12 +1,9 @@
 {% extends "../base.html" %}
 {% load i18n %}  <!-- Load translation tags -->
-
 {% block title %}{% trans "Department" %}: {{ department.name }}{% endblock %}
-
 {% block content %}
 <div class="container mt-4 mb-4">
     <h1 class="display-5">{% trans "Department" %}: {{ department.name }}</h1>
-    
     <div class="card mt-3">
         <div class="card-body">
             <h3 class="card-title">{% trans "Head of Department" %}: {{ department.head }}</h3>
@@ -22,13 +19,11 @@
             </p>
         </div>
     </div>
-    
     <div class="mt-4">
         {% if user.is_authenticated and user.is_staff %}
         <a href="{% url 'departments:update' department.id %}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i> {% trans "Edit" %}
         </a>
-        
         <form method="post" action="{% url 'departments:delete' department.id %}" style="display: inline-block;">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">
@@ -36,7 +31,6 @@
             </button>
         </form>
         {% endif %}
-        
         <a href="{% url 'departments:list' %}" class="btn btn-secondary">
             <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
         </a>

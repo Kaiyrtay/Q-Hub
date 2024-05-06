@@ -3,7 +3,7 @@
 {% load core_tags %}
 {% block title %}{% trans "Students List" %}{% endblock %} 
 {% block content %}
-<div class="container mt-4 mb-4">
+<div class="container mt-3 mb-4">
   {% if user.is_authenticated and user|in_group:'Managers' %}
   <div class="d-flex justify-content-between mb-4">
     <a href="{% url 'students:create' %}" class="btn btn-primary"
@@ -65,7 +65,6 @@
           {% endfor %}
         </tbody>
       </table>
-
       <ul class="pagination justify-content-center">
         {% if students.has_previous %}
         <li class="page-item">
@@ -111,7 +110,6 @@
   </div>
   {% endfor %} 
   {% endif %}
-
   <!-- Students Without Departments -->
   {% if without_departments_paginated %}
   <h2>{% trans "Students Without Departments" %}</h2>
@@ -163,7 +161,6 @@
           {% endfor %}
         </tbody>
       </table>
-
       <ul class="pagination justify-content-center">
         {% if without_departments_paginated.has_previous %}
         <li class="page-item">
