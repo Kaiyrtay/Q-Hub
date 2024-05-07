@@ -1,61 +1,89 @@
 {% extends "../base.html" %}
-{% load i18n %}
-{% block title %}{% trans "Faculty" %}: {{ faculty.name }}{% endblock %}
+{% load i18n static %}
+{% block title %}{% trans "Faculty Details" %}: {{ faculty.name }}{% endblock %}
 {% block content %}
 <div class="container mt-4 mb-4">
-    <h1 class="display-5">{% trans "Faculty" %}: {{ faculty.name }}</h1>
-    <div class="card mt-3 mb-3">
+  <div class="row">
+    <!-- Faculty Information on the Left -->
+    <div class="col-12 col-md-8">
+      <div class="card mt-3" style="border-radius: 10px;">
         <div class="card-body">
-            <h3 class="card-title">{% trans "Dean of Faculty" %}: {{ faculty.dean.get_full_name|default:'Not Assigned' }}</h3>
-            <p class="card-text">
-                <strong>{% trans "Description" %}:</strong> {{ faculty.description|default:'No description available' }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Location" %}:</strong> {{ faculty.location|default:'Not specified' }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Website" %}:</strong> 
-                {% if faculty.website %}
-                    <a href="{{ faculty.website }}" class="btn btn-link">{% trans "Visit Website" %}</a>
-                {% else %}
-                    {% trans "Not Available" %}
-                {% endif %}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Contact Email" %}:</strong> {{ faculty.contact_email|default:'Not specified' }}
-            </p>
-            <hr>
-            <p class="card-text">
-                <strong>{% trans "Number of Departments" %}:</strong> {{ department_count }}
-            </p>
-            <ul class="list-group">
-                {% for department in faculty.departments.all %}
-                    <li class="list-group-item">
-                        <a href="{% url 'departments:detail' department.id %}">
-                            {{ department.name }}
-                        </a>
-                    </li>
-                {% empty %}
-                    <li class="list-group-item">{% trans "No departments are associated with this faculty." %}</li>
-                {% endfor %}
-            </ul>
+          <h1 class="display-5">{% trans "Faculty" %}: {{ faculty.name }}</h1>
+          <h3>{% trans "Dean of Faculty" %}: {{ faculty.dean.get_full_name|default:'Not Assigned' }}</h3>
+          <hr> <!-- Separator -->
+          <p>
+            <strong>{% trans "Description" %}:</strong> {{ faculty.description|default:'No description available' }}
+          </p>
+          <p>
+            <strong>{% trans "Location" %}:</strong> {{ faculty.location|default:'Not specified' }}
+          </p>
+          <p>
+            <strong>{% trans "Website" %}:</strong>
+            {% if faculty.website %}
+              <a href="{{ faculty.website }}" class="btn btn-link">
+                {% trans "Visit Website" %}
+              </a>
+            {% else %}
+              {% trans "Not Available" %}
+            {% endif %}
+          </p>
+          <p>
+            <strong>{% trans "Contact Email" %}:</strong> {{ faculty.contact_email|default:'Not specified' }}
+          </p>
+          <hr> <!-- Another Separator -->
+          <p>
+            <strong>{% trans "Number of Departments" %}:</strong> {{ department_count }}
+          </p>
+          <ul class="list-group">
+            {% for department in faculty.departments.all %}
+              <li class="list-group-item">
+                <a href="{% url 'departments:detail' department.id %}">
+                  {{ department.name }}
+                </a>
+              </li>
+            {% empty %}
+              <li class="list-group-item">
+                {% trans "No departments are associated with this faculty." %}
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+      </div>
     </div>
-    <div class="mt-4">
-        {% if user.is_authenticated and user.is_staff %}
+
+    <!-- Faculty Logo on the Right -->
+    <div class="col-12 col-md-4 text-center">
+      <div class="h-100" style="display: flex; align-items: center; justify-content: center;">
+        <img
+          class="img-fluid"
+          src="{{ faculty.logo.url }}"
+          alt="{% trans 'Faculty Logo' %}"
+          style="object-fit: cover; max-width: 100%; max-height: 100%;"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="mt-4 d-flex justify-content-between">
+    <div> <!-- Edit and Delete Buttons -->
+      {% if user.is_authenticated and user.is_staff %}
         <a href="{% url 'faculties:update' faculty.id %}" class="btn btn-warning">
-            <i class="bi bi-pencil-square"></i> {% trans "Edit" %}
+          <i class="bi bi-pencil-square"></i> {% trans "Edit" %}
         </a>
         <form method="post" action="{% url 'faculties:delete' faculty.id %}" style="display: inline-block;">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">
-                <i class="bi bi-trash"></i> {% trans "Delete" %}
-            </button>
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash"></i> {% trans "Delete" %}
+          </button>
         </form>
-        {% endif %}
-        <a href="{% url 'faculties:list' %}" class="btn btn-secondary">
-            <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
-        </a>
+      {% endif %}
     </div>
+
+    <!-- Back to Faculty List -->
+    <a href="{% url 'faculties:list' %}" class="btn btn-primary">
+      <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+    </a>
+  </div>
 </div>
 {% endblock %}

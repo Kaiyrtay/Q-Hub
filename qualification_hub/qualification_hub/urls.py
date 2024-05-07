@@ -28,6 +28,8 @@ from django.urls import path, include, re_path
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -73,7 +75,10 @@ urlpatterns = [
          name='copy-right'),
     path('rosetta/', include('rosetta.urls')),
 ]
-
+# Translated
 urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
 )
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

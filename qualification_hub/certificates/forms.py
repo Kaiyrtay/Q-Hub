@@ -32,9 +32,11 @@ class CertificateForm(forms.ModelForm):
     organization = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': 'Organization'}
     ))
-    description = forms.CharField(widget=forms.Textarea(
-        attrs={'placeholder': 'Description', 'rows': 3}
-    ))
+    description = forms.CharField(
+        required=False,
+        widget=forms.Textarea(
+            attrs={'placeholder': 'Description', 'rows': 3}
+        ))
     expiration_date = forms.DateField(
         required=False,
         widget=forms.TextInput(
@@ -58,11 +60,12 @@ class CertificateForm(forms.ModelForm):
             attrs={'class': 'datepicker', 'placeholder': 'Date Earned'}
         )
     )
+    certificate_image = forms.ImageField(required=False)
 
     class Meta:
         model = Certificate
         fields = [
-            'certificate_name', 'organization', 'description', 'expiration_date',
+            'certificate_name', 'certificate_image', 'organization', 'description', 'expiration_date',
             'issuing_authority', 'certificate_number', 'verification_url', 'date_earned',
         ]
 
@@ -72,6 +75,7 @@ class CertificateForm(forms.ModelForm):
         self.helper.layout = Layout(
             Div(
                 Field('certificate_name', css_class='form-control'),
+                Field('certificate_image', css_class='form-control'),
                 Field('organization', css_class='form-control'),
                 Field('description', css_class='form-control'),
                 Field('expiration_date', css_class='datepicker'),

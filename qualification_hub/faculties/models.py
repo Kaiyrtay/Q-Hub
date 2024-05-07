@@ -32,6 +32,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+def faculty_logo_upload_to(instance, filename):
+    # This function creates a dynamic upload path based on the manager's user ID
+    return f'logos/faculty/{instance.name}/{filename}'
+
+
 class Faculty(models.Model):
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(blank=True, null=True)
@@ -42,6 +47,13 @@ class Faculty(models.Model):
     website = models.URLField(blank=True, null=True)
     contact_email = models.EmailField(blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
+
+    logo = models.ImageField(
+        upload_to=faculty_logo_upload_to,
+        default="assets/images/default_logo.png",
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ['name',]

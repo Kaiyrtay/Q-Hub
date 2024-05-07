@@ -26,6 +26,12 @@ from django.contrib.auth.models import User, Group
 from django.db import models
 from departments.models import Department
 
+
+def manager_avatar_upload_to(instance, filename):
+    # This function creates a dynamic upload path based on the manager's user ID
+    return f'avatars/managers/{instance.user.id}/{filename}'
+
+
 class Manager(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="manager")
@@ -36,6 +42,13 @@ class Manager(models.Model):
     middle_name = models.CharField(max_length=100, blank=True, null=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     contact_email = models.EmailField(blank=True, null=True)
+
+    avatar = models.ImageField(
+        upload_to=manager_avatar_upload_to,
+        default="assets/images/default_account.png",
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ['user__first_name', 'middle_name', 'user__last_name']

@@ -25,6 +25,11 @@ from django.db import models
 from departments.models import Department
 
 
+def student_avatar_upload_to(instance, filename):
+    # This function creates a dynamic upload path based on the manager's user ID
+    return f'avatars/students/{instance.user.id}/{filename}'
+
+
 class Student(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="student")
@@ -39,6 +44,13 @@ class Student(models.Model):
     contact_email = models.EmailField(
         blank=True, null=True)
     major = models.CharField(max_length=100, blank=True, null=True)
+
+    avatar = models.ImageField(
+        upload_to=student_avatar_upload_to,
+        default="assets/images/default_account.png",
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ['user__first_name', 'middle_name', 'user__last_name']

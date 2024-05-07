@@ -39,6 +39,11 @@ from teachers.models import Teacher
 from students.models import Student
 
 
+def certificate_upload_to(instance, filename):
+    # This function creates a dynamic upload path based on the manager's user ID
+    return f'certificates/{instance.certificate_number}/{filename}'
+
+
 class Certificate(models.Model):
     certificate_name = models.CharField(max_length=100)
     organization = models.CharField(max_length=100)
@@ -56,6 +61,13 @@ class Certificate(models.Model):
 
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    certificate_image = models.ImageField(
+        upload_to=certificate_upload_to,
+        default="assets/images/default_certificate.jpg",
+        blank=True,
+        null=True
+    )
 
     class Meta:
         ordering = ['-date_earned', 'organization', 'certificate_name']

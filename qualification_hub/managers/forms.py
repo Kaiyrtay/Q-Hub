@@ -64,12 +64,13 @@ class UserManagerForm(forms.ModelForm):
             attrs={'class': 'datepicker', 'placeholder': 'Appointed Date'}
         )
     )
+    avatar = forms.ImageField(required=False)
 
     class Meta:
         model = Manager
         fields = [
             'username', 'email', 'password', 'first_name', 'last_name',
-            'middle_name', 'phone_number', 'department', 'role', 'appointed_date'
+            'middle_name', 'phone_number', 'department', 'role', 'appointed_date', 'avatar'
         ]
 
     # Initialize the form with existing data
@@ -106,13 +107,13 @@ class UserManagerForm(forms.ModelForm):
                 Field('role', css_class='form-control'),
                 Field('appointed_date', css_class='datepicker',
                       placeholder='Appointed Date'),
+                Field('avatar', css_class='form-control'),
                 Submit('submit', 'Save Changes', css_class='btn btn-primary')
             )
         )
 
-        
-
     # Validate email uniqueness
+
     def clean_email(self):
         email = self.cleaned_data.get('email', '')
         user_pk = self.instance.user.pk if hasattr(

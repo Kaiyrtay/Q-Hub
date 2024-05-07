@@ -193,8 +193,9 @@
       </ul>
     </div>
   </div>
-  {% else %}
-  <div class="alert alert-warning">
+  {% endif %}
+  {% if not teachers_grouped  and not without_departments_paginated%}
+    <div class="alert alert-warning">
     <i class="bi bi-exclamation-triangle-fill"></i> {% blocktrans %}The database
     currently has no data; it's completely empty.{% endblocktrans %}
   </div>

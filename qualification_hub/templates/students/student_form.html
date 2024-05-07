@@ -19,7 +19,7 @@
         <h2>{% trans "Create New Student" %}</h2>
       {% endif %}
       <!-- Form with CSRF Token -->
-      <form method="post">
+      <form method="post"  enctype="multipart/form-data">
         {% csrf_token %}
         <!-- Display Validation Errors, if any -->
         {% if form.errors %}

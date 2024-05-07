@@ -1,64 +1,87 @@
-{% extends '../base.html' %}
-{% load core_tags i18n %}  <!-- Load the translation tag library -->
-{% block title %}{% trans "Certificate Detail" %}{% endblock %}
+{% extends "../base.html" %}
+{% load core_tags i18n %}
+{% block title %}{% trans "Certificate Detail" %}: {{ certificate.certificate_name }}{% endblock %}
 {% block content %}
 <div class="container mt-4 mb-4">
-    <h1 class="display-5">{{ certificate.certificate_name }}</h1>
-    <div class="card mt-3">
+  <div class="row">
+    <!-- Certificate Information on the Left -->
+    <div class="col-12 col-md-6">
+      <div class="card mt-3" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <div class="card-body">
+          <h3>{% trans "Certificate Detail" %}: {{ certificate.certificate_name }}</h3>
+          <p class="card-text">
+            <strong>{% trans "Organization" %}:</strong> {{ certificate.organization }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Description" %}:</strong> {{ certificate.description }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Expiration Date" %}:</strong> {{ certificate.expiration_date }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Issued By" %}:</strong> {{ certificate.issuing_authority }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Certificate Number" %}:</strong> {{ certificate.certificate_number }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Date Earned" %}:</strong> {{ certificate.date_earned }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Verification URL" %}:</strong> 
+            <a href="{{ certificate.verification_url }}" class="btn btn-link">
+              {{ certificate.verification_url }}
+            </a>
+          </p>
+          {% if certificate.teacher_owner %}
             <p class="card-text">
-                <strong>{% trans "Organization" %}:</strong> {{ certificate.organization }}
+              <strong>{% trans "Owner" %}:</strong> {{ certificate.teacher_owner.user.username }}
             </p>
+          {% elif certificate.student_owner %}
             <p class="card-text">
-                <strong>{% trans "Description" %}:</strong> {{ certificate.description }}
+              <strong>{% trans "Owner" %}:</strong> {{ certificate.student_owner.user.username }}
             </p>
-            <p class="card-text">
-                <strong>{% trans "Expiration Date"%}:
-                </strong> {{ certificate.expiration_date }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Issued By" %}:</strong> {{ certificate.issuing_authority }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Certificate Number" %}:</strong> {{ certificate.certificate_number }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Date Earned" %}:</strong> {{ certificate.date_earned }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Verification URL" %}:</strong> 
-                <a href="{{ certificate.verification_url }}" class="btn btn-link">
-                    {{ certificate.verification_url }}
-                </a>
-            </p>
-            {% if certificate.teacher_owner %}
-                <p class="card-text">
-                    <strong>{% trans "Owner" %}:</strong> {{ certificate.teacher_owner.user.username }}
-                </p>
-            {% elif certificate.student_owner %}
-                <p class="card-text">
-                    <strong>{% trans "Owner" %}:</strong> {{ certificate.student_owner.user.username }}
-                </p>
-            {% endif %}
+          {% endif %}
         </div>
+      </div>
     </div>
-    <div class="mt-4">
-        {% if user.is_authenticated %}
+
+    <!-- Certificate Image on the Right -->
+    <div class="col-12 col-md-6">
+      <div class="h-100 d-flex align-items-center justify-content-center" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <img
+          class="img-fluid rounded"
+          loading="lazy"
+          src="{{ certificate.certificate_image.url }}"
+          alt="{% trans 'Certificate Image' %}"
+          style="object-fit: cover; width: 100%; height: 100%;"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="mt-4 d-flex justify-content-between"> <!-- Use Flexbox for consistent spacing -->
+    <div> <!-- Edit and Delete Buttons -->
+      {% if user.is_authenticated %}
         {% if user.pk == certificate.teacher_owner.user.pk or user.pk == certificate.student_owner.user.pk or user|in_group:'Managers' %}
-        <a href="{% url 'certificates:update' certificate.pk %}" class="btn btn-warning">
+          <a href="{% url 'certificates:update' certificate.pk %}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i> {% trans "Edit Certificate" %}
-        </a>
-        <form method="post" action="{% url 'certificates:delete' certificate.pk %}" style="display: inline-block;">
+          </a>
+          <form method="post" action="{% url 'certificates:delete' certificate.pk %}" style="display: inline-block;">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">
-                <i class="bi bi-trash"></i> {% trans "Delete Certificate" %}
+              <i class="bi bi-trash"></i> {% trans "Delete Certificate" %}
             </button>
-        </form>
+          </form>
         {% endif %}
-        {% endif %}
-        <a href="{% url 'certificates:list' %}" class="btn btn-secondary">
-            <i class="bi bi-arrow-left"></i> {% trans "Back to Certificate List" %}
-        </a>
+      {% endif %}
     </div>
+
+    <!-- Back to Certificate List Button -->
+    <a href="{% url 'certificates:list' %}" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> {% trans "Back to Certificate List" %}
+    </a>
+  </div>
 </div>
 {% endblock %}
