@@ -12,7 +12,7 @@
         <h2>{% trans "Create New Faculty" %}</h2>
       {% endif %}
       <!-- Form with CSRF Token -->
-      <form method="post">
+      <form method="post"  enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}  <!-- Render form fields as paragraphs -->
         <!-- Flex container for buttons -->

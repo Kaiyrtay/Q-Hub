@@ -1,45 +1,66 @@
-{% extends 'base.html' %}
-{% load core_tags i18n %}
-{% block title %}{% trans "Manager" %}: {{ manager.full_name }}{% endblock %}
+{% extends "base.html" %}
+{% load i18n %}
+{% load core_tags %}
+{% block title %}{% trans "Manager Details" %}: {{ manager.full_name }}{% endblock %}
 {% block content %}
-<div class="container mt-4 mb-4">
-    <h1 class="display-5">{% trans "Manager Details" %}</h1>
-    <div class="card mt-3">
-        <div class="card-body">
-            <p class="card-text">
-                <strong>{% trans "Full Name" %}:</strong> {{ manager.full_name }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Department" %}:</strong> {{ manager.department.name }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Role" %}:</strong> {{ manager.role }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Appointed Date" %}:</strong> {{ manager.appointed_date }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Phone Number" %}:</strong> {{ manager.phone_number }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Contact Email" %}:</strong> {{ manager.contact_email }}
-            </p>
+<section class="p-3 p-md-4 p-xl-5">
+  <div class="container">
+    <div class="row">
+      <!-- Manager Information on the Left -->
+      <div class="col-12 col-md-6">
+        <div class="p-3 p-md-4 p-xl-5">
+          <h3>{% trans "Manager Details" %}</h3>
+          <p class="card-text">
+            <strong>{% trans "Full Name" %}:</strong> {{ manager.full_name }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Department" %}:</strong> <a href="{% url 'departments:detail' manager.department.pk %}"> {{ manager.department.name }}</a>
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Role" %}:</strong> {{ manager.role }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Appointed Date" %}:</strong> {{ manager.appointed_date }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Phone Number" %}:</strong> {{ manager.phone_number }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Contact Email" %}:</strong> {{ manager.contact_email }}
+          </p>
         </div>
+      </div>
+
+      <!-- Avatar on the Right -->
+      <div class="col-12 col-md-6 text-center">
+        <div class="d-flex flex-column justify-content-between h-100 p-3 p-md-4 p-xl-5" style="background:#cecece">
+          <img
+            class="img-fluid rounded mx-auto my-4"
+            loading="lazy"
+            src="{{ manager.avatar.url }}"
+            alt="{% trans 'Manager Avatar' %}"
+            style="object-fit: cover; width: 100%; height: 100%;"
+          >
+        </div>
+      </div>
     </div>
-    <div class="mt-4">
+
+    <!-- Action Buttons -->
+    <div class="m-2">
       {% if user.is_authenticated %}
         {% if user.is_staff or user.pk == manager.user.pk %}
           <a href="{% url 'managers:update' manager.pk %}" class="btn btn-warning">
-              <i class="bi bi-pencil-square"></i> {% trans "Update" %}
+            <i class="bi bi-pencil-square"></i> {% trans "Update" %}
           </a>
           <a href="{% url 'managers:delete' manager.pk %}" class="btn btn-danger">
-              <i class="bi bi-trash"></i> {% trans "Delete" %}
+            <i class="bi bi-trash"></i> {% trans "Delete" %}
           </a>
         {% endif %}
       {% endif %}
-      <a href="{% url 'managers:list' %}" class="btn btn-secondary">
-          <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+      <a href="{% url 'managers:list' %}" class="btn btn-primary">
+        <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
       </a>
     </div>
-</div>
+  </div>
+</section>
 {% endblock %}

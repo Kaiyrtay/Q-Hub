@@ -1,64 +1,88 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load i18n %}
 {% load core_tags %}
-{% load i18n %} 
-{% block title %}{% trans "Student" %}: {{ student.full_name }}{% endblock %}
+{% block title %}{% trans "Student Details" %}: {{ student.full_name }}{% endblock %}
 {% block content %}
-<div class="container mt-4 mb-4">
-    <h1 class="display-5">{% trans "Student Details" %}</h1>
-    <div class="card mt-3">
-        <div class="card-body">
-            <p class="card-text">
-                <strong>{% trans "Full Name" %}:</strong> {{ student.full_name }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Department" %}:</strong> {{ student.department.name }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Role" %}:</strong> {{ student.role }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Enrollment Date" %}:</strong> {{ student.enrollment_date }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Phone Number" %}:</strong> {{ student.phone_number }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Contact Email" %}:</strong> {{ student.contact_email }}
-            </p>
+<section class="p-3 p-md-4 p-xl-5">
+  <div class="container">
+    <div class="row">
+      <!-- Student Information on the Left -->
+      <div class="col-12 col-md-6">
+        <div class="p-3 p-md-4 p-xl-5">
+          <h3>{% trans "Student Details" %}</h3>
+          <p class="card-text">
+            <strong>{% trans "Full Name" %}:</strong> {{ student.full_name }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Department" %}:</strong> <a href="{% url 'departments:detail' student.department.pk %}"> {{ student.department.name }}</a>
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Role" %}:</strong> {{ student.role }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Enrollment Date" %}:</strong> {{ student.enrollment_date }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Phone Number" %}:</strong> {{ student.phone_number }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Contact Email" %}:</strong> {{ student.contact_email }}
+          </p>
         </div>
+      </div>
+
+      <!-- Avatar on the Right -->
+      <div class="col-12 col-md-6 text-center">
+        <div class="d-flex flex-column justify-content-between h-100 p-3 p-md-4 p-xl-5" style="background:#cecece">
+          <img
+            class="img-fluid rounded mx-auto my-4"
+            loading="lazy"
+            src="{{ student.avatar.url }}"
+            alt="{% trans 'Student Avatar' %}"
+            style="object-fit: cover; width: 100%; height: 100%;"
+          >
+        </div>
+      </div>
     </div>
-    <h2 class="h4">{% trans "Certificates" %}</h2>
-    <ul class="list-group">
-        {% for certificate in student.certificates.all %}
-            <li class="list-group-item">
-                <i class="bi bi-file-earmark"></i>
-                <a href="{% url 'certificates:detail' certificate.pk %}">
-                    {{ certificate.certificate_name }}
-                </a>
-            </li>
-        {% empty %}
-            <li class="list-group-item">{% trans "No certificates found." %}</li>
-            {% if user.is_authenticated and user.pk == student.user.pk %}
-                <a href="{% url 'certificates:create' %}" class="btn btn-primary btn-sm mt-2">
-                    <i class="bi bi-plus-lg"></i>{% trans "Add New Certificate" %}
-                </a>
-            {% endif %}
-        {% endfor %}
-    </ul>
+
+    <!-- Certificates Section -->
     <div class="mt-4">
-        {% if user.is_authenticated %}
-          {% if user|in_group:'Managers' or user.pk == student.user.pk %}
-            <a href="{% url 'students:update' student.pk %}" class="btn btn-warning">
-                <i class="bi bi-pencil-square"></i>{% trans "Update" %}
+      <h2 class="h4">{% trans "Certificates" %}</h2>
+      <ul class="list-group">
+        {% for certificate in student.certificates.all %}
+          <li class="list-group-item">
+            <i class="bi bi-file-earmark"></i>
+            <a href="{% url 'certificates:detail' certificate.pk %}">
+              {{ certificate.certificate_name }}
             </a>
-            <a href="{% url 'students:delete' student.pk %}" class="btn btn-danger">
-                <i class="bi bi-trash"></i>{% trans "Delete" %}
+          </li>
+        {% empty %}
+          <li class="list-group-item">{% trans "No certificates found." %}</li>
+          {% if user.is_authenticated and user.pk == student.user.pk %}
+            <a href="{% url 'certificates:create' %}" class="btn btn-primary btn-sm mt-2">
+              <i class="bi bi-plus-lg"></i> {% trans "Add New Certificate" %}
             </a>
           {% endif %}
-        {% endif %}
-        <a href="{% url 'students:list' %}" class="btn btn-secondary">
-            <i class="bi bi-arrow-left"></i>{% trans "Back to List" %}
-        </a>
+        {% endfor %}
+      </ul>
     </div>
-</div>
+
+    <!-- Action Buttons -->
+    <div class="m-2">
+      {% if user.is_authenticated %}
+        {% if user|in_group:'Managers' or user.pk == student.user.pk %}
+          <a href="{% url 'students:update' student.pk %}" class="btn btn-warning">
+            <i class="bi bi-pencil-square"></i> {% trans "Update" %}
+          </a>
+          <a href="{% url 'students:delete' student.pk %}" class="btn btn-danger">
+            <i class="bi bi-trash"></i> {% trans "Delete" %}
+          </a>
+        {% endif %}
+      {% endif %}
+      <a href="{% url 'students:list' %}" class="btn btn-primary">
+        <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock %}

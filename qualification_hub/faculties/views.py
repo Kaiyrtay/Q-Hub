@@ -62,7 +62,7 @@ class FacultyDetailView(DetailView):
 
 class FacultyCreateView(StaffRequiredMixin, CreateView):
     model = Faculty
-    fields = ["name", "description", "dean",
+    fields = ["name", "logo", "description", "dean",
               "website", "contact_email", "location"]
     template_name = "faculties/faculty_form.html"
     success_url = reverse_lazy("faculties:list")
@@ -70,7 +70,7 @@ class FacultyCreateView(StaffRequiredMixin, CreateView):
 
 class FacultyUpdateView(StaffRequiredMixin, UpdateView):
     model = Faculty
-    fields = ["name", "description", "dean",
+    fields = ["name","logo", "description", "dean",
               "website", "contact_email", "location"]
     template_name = "faculties/faculty_form.html"
     success_url = reverse_lazy("faculties:list")

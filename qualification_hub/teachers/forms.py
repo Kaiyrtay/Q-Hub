@@ -52,13 +52,14 @@ class UserTeacherForm(forms.ModelForm):
     )
     subject_taught = forms.CharField(required=False)
     room_number = forms.CharField(required=False)
+    avatar = forms.ImageField(required=False)
 
     class Meta:
         model = Teacher
         fields = [
             'username', 'email', 'password', 'first_name', 'last_name',
             'middle_name', 'phone_number', 'department', 'role',
-            'hire_date', 'subject_taught', 'room_number'
+            'hire_date', 'subject_taught', 'room_number', 'avatar'
         ]
 
     def __init__(self, *args, **kwargs):
@@ -106,6 +107,7 @@ class UserTeacherForm(forms.ModelForm):
                       placeholder='Subject Taught'),
                 Field('room_number', css_class='form-control',
                       placeholder='Room Number'),
+                Field('avatar', css_class='form-control'),
                 Submit('submit', 'Save Changes', css_class='btn btn-primary'),
             )
         )

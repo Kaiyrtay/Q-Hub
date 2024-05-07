@@ -19,7 +19,7 @@
         <h2>{% trans "Create New Teacher" %}</h2>
       {% endif %}
       <!-- Form with CSRF Token -->
-      <form method="post">
+      <form method="post"  enctype="multipart/form-data">
         {% csrf_token %}
         <!-- Display the form with Crispy Forms -->
         {{ form|crispy }}

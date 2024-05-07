@@ -72,13 +72,14 @@ class UserStudentForm(forms.ModelForm):
     )
     major = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': 'Major'}), required=False)
+    avatar = forms.ImageField(required=False)
 
     class Meta:
         model = Student
         fields = [
             'username', 'email', 'password', 'first_name', 'last_name',
             'middle_name', 'phone_number', 'department', 'role',
-            'enrollment_date', 'graduation_date', 'major'
+            'enrollment_date', 'graduation_date', 'major', 'avatar'
         ]
 
     def __init__(self, *args, **kwargs):
@@ -108,6 +109,7 @@ class UserStudentForm(forms.ModelForm):
                 Field('graduation_date', css_class='datepicker',
                       placeholder='Graduation Date'),
                 Field('major', css_class='form-control', placeholder='Major'),
+                Field('avatar', css_class='form-control'),
                 Submit('submit', 'Save Changes', css_class='btn btn-primary')
             )
         )

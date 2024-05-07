@@ -87,6 +87,9 @@ class CertificateUpdateView(ManagerOrOwnerForCertificateRequiredMixin, UpdateVie
         if certificate is None:
             raise Http404("Certificate not found")
         return certificate
+    
+    def form_valid(self, form):
+        return super().form_valid(form)
 
 
 class CertificateDeleteView(ManagerOrOwnerForCertificateRequiredMixin, DeleteView):

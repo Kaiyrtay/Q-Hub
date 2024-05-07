@@ -1,66 +1,90 @@
-{% extends 'base.html' %}
-{% load core_tags %}
+{% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% trans "Teacher" %}: {{ teacher.full_name }}{% endblock title %}
+{% load core_tags %}
+{% block title %}{% trans "Teacher Details" %}: {{ teacher.full_name }}{% endblock %}
 {% block content %}
-<div class="container mt-4 mb-4">
-    <h1 class="display-5">{% trans "Teacher Details" %}</h1>
-    <div class="card mt-3 mb-3">
-        <div class="card-body">
-            <p class="card-text">
-                <strong>{% trans "Full Name" %}:</strong> {{ teacher.full_name }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Department" %}:</strong> {{ teacher.department.name }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Role" %}:</strong> {{ teacher.role }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Hire Date" %}:</strong> {{ teacher.hire_date }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Phone Number" %}:</strong> {{ teacher.phone_number }}
-            </p>
-            <p class="card-text">
-                <strong>{% trans "Contact Email" %}:</strong> {{ teacher.contact_email }}
-            </p>
+<section class="p-3 p-md-4 p-xl-5">
+  <div class="container">
+    <div class="row">
+      <!-- Teacher Information on the Left -->
+      <div class="col-12 col-md-6">
+        <div class="p-3 p-md-4 p-xl-5">
+          <h3>{% trans "Teacher Details" %}</h3>
+          <p class="card-text">
+            <strong>{% trans "Full Name" %}:</strong> {{ teacher.full_name }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Department" %}:</strong><a href="{% url 'departments:detail' teacher.department.pk %}"> {{ teacher.department.name }}</a> 
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Role" %}:</strong> {{ teacher.role }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Hire Date" %}:</strong> {{ teacher.hire_date }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Phone Number" %}:</strong> {{ teacher.phone_number }}
+          </p>
+          <p class="card-text">
+            <strong>{% trans "Contact Email" %}:</strong> {{ teacher.contact_email }}
+          </p>
         </div>
+      </div>
+
+      <!-- Avatar Image on the Right -->
+      <div class="col-12 col-md-6 text-center">
+        <div class="d-flex flex-column justify-content-between h-100 p-3 p-md-4 p-xl-5" style="background:#cecece">
+          <img
+            class="img-fluid rounded mx-auto my-4"
+            loading="lazy"
+            src="{{ teacher.avatar.url }}"
+            alt="{% trans 'Teacher Avatar' %}"
+            style="object-fit: cover; width: 100%; height: 100%;"
+          >
+        </div>
+      </div>
     </div>
-    <h2 class="h4">{% trans "Certificates" %}</h2>
-    <ul class="list-group">
-        {% for certificate in teacher.certificates.all %}
-            <li class="list-group-item">
-                <i class="bi bi-file-earmark"></i>
-                <a href="{% url 'certificates:detail' certificate.pk %}">
-                    {{ certificate.certificate_name }}
-                </a>
-            </li>
-        {% empty %}
-            <li class="list-group-item">{% trans "No certificates found." %}</li>
-            {% if self.request.user == teacher.user %}
-                <li class="list-group-item">
-                    <a href="{% url 'certificates:create' %}" class="btn btn-primary btn-sm">
-                        <i class="bi bi-plus-lg"></i>{% trans "Add New Certificate" %}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+
+    <!-- Certificates and Action Buttons -->
     <div class="mt-4">
-      {% if user.is_authenticated%}
-        {% if user|in_group:'Managers' or user.pk == teacher.user.pk%}
-        <a href="{% url 'teachers:update' teacher.pk %}" class="btn btn-warning">
-            <i class="bi bi-pencil-square"></i>{% trans "Update" %}
-        </a>
-        <a href="{% url 'teachers:delete' teacher.pk %}" class="btn btn-danger">
-            <i class="bi bi-trash"></i>{% trans "Delete" %}
-        </a>
-        {%endif%}
-      {%endif%}
-        <a href="{% url 'teachers:list' %}" class="btn btn-secondary">
-            <i class="bi bi-arrow-left"></i>{% trans "Back to List" %}
-        </a>
+      <h2 class="h4">{% trans "Certificates" %}</h2>
+      <ul class="list-group">
+        {% for certificate in teacher.certificates.all %}
+          <li class="list-group-item">
+            <i class="bi bi-file-earmark"></i>
+            <a href="{% url 'certificates:detail' certificate.pk %}">
+              {{ certificate.certificate_name }}
+            </a>
+          </li>
+        {% empty %}
+          <li class="list-group-item">{% trans "No certificates found." %}</li>
+          {% if user == teacher.user %}
+            <li class="list-group-item">
+              <a href="{% url 'certificates:create' %}" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-lg"></i> {% trans "Add New Certificate" %}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="m-2">
+      {% if user.is_authenticated %}
+        {% if user|in_group:'Managers' or user.pk == teacher.user.pk %}
+          <a href="{% url 'teachers:update' teacher.pk %}" class="btn btn-warning">
+            <i class="bi bi-pencil-square"></i> {% trans "Update" %}
+          </a>
+          <a href="{% url 'teachers:delete' teacher.pk %}" class="btn btn-danger">
+            <i class="bi bi-trash"></i> {% trans "Delete" %}
+          </a>
+        {% endif %}
+      {% endif %}
+      <a href="{% url 'teachers:list' %}" class="btn btn-primary">
+        <i class="bi bi-arrow-left"></i> {% trans "Back to List" %}
+      </a>
     </div>
-</div>
+  </div>
+  </div>
+</section>
 {% endblock %}
