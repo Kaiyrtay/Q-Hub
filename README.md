@@ -2,13 +2,13 @@
 
 **Qualification Hub** is a Django-based project designed to manage and track educational qualifications, certificates, and related information. It supports various user roles such as teachers, students, managers, and administrators, allowing them to manage certificates and track qualifications.
 
-**_Screen capture_**
+![Screen capture](././qualification_hub/static/docs/video/screen-capture.gif)
 
+<!-- **_Screen capture_**
 <video width="700" height="300" controls>
-
-  <source src="./qualification_hub/static/docs/video/screen-capture.mp4" type="video/mp4">
+  <source src="./qualification_hub/statics/docs/video/screen-capture.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video>
+</video> -->
 
 ## Features
 
