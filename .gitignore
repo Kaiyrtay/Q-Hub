@@ -9,7 +9,8 @@
 __pycache__/
 local_settings.py
 db.sqlite3
-media
+#but it needs to be included into git
+#media
 
 ### Linux ###
 *~
