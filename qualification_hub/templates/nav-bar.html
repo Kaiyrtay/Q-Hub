@@ -1,5 +1,5 @@
 {% load i18n %}
-<nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
+<nav class="navbar navbar-expand-lg gradient-custom" id="navbar">
   <div class="container-fluid">
     <!-- Navbar Brand -->
     <a class="navbar-brand" href="{% url 'home' %}">Q-hub</a>
@@ -18,56 +18,47 @@
     <!-- Collapsible Section -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Main Navigation Links -->
-      <!-- Navigation Links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'faculties:list' %}"
-            >{% trans "Faculty" %}</a
-          >
+          <a class="nav-link" href="{% url 'faculties:list' %}">{% trans "Faculty" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'departments:list' %}"
-            >{% trans "Department" %}</a
-          >
+          <a class="nav-link" href="{% url 'departments:list' %}">{% trans "Department" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'managers:list' %}"
-            >{% trans "Managers" %}</a
-          >
+          <a class="nav-link" href="{% url 'managers:list' %}">{% trans "Managers" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'teachers:list' %}"
-            >{% trans "Teachers" %}</a
-          >
+          <a class="nav-link" href="{% url 'teachers:list' %}">{% trans "Teachers" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'students:list' %}"
-            >{% trans "Students" %}</a
-          >
+          <a class="nav-link" href="{% url 'students:list' %}">{% trans "Students" %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'certificates:list' %}"
-            >{% trans "Certificates" %}</a
-          >
+          <a class="nav-link" href="{% url 'certificates:list' %}">{% trans "Certificates" %}</a>
         </li>
       </ul>
-       <!-- Language Dropdown -->
+      <!-- Dark Mode Switch -->
       <ul class="navbar-nav">
-        {% get_current_language as CURRENT_LANGUAGE %} 
-        {% get_available_languages as AVAILABLE_LANGUAGES %} 
-        {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+        <li class="nav-item">
+          <div class="form-check form-switch pt-2" style="--bs-form-switch-width: 60px; --bs-form-switch-height: 24px;">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="darkModeSwitch"
+            />
+          </div>
+        </li>
+        <!-- Language Dropdown -->
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarLanguageDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-          <i class="fas fa-globe"></i> {% trans "Language" %}
+          <a class="nav-link dropdown-toggle" href="#" id="navbarLanguageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-globe"></i> {% trans "Language" %}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarLanguageDropdown">
+            {% get_current_language as CURRENT_LANGUAGE %} 
+            {% get_available_languages as AVAILABLE_LANGUAGES %} 
+            {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
             {% for language in languages %}
               <li>
                 <form method="post" action="{% url 'set_language' %}">
@@ -84,40 +75,26 @@
         </li>
         <!-- User Authentication Links -->
         {% if user.is_authenticated %}
-        <li class="nav-item">
           {% if user.is_staff %}
-          <li class="nav-item">
-          <a class="nav-link" href="/rosetta">
-            Rosetta</a
-          >
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/admin">
-            {% trans "Hello" %}, {{ user.username }}!</a
-          >
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/rosetta">Rosetta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">{% trans "Hello" %}, {{ user.username }}!</a>
+            </li>
           {% else %}
-          <span class="nav-link"
-            >{% trans "Hello" %}, {{ user.username }}!</span
-          >
+            <span class="nav-link">{% trans "Hello" %}, {{ user.username }}!</span>
           {% endif %}
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:logout' %}"
-            >{% trans "Logout" %}</a
-          >
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:logout' %}">{% trans "Logout" %}</a>
+          </li>
         {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:register' %}"
-            >{% trans "Sign Up" %}</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'core:login' %}"
-            >{% trans "Sign In" %}</a
-          >
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:register' %}">{% trans "Sign Up" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:login' %}">{% trans "Sign In" %}</a>
+          </li>
         {% endif %}
       </ul>
     </div>

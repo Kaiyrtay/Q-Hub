@@ -1,0 +1,26 @@
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.navbar.gradient-custom {
+  background-color: #333;
+}
+
+.navbar.gradient-custom a {
+  color: #f5f5f5dc;
+}
+.navbar-light.bg-light.dark-mode {
+  background-color: #333; /* Dark navbar */
+  color: #ffffff;
+}
+
+.btn-outline-secondary.dark-mode {
+  border-color: #ffffff; /* White borders for buttons */
+  color: #ffffff; /* White text */
+}
+
+.btn-outline-secondary.dark-mode:hover {
+  background-color: #ffffff; /* Light background on hover */
+  color: #121212; /* Dark text on hover */
+}
