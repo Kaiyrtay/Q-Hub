@@ -49,7 +49,7 @@ class CertificateListView(ListView):
     model = Certificate
     template_name = 'certificates/certificate_list.html'
     context_object_name = 'certificates'
-    paginate_by = 9
+    paginate_by = 6
 
 
 class CertificateDetailView(DetailView):

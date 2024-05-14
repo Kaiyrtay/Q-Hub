@@ -44,7 +44,7 @@
             </td>
             <td>{{ student.major }}</td>
             <td>{{ student.phone_number }}</td>
-            <td>{{ student.contact_email }}</td>
+            <td>{{ student.user.email }}</td>
             <td>{{ student.enrollment_date|date:"d M Y" }}</td>
             {% if user.is_authenticated and user|in_group:'Managers' %}
             <td>

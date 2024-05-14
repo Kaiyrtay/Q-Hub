@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n core_tags %}
 <nav class="navbar navbar-expand-lg gradient-custom" id="navbar">
   <div class="container-fluid">
     <!-- Navbar Brand -->
@@ -19,6 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Main Navigation Links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% if user.is_staff %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'faculties:list' %}"
             >{% trans "Faculty" %}</a
@@ -34,6 +35,7 @@
             >{% trans "Managers" %}</a
           >
         </li>
+        {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'teachers:list' %}"
             >{% trans "Teachers" %}</a
@@ -113,7 +115,17 @@
           >
         </li>
         {% else %}
-        <span class="nav-link">{% trans "Hello" %}, {{ user.username }}!</span>
+        <span class="nav-link" style="color:white">
+          {% if user|in_group:'Managers'  %}
+            <a href="{% url 'managers:detail' user.manager.pk %}">{% trans "Hello" %}, {{ user.username }}!</a>
+          {% endif %}
+          {% if user|in_group:'Teachers'  %}
+            <a href="{% url 'teachers:detail' user.teacher.pk %}">{% trans "Hello" %}, {{ user.username }}!</a>
+          {% endif %}
+          {% if user|in_group:'Students'  %}
+            <a href="{% url 'students:detail' user.student.pk %}">{% trans "Hello" %}, {{ user.username }}!</a>
+          {% endif %}
+        </span>
         {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'core:logout' %}"

@@ -32,7 +32,10 @@
           <a href="{% url 'faculties:detail' faculty.id %}">{{ faculty.name }}</a>
         </td>
         <td>
-          {{ faculty.dean.get_full_name|default:'Not Assigned' }}
+          {% if faculty.dean.user != None%}
+            <a href="{% url 'managers:detail' faculty.dean.user.manager.pk %}"></a>{{ faculty.dean.get_full_name}}
+          {% endif %}
+          Not Assigned
         </td>
         <td>
           <a href="{{ faculty.website|default:'#' }}" target="_blank">

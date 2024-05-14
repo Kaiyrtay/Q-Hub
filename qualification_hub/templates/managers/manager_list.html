@@ -46,7 +46,7 @@
             </td>
             <td>{{ manager.role }}</td>
             <td>{{ manager.phone_number }}</td>
-            <td>{{ manager.contact_email }}</td>
+            <td>{{ manager.user.email }}</td>
             {% if user.is_authenticated and user.is_staff %}
             <td>
               <a

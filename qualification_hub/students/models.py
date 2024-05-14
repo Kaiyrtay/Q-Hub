@@ -69,7 +69,7 @@ class Student(models.Model):
         first_name = self.user.first_name
         last_name = self.user.last_name
         middle_name = self.middle_name
-        return f"{first_name} {middle_name if middle_name else ''} {last_name}".strip()
+        return f" {last_name if last_name else ''} {first_name} {middle_name if middle_name else ''}".strip()
 
     def __str__(self):
         return f"{self.full_name()} - {self.role} ({self.department.name if self.department else 'No Department'})"

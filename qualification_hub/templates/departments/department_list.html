@@ -31,7 +31,11 @@
           </a>
         </td>
         <td>
-          {{ department.head.get_full_name|default:'Not Assigned' }}
+          {% if department.head %}
+            <a href="{% url 'managers:detail' department.head.pk %}">{{ department.head.get_full_name }}</a>
+          {% else %}
+            {% trans "Not Assigned" %}
+          {% endif %}
         </td>
         <td>
           {% if department.faculty %}

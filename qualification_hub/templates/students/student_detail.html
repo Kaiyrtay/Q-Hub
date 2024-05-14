@@ -13,9 +13,11 @@
           <p class="card-text">
             <strong>{% trans "Full Name" %}:</strong> {{ student.full_name }}
           </p>
+          {% if student.department %}
           <p class="card-text">
             <strong>{% trans "Department" %}:</strong> <a href="{% url 'departments:detail' student.department.pk %}"> {{ student.department.name }}</a>
           </p>
+          {%endif%}
           <p class="card-text">
             <strong>{% trans "Role" %}:</strong> {{ student.role }}
           </p>
@@ -26,7 +28,7 @@
             <strong>{% trans "Phone Number" %}:</strong> {{ student.phone_number }}
           </p>
           <p class="card-text">
-            <strong>{% trans "Contact Email" %}:</strong> {{ student.contact_email }}
+            <strong>{% trans "Contact Email" %}:</strong> {{ student.user.email }}
           </p>
         </div>
       </div>

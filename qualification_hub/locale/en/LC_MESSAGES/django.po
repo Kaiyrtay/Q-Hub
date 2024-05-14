@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-05 21:58+0600\n"
-"PO-Revision-Date: 2024-05-06 15:14+0000\n"
+"PO-Revision-Date: 2024-05-14 14:24+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -25,11 +25,11 @@ msgstr "English"
 
 #: .\qualification_hub\settings.py:164
 msgid "Russian"
-msgstr "Russian"
+msgstr "Русский язык"
 
 #: .\qualification_hub\settings.py:165
 msgid "Kazakh"
-msgstr "Kazakh"
+msgstr "Қазақ тілі"
 
 #: .\templates\certificates\certificate_confirm_delete.html:3
 #: .\templates\certificates\certificate_detail.html:54
@@ -485,7 +485,7 @@ msgstr "Home"
 #: .\templates\students\student_detail.html:30
 #: .\templates\teachers\teacher_detail.html:30
 msgid "Certificates"
-msgstr "Certificates"
+msgstr "Awards"
 
 #: .\templates\footer.html:40
 msgid "Contact Us"
