@@ -26,26 +26,6 @@
 - **Student**: Access to certificates.
 - **Guest**: Non-authenticated user with read-only access to public information.
 
-## Visual representation of project
-
-### Entity-Relationship Diagram
-
-Below is the Entity-Relationship Diagram for the project:
-
-![ERD](./qualification_hub/static/docs/jpg/ERD_v1.0.jpg)
-
-### Unified Modeling Language (UML)
-
-Here's a UML class diagram showing the relationships between classes:
-
-![UML Class Diagram](./qualification_hub/static/docs/jpg/UML_v1.0.jpg)
-
-### Flowchart
-
-This flowchart describes the process of creating a certificate in the system:
-
-![Certificate Creation Flowchart](./qualification_hub/static/docs/jpg/Certificates_flowcharts.jpg)
-
 ## Setup Instructions
 
 1. **Clone the Repository**
